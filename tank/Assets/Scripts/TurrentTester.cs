@@ -7,6 +7,7 @@ namespace TurretDemo
     {
         public TurrentRotation[] turret;
         public Vector3 targetPos;
+        public Transform TPSAiming;
         public Transform targetTransform;
 
         [Space]
