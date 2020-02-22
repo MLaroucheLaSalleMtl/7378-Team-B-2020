@@ -14,14 +14,14 @@ TagManager:
   - UI
   - 
   - 
-  - ignore linecast
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - OutSideWheel
+  - InSideWheel
+  - TankBody
+  - TankTrack
+  - Bullet
+  - Armor Collider
+  - SafeCollider
+  - Suspension
   - 
   - 
   - 
