@@ -30,7 +30,7 @@ public class MoveTank : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             wheelTorque = 150000;
-            hull.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, 1) * 30000);
+            hull.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, 1) * 50000);
             //         FrontLeft.AddRelativeTorque(Vector3.right*wheelTorque,ForceMode.Force);
             //RearLeft.AddRelativeTorque(Vector3.right*wheelTorque, ForceMode.Force);
             //FrontRight.AddRelativeTorque(Vector3.right*wheelTorque, ForceMode.Force);

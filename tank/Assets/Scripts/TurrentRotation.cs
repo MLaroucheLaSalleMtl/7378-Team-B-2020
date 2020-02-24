@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Turrets
 {
@@ -56,6 +57,7 @@ namespace Turrets
         {
             if (aiming == false)
                 aimPoint = transform.TransformPoint(Vector3.forward * 100.0f);
+            print(Vector3.forward * 100f);
         }
 
         private void Update()
@@ -67,6 +69,7 @@ namespace Turrets
 
             if (showDebugRay)
                 DrawDebugRays();
+
         }
 
         private void FixedUpdate()
@@ -115,10 +118,7 @@ namespace Turrets
                 Debug.LogWarning(name + ": Turret cannot auto-populate transforms while game is playing.");
             }
         }
-
-        /// <summary>
-        /// Sets the turretBase and turretBarrels transforms to null.
-        /// </summary>
+        //归零
         public void ClearTransforms()
         {
             // Don't allow this while ingame.
@@ -148,16 +148,13 @@ namespace Turrets
 
         private void RotateBase()
         {
-            // TODO: Turret needs to rotate the long way around if the aimpoint gets behind
-            // it and traversal limits prevent it from taking the shortest rotation.
             if (turretBase != null)
             {
-                // Note, the local conversion has to come from the parent.
+                //瞄准坐标来自父物体
                 Vector3 localTargetPos = transform.InverseTransformPoint(aimPoint);
                 localTargetPos.y = 0.0f;
 
-                // Clamp target rotation by creating a limited rotation to the target.
-                // Use different clamps depending if the target is to the left or right of the turret.
+                //限制炮塔左右转动
                 Vector3 clampedLocalVec2Target = localTargetPos;
                 if (limitTraverse)
                 {
@@ -167,47 +164,39 @@ namespace Turrets
                         clampedLocalVec2Target = Vector3.RotateTowards(Vector3.forward, localTargetPos, Mathf.Deg2Rad * leftTraverse, float.MaxValue);
                 }
 
-                // Create new rotation towards the target in local space.
+                //创建本地旋转
                 Quaternion rotationGoal = Quaternion.LookRotation(clampedLocalVec2Target);
                 Quaternion newRotation = Quaternion.RotateTowards(turretBase.localRotation, rotationGoal, turnRate * Time.deltaTime);
 
-                // Set the new rotation of the base.
+                //把旋转赋值给炮塔底座
                 turretBase.localRotation = newRotation;
             }
         }
 
         private void RotateBarrels()
         {
-            // TODO: A target position directly to the turret's right will cause the turret
-            // to attempt to aim straight up. This looks silly and on slow moving turrets can
-            // cause delays on targeting. This is why barrels have a boosted rotation speed.
+
             if (turretBase != null && turretBarrels != null)
             {
-                // Note, the local conversion has to come from the parent.
                 Vector3 localTargetPos = turretBase.InverseTransformPoint(aimPoint);
                 localTargetPos.x = 0.0f;
 
-                // Clamp target rotation by creating a limited rotation to the target.
-                // Use different clamps depending if the target is above or below the turret.
+                //俯仰角
                 Vector3 clampedLocalVec2Target = localTargetPos;
                 if (localTargetPos.y >= 0.0f)
                     clampedLocalVec2Target = Vector3.RotateTowards(Vector3.forward, localTargetPos, Mathf.Deg2Rad * elevation, float.MaxValue);
                 else
                     clampedLocalVec2Target = Vector3.RotateTowards(Vector3.forward, localTargetPos, Mathf.Deg2Rad * depression, float.MaxValue);
 
-                // Create new rotation towards the target in local space.
+                //创建本地旋转
                 Quaternion rotationGoal = Quaternion.LookRotation(clampedLocalVec2Target);
                 Quaternion newRotation = Quaternion.RotateTowards(turretBarrels.localRotation, rotationGoal, 2.0f * turnRate * Time.deltaTime);
 
-                // Set the new rotation of the barrels.
+                //把旋转赋值给炮塔底座
                 turretBarrels.localRotation = newRotation;
             }
         }
 
-        /// <summary>
-        /// Rotates the turret to resting position.
-        /// </summary>
-        /// <returns>True when turret has finished rotating to resting positing.</returns>
         private bool RotateToIdle()
         {
             bool baseFinished = false;
@@ -241,5 +230,23 @@ namespace Turrets
             else if (turretBase != null)
                 Debug.DrawRay(turretBase.position, turretBase.forward * 100.0f);
         }
+        Vector3 UIToWorldMapDistance(Image ui)//瞄准星的3维坐标，z表示此元件在屏幕上的位置到世界地图上的距离
+        {
+            float cameraHeight = Camera.main.transform.position.y;//摄像机到世界的距离
+            Vector3 screenPos = ui.rectTransform.transform.position;
+
+            bool highThanCenter = screenPos.y > Screen.height * 0.5f;
+            float ratio = Mathf.Abs((screenPos.y - Screen.height * 0.5f) / (Screen.height * 0.5f));//算出ui在屏幕上的比例关系
+            float centerLineLength = cameraHeight / Mathf.Cos(Mathf.Deg2Rad * (90 - Camera.main.transform.eulerAngles.x));
+            float bottomLength = centerLineLength * Mathf.Tan(Mathf.Deg2Rad * Camera.main.fieldOfView * 0.5f);
+            float acturalLength = bottomLength * ratio;
+            float requireAngle = Mathf.Atan(acturalLength / centerLineLength);
+            float bevelLength = cameraHeight / Mathf.Cos(Mathf.Deg2Rad * (90 - Camera.main.transform.eulerAngles.x) + (highThanCenter ? requireAngle : -requireAngle));
+            float finalLength = bevelLength * Mathf.Cos(requireAngle);//瞄准星在屏幕上的位置到世界地图上的距离
+
+            screenPos.z = finalLength;
+            return screenPos;
+        }
     }
+
 }

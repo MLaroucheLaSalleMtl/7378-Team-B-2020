@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TankCamera : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class TankCamera : MonoBehaviour
 
     public Transform LookAt;
     public Transform camTransform;
+
+
+    public bool IsAiming;
 
     private Camera cam;
 
@@ -50,5 +54,8 @@ public class TankCamera : MonoBehaviour
         currentY -= Input.GetAxis("Mouse Y");
 
         currentY = Mathf.Clamp(currentY, YLimit_Min, YLimit_Max);
+
+
     }
+   
 }

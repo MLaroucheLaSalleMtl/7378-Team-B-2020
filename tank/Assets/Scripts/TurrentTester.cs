@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using Turrets;
-
+using UnityEngine.UI;
 namespace TurretDemo
 {
     public class TurrentTester : MonoBehaviour
@@ -30,6 +30,7 @@ namespace TurretDemo
 
                 tur.SetIdle(turretsIdle);
             }
+            
         }
 
         private void OnDrawGizmos()

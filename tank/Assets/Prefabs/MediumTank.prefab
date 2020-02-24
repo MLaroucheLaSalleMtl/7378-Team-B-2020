@@ -4958,7 +4958,6 @@ MonoBehaviour:
   - {fileID: 365844883678283307}
   - {fileID: 365844883365318889}
   - {fileID: 365844883726650797}
-  hull: {fileID: 0}
 --- !u!114 &365844883880272024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6127,6 +6126,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 365844882868965686}
+  - {fileID: 5224918342844042060}
   m_Father: {fileID: 365844883865074722}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7235,3 +7235,33 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.81
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4197275345423342704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5224918342844042060}
+  m_Layer: 10
+  m_Name: TPSFocusPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5224918342844042060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197275345423342704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 5.98, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 365844884381117550}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
