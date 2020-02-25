@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-02-20T15:08:05.858-05:00
-  initializedAtString: 2020-02-20T10:45:20.513-05:00
+  lastUpdatedAtString: 2020-02-24T09:45:04.335-05:00
+  initializedAtString: 2020-02-24T09:45:04.335-05:00
   currentGitRemote:
     name: origin
     url: https://github.com/MLaroucheLaSalleMtl/7378-Team-B-2020.git

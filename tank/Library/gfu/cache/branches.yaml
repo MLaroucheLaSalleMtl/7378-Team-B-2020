@@ -13,15 +13,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2020-02-20T15:08:05.908-05:00
-  initializedAtString: 2020-02-20T15:08:05.574-05:00
+  lastUpdatedAtString: 2020-02-24T09:57:04.489-05:00
+  initializedAtString: 2020-02-24T09:57:03.103-05:00
   localBranches:
   - name: master
     tracking: origin/master
   - name: UI
     tracking: origin/UI
   remoteBranches:
+  - name: origin/chengyu
+    tracking: '[None]'
   - name: origin/HEAD
+    tracking: '[None]'
+  - name: origin/master
+    tracking: '[None]'
+  - name: origin/UI
+    tracking: '[None]'
+  - name: origin/YanqingLi
     tracking: '[None]'
   remotes:
   - name: origin
@@ -51,10 +59,34 @@ MonoBehaviour:
     - origin
     subKeys:
     - Values:
+      - chengyu
       - HEAD
+      - master
+      - UI
+      - YanqingLi
     subKeyValues:
     - Values:
+      - name: chengyu
+        remote:
+          name: origin
+          url: https://github.com/MLaroucheLaSalleMtl/7378-Team-B-2020.git
+        trackingBranch: 
       - name: HEAD
+        remote:
+          name: origin
+          url: https://github.com/MLaroucheLaSalleMtl/7378-Team-B-2020.git
+        trackingBranch: 
+      - name: master
+        remote:
+          name: origin
+          url: https://github.com/MLaroucheLaSalleMtl/7378-Team-B-2020.git
+        trackingBranch: 
+      - name: UI
+        remote:
+          name: origin
+          url: https://github.com/MLaroucheLaSalleMtl/7378-Team-B-2020.git
+        trackingBranch: 
+      - name: YanqingLi
         remote:
           name: origin
           url: https://github.com/MLaroucheLaSalleMtl/7378-Team-B-2020.git
