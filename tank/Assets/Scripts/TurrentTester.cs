@@ -8,6 +8,7 @@ namespace TurretDemo
         public TurrentRotation[] turret;
         public Vector3 targetPos;
         public Transform targetTransform;
+        //this is just for testing purpose
 
         [Space]
         public bool turretsIdle = false;
