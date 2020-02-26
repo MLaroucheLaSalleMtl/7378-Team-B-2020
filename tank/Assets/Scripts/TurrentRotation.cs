@@ -89,8 +89,9 @@ namespace Turrets
             aimPoint = position;
         }
 
-        //炮塔默认状态
-
+        /// <summary>
+        /// When idle, turret returns to resting position, will not track an aimpoint, and rotations stop updating.
+        /// </summary>
         public void SetIdle(bool idle)
         {
             aiming = !idle;
@@ -99,6 +100,10 @@ namespace Turrets
                 atRest = false;
         }
 
+        /// <summary>
+        /// Attempts to automatically assign the turretBase and turretBarrels transforms. Will search for a transform
+        /// named "Base" for turretBase and a transform named "Barrels" for the turretBarrels.
+        /// </summary>
         public void AutoPopulateBaseAndBarrels()
         {
             // Don't allow this while ingame.
