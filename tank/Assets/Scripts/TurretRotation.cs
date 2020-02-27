@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace Turrets
 {
-    public class TurrentRotation : MonoBehaviour
+    public class TurretRotation : MonoBehaviour
     {
         [Tooltip("Should turret rotate in the FixedUpdate rather than Update?")]
         public bool runRotationsInFixed = false;
@@ -57,7 +56,6 @@ namespace Turrets
         {
             if (aiming == false)
                 aimPoint = transform.TransformPoint(Vector3.forward * 100.0f);
-            print(Vector3.forward * 100f);
         }
 
         private void Update()
@@ -69,7 +67,6 @@ namespace Turrets
 
             if (showDebugRay)
                 DrawDebugRays();
-
         }
 
         private void FixedUpdate()
@@ -118,7 +115,10 @@ namespace Turrets
                 Debug.LogWarning(name + ": Turret cannot auto-populate transforms while game is playing.");
             }
         }
-        //归零
+
+        /// <summary>
+        /// Sets the turretBase and turretBarrels transforms to null.
+        /// </summary>
         public void ClearTransforms()
         {
             // Don't allow this while ingame.
@@ -150,12 +150,11 @@ namespace Turrets
         {
             if (turretBase != null)
             {
-                //瞄准坐标来自父物体
-                Vector3 localTargetPos = transform.InverseTransformPoint(aimPoint);
+                Vector3 localTargetPos = transform.InverseTransformPoint(aimPoint);//旋转来自于父物体
+
                 localTargetPos.y = 0.0f;
 
-                //限制炮塔左右转动
-                Vector3 clampedLocalVec2Target = localTargetPos;
+                Vector3 clampedLocalVec2Target = localTargetPos;//左右旋转限制
                 if (limitTraverse)
                 {
                     if (localTargetPos.x >= 0.0f)
@@ -164,11 +163,11 @@ namespace Turrets
                         clampedLocalVec2Target = Vector3.RotateTowards(Vector3.forward, localTargetPos, Mathf.Deg2Rad * leftTraverse, float.MaxValue);
                 }
 
-                //创建本地旋转
+                // 创建本地旋转
                 Quaternion rotationGoal = Quaternion.LookRotation(clampedLocalVec2Target);
                 Quaternion newRotation = Quaternion.RotateTowards(turretBase.localRotation, rotationGoal, turnRate * Time.deltaTime);
 
-                //把旋转赋值给炮塔底座
+                // 把旋转给到物体上
                 turretBase.localRotation = newRotation;
             }
         }
@@ -181,18 +180,14 @@ namespace Turrets
                 Vector3 localTargetPos = turretBase.InverseTransformPoint(aimPoint);
                 localTargetPos.x = 0.0f;
 
-                //俯仰角
                 Vector3 clampedLocalVec2Target = localTargetPos;
                 if (localTargetPos.y >= 0.0f)
                     clampedLocalVec2Target = Vector3.RotateTowards(Vector3.forward, localTargetPos, Mathf.Deg2Rad * elevation, float.MaxValue);
                 else
                     clampedLocalVec2Target = Vector3.RotateTowards(Vector3.forward, localTargetPos, Mathf.Deg2Rad * depression, float.MaxValue);
-
-                //创建本地旋转
                 Quaternion rotationGoal = Quaternion.LookRotation(clampedLocalVec2Target);
                 Quaternion newRotation = Quaternion.RotateTowards(turretBarrels.localRotation, rotationGoal, 2.0f * turnRate * Time.deltaTime);
 
-                //把旋转赋值给炮塔底座
                 turretBarrels.localRotation = newRotation;
             }
         }
@@ -230,23 +225,5 @@ namespace Turrets
             else if (turretBase != null)
                 Debug.DrawRay(turretBase.position, turretBase.forward * 100.0f);
         }
-        Vector3 UIToWorldMapDistance(Image ui)//瞄准星的3维坐标，z表示此元件在屏幕上的位置到世界地图上的距离
-        {
-            float cameraHeight = Camera.main.transform.position.y;//摄像机到世界的距离
-            Vector3 screenPos = ui.rectTransform.transform.position;
-
-            bool highThanCenter = screenPos.y > Screen.height * 0.5f;
-            float ratio = Mathf.Abs((screenPos.y - Screen.height * 0.5f) / (Screen.height * 0.5f));//算出ui在屏幕上的比例关系
-            float centerLineLength = cameraHeight / Mathf.Cos(Mathf.Deg2Rad * (90 - Camera.main.transform.eulerAngles.x));
-            float bottomLength = centerLineLength * Mathf.Tan(Mathf.Deg2Rad * Camera.main.fieldOfView * 0.5f);
-            float acturalLength = bottomLength * ratio;
-            float requireAngle = Mathf.Atan(acturalLength / centerLineLength);
-            float bevelLength = cameraHeight / Mathf.Cos(Mathf.Deg2Rad * (90 - Camera.main.transform.eulerAngles.x) + (highThanCenter ? requireAngle : -requireAngle));
-            float finalLength = bevelLength * Mathf.Cos(requireAngle);//瞄准星在屏幕上的位置到世界地图上的距离
-
-            screenPos.z = finalLength;
-            return screenPos;
-        }
     }
-
 }
