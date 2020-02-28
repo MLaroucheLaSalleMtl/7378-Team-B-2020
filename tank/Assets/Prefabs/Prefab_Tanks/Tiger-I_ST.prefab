@@ -26112,7 +26112,7 @@ GameObject:
   - component: {fileID: 2969673546455268717}
   - component: {fileID: 4291349664858485204}
   - component: {fileID: 504148816689750346}
-  m_Layer: 14
+  m_Layer: 10
   m_Name: Extra_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
