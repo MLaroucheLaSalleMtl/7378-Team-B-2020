@@ -26153,7 +26153,7 @@ GameObject:
   - component: {fileID: 381253869337436015}
   - component: {fileID: 866725372134781051}
   - component: {fileID: 1555805506867561383}
-  m_Layer: 14
+  m_Layer: 10
   m_Name: Extra_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -23856,7 +23856,7 @@ GameObject:
   - component: {fileID: 2487097332098364297}
   - component: {fileID: 810739113028570966}
   - component: {fileID: 4045748751149582523}
-  m_Layer: 14
+  m_Layer: 10
   m_Name: Extra_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
