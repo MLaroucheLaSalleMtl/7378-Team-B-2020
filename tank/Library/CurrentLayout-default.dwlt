@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 1
-  controlID: 57
+  controlID: 91
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 132
+  controlID: 68
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 58
+  controlID: 92
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -375,7 +375,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b02b0300
     m_LastClickedID: 207792
-    m_ExpandedIDs: 00000000206c0000226c0000246c0000266c0000286c0000
+    m_ExpandedIDs: 00000000206c0000226c0000246c0000266c0000286c00002a6c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -403,21 +403,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000206c0000226c0000246c0000266c0000286c0000526c0000
+    m_ExpandedIDs: ffffffff00000000206c0000226c0000246c0000266c0000286c00002a6c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: T-34-85_ST
-      m_OriginalName: T-34-85_ST
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 27810
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 
@@ -528,7 +528,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: a8ceffff92deffff98deffffeadffffff0dfffffc2f1ffff9ef2ffffccf2ffff72fbffff74670000e6680000
+      m_ExpandedIDs: 72fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 4.253183, y: 1.6406456, z: 28.19392}
     speed: 2
-    m_Value: {x: 4.253183, y: 1.6406456, z: 28.19392}
+    m_Value: {x: -10.333374, y: -2.360494, z: 1.141822}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -638,11 +638,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.13617471, y: 0.81364447, z: -0.21099724, w: 0.5245554}
     speed: 2
-    m_Value: {x: 0.13568628, y: 0.81307495, z: -0.20954801, w: 0.5259165}
+    m_Value: {x: 0.08816766, y: -0.70054215, z: 0.08788139, w: 0.7026692}
   m_Size:
     m_Target: 46.685867
     speed: 2
-    m_Value: 16.020803
+    m_Value: 14.242366
   m_Ortho:
     m_Target: 0
     speed: 2
