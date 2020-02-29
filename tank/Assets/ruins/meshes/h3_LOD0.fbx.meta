@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: dbd65d67197b70643b838799ae31abae
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Cables5
+    100002: Cables6
+    100004: Camera
+    100006: Camera_Interest
+    100008: Camera_Root
+    100010: cube
+    100012: cube1
+    100014: cube2
+    100016: Default_Layer16
+    100018: Default_Layer17
+    100020: Default_Layer18
+    100022: Default_Layer19
+    100024: //RootNode
+    100026: light
+    100028: polymsh1
+    100030: polymsh_extracted1
+    100032: shutt4
+    100034: shutt5
+    100036: Texture_Support
+    100038: Texture_Support14
+    100040: Texture_Support15
+    100042: Texture_Support16
+    100044: Texture_Support6
+    100046: Texture_Support7
+    100048: Texture_Support8
+    400000: Cables5
+    400002: Cables6
+    400004: Camera
+    400006: Camera_Interest
+    400008: Camera_Root
+    400010: cube
+    400012: cube1
+    400014: cube2
+    400016: Default_Layer16
+    400018: Default_Layer17
+    400020: Default_Layer18
+    400022: Default_Layer19
+    400024: //RootNode
+    400026: light
+    400028: polymsh1
+    400030: polymsh_extracted1
+    400032: shutt4
+    400034: shutt5
+    400036: Texture_Support
+    400038: Texture_Support14
+    400040: Texture_Support15
+    400042: Texture_Support16
+    400044: Texture_Support6
+    400046: Texture_Support7
+    400048: Texture_Support8
+    2300000: Cables5
+    2300002: Cables6
+    2300004: cube
+    2300006: cube1
+    2300008: cube2
+    2300010: Default_Layer16
+    2300012: Default_Layer17
+    2300014: Default_Layer18
+    2300016: Default_Layer19
+    2300018: polymsh1
+    2300020: polymsh_extracted1
+    2300022: shutt4
+    2300024: shutt5
+    2300026: //RootNode
+    3300000: Cables5
+    3300002: Cables6
+    3300004: cube
+    3300006: cube1
+    3300008: cube2
+    3300010: Default_Layer16
+    3300012: Default_Layer17
+    3300014: Default_Layer18
+    3300016: Default_Layer19
+    3300018: polymsh1
+    3300020: polymsh_extracted1
+    3300022: shutt4
+    3300024: shutt5
+    3300026: //RootNode
+    4300000: Default_Layer16
+    4300002: Default_Layer17
+    4300004: shutt4
+    4300006: shutt5
+    4300008: polymsh_extracted1
+    4300010: Cables5
+    4300012: Cables6
+    4300014: polymsh1
+    4300016: Default_Layer18
+    4300018: Default_Layer19
+    4300020: cube
+    4300022: cube1
+    4300024: cube2
+    4300026: h3_LOD0
+    6400000: Cables5
+    6400002: Cables6
+    6400004: cube
+    6400006: cube1
+    6400008: cube2
+    6400010: Default_Layer16
+    6400012: Default_Layer17
+    6400014: Default_Layer18
+    6400016: Default_Layer19
+    6400018: polymsh1
+    6400020: polymsh_extracted1
+    6400022: shutt4
+    6400024: shutt5
+    6400026: //RootNode
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 40
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
