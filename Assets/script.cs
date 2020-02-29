@@ -29,7 +29,7 @@ public class script : MonoBehaviour
     void Update()
     {
         Debug.DrawLine(transform.position, player.transform.position, Color.black);
-        print(transform.localRotation.x);
+        
         if (trigger_Of_Light.target_is_found==false&&nocollider==true)//if player is not touched,rotate
         {
             spotlight_rotation();
