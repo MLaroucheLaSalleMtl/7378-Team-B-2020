@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     public float damage = 50f;
     public float DamageRadius = 4f;
     public bool DamageOnce;
+    public EndCondition EndCondition;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,7 @@ public class EnemyHealth : MonoBehaviour
         if (CurrentHealth<=0)
         {
             enemy.SetActive(false);
+            EndCondition.numberupdate();
         }
     }
     //private void OnCollisionEnter(Collision collision)
