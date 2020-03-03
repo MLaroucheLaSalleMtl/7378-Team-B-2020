@@ -69,17 +69,8 @@ public class OptionButton : MonoBehaviour
     }
     
     private bool shootPanelFlg = false;
-    public void ShowWPanel()
+    public void LoadScene()
     {
-        if (!shootPanelFlg)
-        {
-            GameObject.Find("HomeCanvas").transform.Find("ShootPanel").gameObject.SetActive(true);
-            shootPanelFlg = true;
-        }
-        else
-        {
-            GameObject.Find("HomeCanvas").transform.Find("ShootPanel").gameObject.SetActive(false);
-            shootPanelFlg = false;
-        }
+        SceneManager.LoadScene("TutorialField");
     }
 }

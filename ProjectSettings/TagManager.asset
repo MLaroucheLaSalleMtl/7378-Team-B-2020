@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - light
+  - AP
+  - HE
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -23,8 +26,8 @@ TagManager:
   - Safe
   - Suspension
   - Terrain
-  - 
-  - 
+  - LightlyArmored
+  - HeavilyArmored
   - 
   - 
   - 

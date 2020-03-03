@@ -26,13 +26,13 @@ namespace TurretDemo
             RaycastHit hit;
             if (Physics.Raycast(ray.origin, ray.direction * 10, out hit, Mathf.Infinity))
             {
-                Debug.DrawRay(ray.origin, hit.point, Color.yellow);
+                Debug.DrawLine(ray.origin, hit.point, Color.yellow);
                 targetPos = hit.point;
                 //Debug.Log("Did Hit");
             }
             else
             {
-                Debug.DrawRay(ray.origin, ray.direction * 1000, Color.white);
+                Debug.DrawLine(ray.origin, ray.direction * 1000, Color.white);
                 targetPos = ray.direction * 1000;
                 //Debug.Log("did not hit");
             }
