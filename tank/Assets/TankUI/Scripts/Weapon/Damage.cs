@@ -9,7 +9,7 @@ namespace HWRWeaponSystem
 		public bool Explosive;
 		public float DamageRadius = 20;
 		public float ExplosionRadius = 20;
-		public float ExplosionForce = 1000;
+		public float ExplosionForce = 200;
 		public bool HitedActive = true;
 		public float TimeActive = 0;
 		private float timetemp = 0;

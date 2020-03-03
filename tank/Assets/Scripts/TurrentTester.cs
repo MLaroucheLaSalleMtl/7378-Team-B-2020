@@ -5,7 +5,7 @@ namespace TurretDemo
 {
     public class TurrentTester : MonoBehaviour
     {
-        public TurrentRotation[] turret;
+        public TurretRotation[] TurretRotation;
         public Vector3 targetPos;
         public Transform targetTransform;
 
@@ -21,7 +21,7 @@ namespace TurretDemo
             // When a transform is assigned, pass that to the turret. If not,
             // just pass in whatever this is looking at.
             targetPos = transform.TransformPoint(Vector3.forward * 200.0f);
-            foreach (TurrentRotation tur in turret)
+            foreach (TurretRotation tur in TurretRotation)
             {
                 if (targetTransform == null)
                     tur.SetAimpoint(targetPos);

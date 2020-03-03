@@ -13,6 +13,7 @@ namespace HWRWeaponSystem
 		public ObjectPool objectPool;
 		public string[] TargetTag = new string[1]{"Enemy"};
 		public string[] IgnoreTag;
+        
 	
 		public bool DoDamageCheck (GameObject gob)
 		{
