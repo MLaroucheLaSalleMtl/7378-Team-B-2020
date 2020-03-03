@@ -1,16 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OptionButton : MonoBehaviour
 {
-    public GameObject LoadPanel;
-    private AsyncOperation asyncOp;
-    private float loadPct = 0;
-    public GameObject LoadProgress;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,16 +15,8 @@ public class OptionButton : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-     {
-        if (asyncOp != null)
-        {
-            loadPct = asyncOp.progress;
-            if (loadPct >= 0.9f)
-            {
-                loadPct = 1;
-            }
-            LoadProgress.GetComponent<bl_ProgressBar>().Value = loadPct*100;
-        }
+    {
+        
     }
 
     public void ShowOptionPanel()
@@ -81,15 +68,9 @@ public class OptionButton : MonoBehaviour
         optionBodyPanel.transform.Find("GamePlayOptionsPanel").gameObject.SetActive(false);
     }
     
-    public void ShowShootPanel()
+    private bool shootPanelFlg = false;
+    public void LoadScene()
     {
-        LoadPanel.SetActive(true);
-        StartCoroutine(LoadingTutorialFieldAsync());
-    }
-    IEnumerator LoadingTutorialFieldAsync()
-    {
-        asyncOp = SceneManager.LoadSceneAsync("TutorialField");
-        loadPct = asyncOp.progress;
-        yield return loadPct;
+        SceneManager.LoadScene("TutorialField");
     }
 }
