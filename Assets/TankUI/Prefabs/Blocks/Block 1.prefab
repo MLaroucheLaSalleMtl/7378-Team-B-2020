@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.3, y: -19}
+  m_AnchoredPosition: {x: -3.300003, y: -19}
   m_SizeDelta: {x: -13, y: -42.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &22200002
@@ -154,9 +154,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Velit indoctum eloquentiam mea ei. Tale appareat sit no. Exerci fierent
-    evertitur at duo. Ea nostrud saperet vis, pri interesset eloquentiam ut, eum libris
-    oporteat eleifend in. Unum malis dignissim eum ad, enim elit tibique no ius. Sea
-    no melius ocurreret vulputate.
+    evertitur at duo. Ea nostrud saperet vis, pri interesset eloquentiam ut, eum
+    libris oporteat eleifend in. Unum malis dignissim eum ad, enim elit tibique no
+    ius. Sea no melius ocurreret vulputate.
 
 '
 --- !u!1 &100004

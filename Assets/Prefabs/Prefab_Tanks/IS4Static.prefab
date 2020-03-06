@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1717230183567768146}
   - component: {fileID: 5957812668109564035}
   - component: {fileID: 5957812668109564032}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: IS4Static
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 9203682044425595242}
   - component: {fileID: 8501332120434916793}
   - component: {fileID: 925610999685927241}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
