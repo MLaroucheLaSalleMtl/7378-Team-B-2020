@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 namespace Turrets
 {
     public class TurretRotation : MonoBehaviour
@@ -38,9 +38,10 @@ namespace Turrets
         public bool showDebugRay = true;
 
         private Vector3 aimPoint;
-
+        public Image reticle;
         private bool aiming = false;
         private bool atRest = false;
+        private bool lockTur = false;
 
         /// <summary>
         /// Turret is no longer aiming at anything, returns to resting position, and stops rotating.
@@ -52,6 +53,8 @@ namespace Turrets
         /// </summary>
         public bool AtRest { get { return atRest; } }
 
+        public bool LockTur { get => lockTur; set => lockTur = value; }
+
         private void Start()
         {
             if (aiming == false)
@@ -60,7 +63,20 @@ namespace Turrets
 
         private void Update()
         {
-            if (!runRotationsInFixed)
+            Camera cam = Camera.main;
+            Ray ray;
+            RaycastHit hit;
+            if(Physics.Raycast(turretBarrels.transform.position, turretBarrels.transform.forward * 1000, out hit))
+            {
+                Vector2 screenPos = cam.WorldToScreenPoint(hit.point);
+                reticle.rectTransform.position = screenPos;
+            }
+            else
+            {
+                Vector2 screenPos = cam.WorldToScreenPoint(turretBarrels.forward * 1000);
+                reticle.rectTransform.position = screenPos;
+            }
+            if (!runRotationsInFixed && !lockTur)
             {
                 RotateTurret();
             }
@@ -71,7 +87,7 @@ namespace Turrets
 
         private void FixedUpdate()
         {
-            if (runRotationsInFixed)
+            if (runRotationsInFixed && !lockTur)
             {
                 RotateTurret();
             }
@@ -221,9 +237,9 @@ namespace Turrets
         private void DrawDebugRays()
         {
             if (turretBarrels != null)
-                Debug.DrawRay(turretBarrels.position, turretBarrels.forward * 100.0f);
+                Debug.DrawRay(turretBarrels.position, turretBarrels.forward * 1000.0f);
             else if (turretBase != null)
-                Debug.DrawRay(turretBase.position, turretBase.forward * 100.0f);
+                Debug.DrawRay(turretBase.position, turretBase.forward * 1000.0f);
         }
     }
 }
