@@ -8,7 +8,6 @@ namespace TurretDemo
         public TurretRotation[] turret;
         public Vector3 targetPos;
         public Transform targetTransform;
-        private bool lockTur;
         Camera cam;
         [Space]
         public bool turretsIdle = false;
@@ -38,25 +37,8 @@ namespace TurretDemo
                 //Debug.Log("did not hit");
             }
 
-            if (Input.GetMouseButton(1))
-            {
-                lockTur = true;
-            }
-            else
-            {
-                lockTur = false;
-            }
-
             foreach (TurretRotation tur in turret)
             {
-                if(lockTur)
-                {
-                    tur.LockTur = lockTur;
-                }
-                else
-                {
-                    tur.LockTur = false;
-                }
                 if (targetTransform == null)
                     tur.SetAimpoint(targetPos);
                 else
