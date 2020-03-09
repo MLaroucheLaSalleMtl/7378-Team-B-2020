@@ -303,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.0000030994, y: 0}
+  m_AnchoredPosition: {x: -0.0000030994, y: 0.0000014305115}
   m_SizeDelta: {x: 155.4, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &22200006
@@ -556,16 +556,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'no eos feugait patrioque repudiandae, at mea moderatius ullamcorper. An
+  m_Text: "no eos feugait patrioque repudiandae, at mea moderatius ullamcorper. An
     pri percipit moderatius instructior, vim discere labores commune in. An pri eius
     augue, omittam adipiscing contentiones usu ne. Qui errem feugait conclusionemque
-    cu, ad eum posse complectitur vituperatoribus.
-
-    Nobis nominati invenire
-    ei mea, an pri porro assueverit. Vel ne diceret intellegam, odio delectus sit
-    ea, mel prima ullum temporibus ei. Aeque tantas salutatus usu in. Usu ne patrioque
-    complectitur vituperatoribus. Vix delectus urbanitas disputationi ut, ea sea
-    sint diceret, movet exerci recteque sed id.'
+    cu, ad eum posse complectitur vituperatoribus.\r\nNobis nominati invenire ei mea,
+    an pri porro assueverit. Vel ne diceret intellegam, odio delectus sit ea, mel
+    prima ullum temporibus ei. Aeque tantas salutatus usu in. Usu ne patrioque complectitur
+    vituperatoribus. Vix delectus urbanitas disputationi ut, ea sea sint diceret,
+    movet exerci recteque sed id."
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 0
