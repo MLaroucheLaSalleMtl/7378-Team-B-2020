@@ -3,7 +3,12 @@ guid: 98d36b34ac9253d4ebc23c2ae6e21a03
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 20954_Farm_SiloMat
+    second: {fileID: 2100000, guid: 7118b43bb54d503448e878b4d4906a2f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
