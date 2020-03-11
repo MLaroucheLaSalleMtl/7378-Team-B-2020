@@ -33,8 +33,8 @@ namespace TurretDemo
             }
             else
             {
-                Debug.DrawLine(ray.origin, ray.direction * 1000, Color.white);
-                targetPos = ray.direction * 1000;
+                Debug.DrawLine(ray.origin, ray.GetPoint(1000), Color.white);
+                targetPos = ray.GetPoint(1000);
                 //Debug.Log("did not hit");
             }
 

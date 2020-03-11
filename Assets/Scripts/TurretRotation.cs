@@ -63,8 +63,7 @@ namespace Turrets
 
         private void Update()
         {
-            Camera cam = Camera.main;
-            Ray ray;
+            Camera cam = Camera.main;;
             RaycastHit hit;
             if(Physics.Raycast(turretBarrels.transform.position, turretBarrels.transform.forward * 1000, out hit))
             {
@@ -73,7 +72,7 @@ namespace Turrets
             }
             else
             {
-                Vector2 screenPos = cam.WorldToScreenPoint(turretBarrels.forward * 1000);
+                Vector2 screenPos = cam.WorldToScreenPoint(turretBarrels.transform.forward * 1000);
                 reticle.rectTransform.position = screenPos;
             }
             if (!runRotationsInFixed && !lockTur)
@@ -193,7 +192,7 @@ namespace Turrets
 
             if (turretBase != null && turretBarrels != null)
             {
-                Vector3 localTargetPos = turretBase.InverseTransformPoint(aimPoint);
+                Vector3 localTargetPos = turretBarrels.parent.InverseTransformPoint(aimPoint);
                 localTargetPos.x = 0.0f;
 
                 Vector3 clampedLocalVec2Target = localTargetPos;
