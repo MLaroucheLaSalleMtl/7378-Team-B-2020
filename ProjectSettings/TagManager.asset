@@ -8,6 +8,7 @@ TagManager:
   - AP
   - HE
   - Bullet
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -17,12 +18,12 @@ TagManager:
   - UI
   - 
   - 
-  - OutSideWheel
+  - 
   - InSideWheel
   - TankBody
   - TankTrack
-  - 12 Bullet
-  - 13 Armor Collider
+  - Bullet
+  - Armor Collider
   - Safe
   - Suspension
   - Terrain
