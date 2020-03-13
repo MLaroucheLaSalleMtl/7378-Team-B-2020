@@ -24,8 +24,9 @@ namespace TurretDemo
 
             Ray ray = cam.ScreenPointToRay(new Vector3(960, 583, 0));
 
+            int layerMask = 1 << 16;
             RaycastHit hit;
-            if (Physics.Raycast(ray.origin, ray.direction * 10, out hit, Mathf.Infinity))
+            if (Physics.Raycast(ray.origin, ray.direction * 10, out hit, Mathf.Infinity, layerMask))
             {
                 Debug.DrawLine(ray.origin, hit.point, Color.yellow);
                 targetPos = hit.point;
