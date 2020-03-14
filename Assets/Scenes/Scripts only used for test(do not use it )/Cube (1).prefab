@@ -109,13 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7231afad676ec647a2b56f9001862ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explode: {fileID: 100000, guid: 40aa1cb262d4e3d4baf85740c066de3e, type: 3}
+  explode: {fileID: 100000, guid: 0c05761968e175f4ea049c7859dd3481, type: 3}
   self: {fileID: 8813888416162138446}
-  speed: 10
-  timer: 0
-  waittime: 0.1
-  collided: 0
-  onlyonce: 0
 --- !u!54 &7151953259092523733
 Rigidbody:
   m_ObjectHideFlags: 0

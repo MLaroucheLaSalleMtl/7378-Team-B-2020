@@ -4,42 +4,51 @@ using UnityEngine;
 
 public class enemyHealth : MonoBehaviour
 {
-    public float maxhealth = 100f;
+    private float maxhealth = 100f;
     public float CurrentHealth;
-   
-    public GameObject shell;
-    public GameObject enemy;
+
+    public explosion explosion;
     public float damage = 50f;
-
-    public bool DamageOnce;
-    public EndCondition EndCondition;
+    public GameObject enemy;
 
 
 
-   
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         CurrentHealth = maxhealth;
-        
-        
+
+
     }
     // Start is called before the first frame update
-    
+
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void DoDamage()
-    {
-        if (DamageOnce)
+        if (explosion.ExplodeDistance < 3 && explosion.ExplodeDistance > 0)
         {
-            CurrentHealth = CurrentHealth - damage;
-            DamageOnce = false;
-            
+            DoDamage(damage * 1f);
         }
+        else if (explosion.ExplodeDistance > 3 && explosion.ExplodeDistance < 7)
+        {
+            DoDamage(damage * 0.8f);
+        }
+        else if (explosion.ExplodeDistance > 7 && explosion.ExplodeDistance <= 10)
+        {
+            DoDamage(damage * 0.5f);
+        }
+    }
+    public void DoDamage(float damage)
+    {
+
+        CurrentHealth = CurrentHealth - damage;
+
+
+
 
 
     }

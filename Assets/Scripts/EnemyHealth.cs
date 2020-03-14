@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.AI;
 public class EnemyHealth : MonoBehaviour
 {
     public float maxhealth=100f;
@@ -11,19 +10,14 @@ public class EnemyHealth : MonoBehaviour
     public GameObject shell;
     public GameObject enemy;
     public float damage = 50f;
-    
+    public float DamageRadius = 4f;
     public bool DamageOnce;
     public EndCondition EndCondition;
-
-
-
-    private NavMeshAgent enemynav;
     // Start is called before the first frame update
     void Start()
     {
         CurrentHealth = maxhealth;
         health_bar.value = CurrentHealth;
-        enemynav = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -46,16 +40,16 @@ public class EnemyHealth : MonoBehaviour
         //    }
         //}
 
-        if (CurrentHealth <= 0)
+        if (CurrentHealth<=0)
         {
-            enemynav.enabled = !enemynav.enabled;
+            enemy.SetActive(false);
             EndCondition.numberupdate();
         }
     }
     //private void OnCollisionEnter(Collision collision)
     //{
     //    Debug.Log(collision.collider.tag);
-    //    if (collision.collider.tag == "Bullet")
+    //    if(collision.collider.tag=="Bullet")
     //    {
     //        Debug.Log("damaged");
     //        DamageOnce = true;
@@ -65,7 +59,7 @@ public class EnemyHealth : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.tag);
-        if (other.tag=="AP")
+        if (other.tag == "Bullet")
         {
             Debug.Log("damaged");
             DamageOnce = true;
