@@ -8,7 +8,6 @@ namespace TurretDemo
         public TurretRotation[] turret;
         public Vector3 targetPos;
         public Transform targetTransform;
-        private bool lockTur;
         Camera cam;
         [Space]
         public bool turretsIdle = false;
@@ -24,9 +23,8 @@ namespace TurretDemo
 
             Ray ray = cam.ScreenPointToRay(new Vector3(960, 583, 0));
 
-            int layerMask = 1 << 16;
             RaycastHit hit;
-            if (Physics.Raycast(ray.origin, ray.direction * 10, out hit, Mathf.Infinity, layerMask))
+            if (Physics.Raycast(ray.origin, ray.direction * 10, out hit, Mathf.Infinity))
             {
                 Debug.DrawLine(ray.origin, hit.point, Color.yellow);
                 targetPos = hit.point;
@@ -34,30 +32,13 @@ namespace TurretDemo
             }
             else
             {
-                Debug.DrawLine(ray.origin, ray.GetPoint(1000), Color.white);
-                targetPos = ray.GetPoint(1000);
+                Debug.DrawLine(ray.origin, ray.direction * 1000, Color.white);
+                targetPos = ray.direction * 1000;
                 //Debug.Log("did not hit");
-            }
-
-            if (Input.GetMouseButton(1))
-            {
-                lockTur = true;
-            }
-            else
-            {
-                lockTur = false;
             }
 
             foreach (TurretRotation tur in turret)
             {
-                if(lockTur)
-                {
-                    tur.LockTur = lockTur;
-                }
-                else
-                {
-                    tur.LockTur = false;
-                }
                 if (targetTransform == null)
                     tur.SetAimpoint(targetPos);
                 else
