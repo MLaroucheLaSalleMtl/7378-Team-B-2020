@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OptionButton : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class OptionButton : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-     {
+    {
         
     }
 
@@ -68,17 +69,8 @@ public class OptionButton : MonoBehaviour
     }
     
     private bool shootPanelFlg = false;
-    public void ShowShootPanel()
+    public void LoadScene()
     {
-        if (!shootPanelFlg)
-        {
-            GameObject.Find("HomeCanvas").transform.Find("ShootPanel").gameObject.SetActive(true);
-            shootPanelFlg = true;
-        }
-        else
-        {
-            GameObject.Find("HomeCanvas").transform.Find("ShootPanel").gameObject.SetActive(false);
-            shootPanelFlg = false;
-        }
+        SceneManager.LoadScene("TutorialField");
     }
 }
