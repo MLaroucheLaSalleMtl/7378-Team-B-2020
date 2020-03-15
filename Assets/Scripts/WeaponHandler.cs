@@ -36,7 +36,7 @@ public class WeaponHandler : MonoBehaviour
         }
         else if(reload <= 0.0f && !doOnce)
         {
-            PlayerWeaponController.canFire = true;
+            //PlayerWeaponController.canFire = true;
             canCount = false;
             doOnce = true;
             ReloadTime.text = "5.0sec";
@@ -59,7 +59,7 @@ public class WeaponHandler : MonoBehaviour
 
     public void resetTimer()
     {
-        PlayerWeaponController.canFire = false;
+        //PlayerWeaponController.canFire = false;
         reload = 5.0f;
         canCount = true;
         doOnce = false;

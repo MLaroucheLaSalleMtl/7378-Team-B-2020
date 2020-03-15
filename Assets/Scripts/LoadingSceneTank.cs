@@ -59,7 +59,7 @@ public class LoadingSceneTank : MonoBehaviour
     private IEnumerator Fire()
     {
         yield return new WaitForSeconds(2.0f);
-        PlayerWeaponController.fire = true;
+        //PlayerWeaponController.fire = true;
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("GameMenu");
     }
