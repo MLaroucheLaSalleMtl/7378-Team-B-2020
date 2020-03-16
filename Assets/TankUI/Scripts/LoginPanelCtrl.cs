@@ -29,7 +29,7 @@ public class LoginPanelCtrl : MonoBehaviour
     }
 
     public void LoginBtnOnClick() {
-        if (userIdText.text == "123" && passwdText.text == "123")
+        /*if (userIdText.text == "123" && passwdText.text == "123")
         {
             menuPanel.SetActive(true);
             loginPanel.SetActive(false);
@@ -41,6 +41,8 @@ public class LoginPanelCtrl : MonoBehaviour
             passwdHolder.text = "wrong passwd!";
             passwdHolder.fontStyle = FontStyle.Bold;
             passwdHolder.color = Color.red;
-        }
+        }*/
+        menuPanel.SetActive(true);
+        loginPanel.SetActive(false);
     }
 }
