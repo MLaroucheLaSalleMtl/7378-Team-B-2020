@@ -9,7 +9,6 @@ public class explosion : MonoBehaviour
     public float speed = 10;
     public float timer = 0;
     public float waittime = 1;
-
     public bool collided = false;
     public bool onlyonce = false;
     RaycastHit hit;
@@ -117,7 +116,6 @@ public class explosion : MonoBehaviour
             }
             i++;
         }
-
 
 
 
