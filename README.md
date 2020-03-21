@@ -7,12 +7,8 @@ Keyboard
 
 
 Move: W A S D
-Dodge: X
-Crouch: C
-Jump: space
-Open the inventory: I
-Skill: 1 and 2
-Shift: Walk
+Fire: left mouse
+
 
 
 ![Image](https://user-images.githubusercontent.com/60398584/77210861-6c428380-6ad8-11ea-938b-efe0fc39096b.png)
