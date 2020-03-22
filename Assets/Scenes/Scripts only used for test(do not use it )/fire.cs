@@ -9,6 +9,7 @@ public class fire : MonoBehaviour
     public float speed = 10;
     public float timer=0;
     public float waittime = 3;
+    
     // Start is called before the first frame update
     void Start()
     {

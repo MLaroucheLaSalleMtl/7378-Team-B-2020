@@ -7089,10 +7089,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6389233831702295785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9642b1a6823c0d54184ebfb9c2cd877a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d158a25e4190e440b30b18e77fd2aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: 67396c15a0ed95444bd1f2e72a00260d, type: 3}
+  projectile: {fileID: 100000, guid: 5c07a9c445f6a464c83deaf35dd8cd37, type: 3}
   playerShootPosition: {fileID: 6753327594055419404}
   shellSpeed: 250
 --- !u!1 &6389233831715685145

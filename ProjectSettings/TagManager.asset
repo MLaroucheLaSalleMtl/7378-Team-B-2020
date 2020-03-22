@@ -9,6 +9,8 @@ TagManager:
   - HE
   - Bullet
   - EnemyBullet
+  - Canvas
+  - Enemy
   layers:
   - Default
   - TransparentFX
