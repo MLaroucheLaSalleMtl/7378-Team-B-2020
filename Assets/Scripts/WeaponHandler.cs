@@ -29,14 +29,14 @@ public class WeaponHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(reload >= 0.0f && canCount)
+        if (reload >= 0.0f && canCount)
         {
             reload -= Time.deltaTime;
-            ReloadTime.text = reload.ToString("F")+"sec";
+            ReloadTime.text = reload.ToString("F") + "sec";
         }
-        else if(reload <= 0.0f && !doOnce)
+        else if (reload <= 0.0f && !doOnce)
         {
-            //PlayerWeaponController.canFire = true;
+            PlayerWeaponController.canFire = true;
             canCount = false;
             doOnce = true;
             ReloadTime.text = "5.0sec";
@@ -59,7 +59,7 @@ public class WeaponHandler : MonoBehaviour
 
     public void resetTimer()
     {
-        //PlayerWeaponController.canFire = false;
+        PlayerWeaponController.canFire = false;
         reload = 5.0f;
         canCount = true;
         doOnce = false;
