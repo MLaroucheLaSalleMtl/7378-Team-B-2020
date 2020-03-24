@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class enemyHealth : MonoBehaviour
 {
+    [Header("Health")]
     private float maxhealth = 100f;
     public float CurrentHealth;
-
-    public explosion explosion;
-    public float damage = 50f;
-    public GameObject enemy;
+    [Header("Death")]
+    public bool IsDead = false;
+    public bool OnlyOnce = false;
+    public EndCondition EndCondition;
+    [Header("Display Hp")]
+    public Slider health_bar;
 
 
 
@@ -20,6 +23,7 @@ public class enemyHealth : MonoBehaviour
     void Start()
     {
         CurrentHealth = maxhealth;
+        health_bar.value = CurrentHealth;
 
 
     }
@@ -29,27 +33,35 @@ public class enemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (explosion.ExplodeDistance < 3 && explosion.ExplodeDistance > 0)
+        health_bar.value = CurrentHealth;
+
+
+
+
+        if (CurrentHealth <= 0)
         {
-            DoDamage(damage * 1f);
-        }
-        else if (explosion.ExplodeDistance > 3 && explosion.ExplodeDistance < 7)
-        {
-            DoDamage(damage * 0.8f);
-        }
-        else if (explosion.ExplodeDistance > 7 && explosion.ExplodeDistance <= 10)
-        {
-            DoDamage(damage * 0.5f);
+            Death();
         }
     }
     public void DoDamage(float damage)
     {
 
         CurrentHealth = CurrentHealth - damage;
+        
 
 
 
 
-
+    }
+    public void Death()
+    {
+        IsDead = true;
+        Debug.Log("dead");
+        if (!OnlyOnce)
+        {
+            EndCondition.numberupdate();
+            OnlyOnce = true;
+        }
+        
     }
 }
