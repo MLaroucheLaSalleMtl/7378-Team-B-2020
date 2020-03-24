@@ -4262,10 +4262,11 @@ GameObject:
   - component: {fileID: 8412899582184405291}
   - component: {fileID: 7059366828706072787}
   - component: {fileID: 575672428018607034}
+  - component: {fileID: 8017582324534110454}
   - component: {fileID: 575672428018607039}
   m_Layer: 11
   m_Name: MainBody
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4297,6 +4298,7 @@ Transform:
   - {fileID: 573071954125292600}
   - {fileID: 571014968272320552}
   - {fileID: 3371882611968793643}
+  - {fileID: 575672426321769409}
   m_Father: {fileID: 570954607853896374}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4501,7 +4503,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.815735, y: 3.2466066, z: 7.5920105}
   m_Center: {x: -0.09429932, y: 1.1233032, z: 0.18852234}
---- !u!114 &575672428018607039
+--- !u!114 &8017582324534110454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4509,6 +4511,21 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574551122885328564}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2a83743c326764684ebe992261a135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  IsDead: 0
+  health_bar: {fileID: 0}
+--- !u!114 &575672428018607039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574551122885328564}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bae05dec839789f43907a819659861db, type: 3}
   m_Name: 
@@ -4521,6 +4538,7 @@ MonoBehaviour:
   damage: 50
   DamageRadius: 3
   DamageOnce: 0
+  EndCondition: {fileID: 0}
 --- !u!1 &574551757574438612
 GameObject:
   m_ObjectHideFlags: 0
@@ -12375,7 +12393,6 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 573018389769417286}
-  - {fileID: 575672426321769409}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12419,20 +12436,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ba7332243c7344c99be30096ed9ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Firsttimer: 0
+  OnlyRunOneTime: 0
   player: {fileID: 0}
   distance: 50
-  LayerMask:
+  LineMask:
     serializedVersion: 2
-    m_Bits: 61495
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   ReachDestination: 0
+  timer: 0
   waittime: 3
   collider_exist: 0
   DistanceBetweenTwo: 0
   isdetected: 0
   detect_distance: 50
+  DestinationDistance: 5
+  EnemyDecision: 0
+  EnemyPreviousDecision: 10
+  StateTime: 0
+  RandomNumber: 0
 --- !u!195 &575672426134501683
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -20849,8 +20871,8 @@ RectTransform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 575672427058926824}
-  m_Father: {fileID: 570954607853896374}
-  m_RootOrder: 1
+  m_Father: {fileID: 573018389769417286}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
