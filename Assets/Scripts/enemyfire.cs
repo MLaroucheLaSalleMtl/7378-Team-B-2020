@@ -6,6 +6,7 @@ public class enemyfire : MonoBehaviour
 {
 
     public enemy_movement enemy_Movement;
+    
     public Transform playerturret;
     public Transform generator;
     public Transform turret;
@@ -72,6 +73,7 @@ public class enemyfire : MonoBehaviour
         if (Physics.Raycast(generator.position, turret.forward, out hit, 40))
         {
             Debug.Log("fire111");
+            Debug.Log(hit.transform.name);
             if (hit.transform.tag=="Player")
             {
                 
