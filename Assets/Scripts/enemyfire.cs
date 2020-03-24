@@ -72,7 +72,6 @@ public class enemyfire : MonoBehaviour
         if (Physics.Raycast(generator.position, turret.forward, out hit, 40))
         {
             Debug.Log("fire111");
-            Debug.Log(hit.transform.name);
             if (hit.transform.tag=="Player")
             {
                 

@@ -29,31 +29,17 @@ public class TankCamera : MonoBehaviour
         camTransform = transform;
         cam = Camera.main;
     }
-    private void clampCamera()
-    {
 
-    }
     private void LateUpdate()
     {
-
-    }
-
-    private void aimCam()
-    {
-
+        Vector3 dir = new Vector3(0, 0, -distance);
+        Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
+        camTransform.position = LookAt.position + rotation * dir;
+        camTransform.LookAt(LookAt.position);
     }
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 dir = new Vector3(0, 0, -distance);
-        Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        camTransform.position = LookAt.position + rotation * dir;
-        if (transform.position.y <= LookAt.position.y - 3)
-        {
-            transform.position = new Vector3(transform.position.x, LookAt.position.y - 3, transform.position.z);
-        }
-        camTransform.LookAt(LookAt.position);
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             distance += 1;
@@ -62,11 +48,6 @@ public class TankCamera : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             distance -= 1;
-        }
-
-        if(distance >= 20)
-        {
-            distance = 20;
         }
 
         currentX += Input.GetAxis("Mouse X");
