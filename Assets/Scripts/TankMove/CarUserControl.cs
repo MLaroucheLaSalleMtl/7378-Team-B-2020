@@ -5,16 +5,23 @@ using UnityEngine;
     public class CarUserControl : MonoBehaviour
     {
         private CarController m_Car; // the car controller we want to use
+<<<<<<< HEAD
     private TankTrackAnimation[] tracks;
 
+=======
+>>>>>>> master
 
 
         private void Awake()
         {
             // get the car controller
             m_Car = GetComponent<CarController>();
+<<<<<<< HEAD
             tracks = GetComponentsInChildren<TankTrackAnimation>();
     }
+=======
+        }
+>>>>>>> master
 
 
         private void FixedUpdate()
@@ -28,6 +35,7 @@ using UnityEngine;
 #else
             m_Car.Move(h, v, v, 0f);
 #endif
+<<<<<<< HEAD
 
         if (v > 0)
         {
@@ -47,3 +55,7 @@ using UnityEngine;
         }
     }
     }
+=======
+        }
+    }
+>>>>>>> master
