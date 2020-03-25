@@ -20,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - Player
+  - 
   - InSideWheel
   - TankBody
   - TankTrack
@@ -31,7 +31,7 @@ TagManager:
   - Terrain
   - LightlyArmored
   - HeavilyArmored
-  - Enemy
+  - 
   - 
   - 
   - 

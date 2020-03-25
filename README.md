@@ -16,25 +16,18 @@ Fire: left mouse
 
 ![Image](https://user-images.githubusercontent.com/60398584/77210852-664ca280-6ad8-11ea-89a1-a6db813b430b.png)
 
-
-
-
-
-
-Mouse
-
-
-First click: Attack
-Second click and third click: double attack (combo attack)
-
-
 References
 
-1.https://www.youtube.com/watch?v=faXQQ5b6GEs
-2.https://www.youtube.com/watch?v=dHzeHh-3bp4&t=71s
-3.https://www.youtube.com/watch?v=EHgQnTr7OW4&t=372s
-4.https://www.youtube.com/watch?v=_nRzoTzeyxU
-5.https://www.youtube.com/watch?v=aEPSuGlcTUQ
+
+UI Material(including a part of coding refences)
+http://www.6m5m.com/index.php?do=service&sid=21816
+http://www.6m5m.com/index.php?do=service&sid=12478
+http://www.6m5m.com/index.php?do=service&sid=23559
+https://free3d.com/
+Tutorial study
+https://www.bilibili.com/video/av86142995?p=9
+https://www.bilibili.com/video/av29751762
+https://answers.unity.com/questions/1161260/rotating-an-object-to-face-another-object-only-on.html
 
 
 ![Image](https://user-images.githubusercontent.com/60398584/77211459-6c438300-6ada-11ea-907b-315bdcf1de7a.png)
