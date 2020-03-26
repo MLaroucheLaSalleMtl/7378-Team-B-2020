@@ -2,67 +2,79 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class enemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
-    [Header("Health")]
-    private float maxhealth = 100f;
+    public float maxhealth=100f;
     public float CurrentHealth;
-    [Header("Death")]
-    public bool IsDead = false;
-    public bool OnlyOnce = false;
-    public EndCondition EndCondition;
-    [Header("Display Hp")]
     public Slider health_bar;
-    enemyfire enemyfire;
-
-
-
-
-
+    public GameObject shell;
+    public GameObject enemy;
+    public float damage = 50f;
+    public float DamageRadius = 4f;
+    public bool DamageOnce;
+    public EndCondition EndCondition;
     // Start is called before the first frame update
     void Start()
     {
         CurrentHealth = maxhealth;
         health_bar.value = CurrentHealth;
-        enemyfire = gameObject.GetComponent<enemyfire>();
-
     }
-    // Start is called before the first frame update
-
 
     // Update is called once per frame
     void Update()
     {
-        health_bar.value = CurrentHealth;
 
 
+        //Collider[] damagecolliders = Physics.OverlapSphere(enemy.transform.position, DamageRadius);
+        //for (int i = 0; i < damagecolliders.Length; i++)
+        //{
+        //    Debug.Log("collider found" + damagecolliders[i]);
+        //    Collider shellhit = damagecolliders[i];
 
 
-        if (CurrentHealth <= 0)
+        //    if (shellhit.tag == "Bullet")
+        //    {
+        //        Debug.Log("damaged");
+        //        DamageOnce = true;
+        //        DoDamage();
+        //    }
+        //}
+
+        if (CurrentHealth<=0)
         {
-            Death();
-        }
-    }
-    public void DoDamage(float damage)
-    {
-
-        CurrentHealth = CurrentHealth - damage;
-        
-
-
-
-
-    }
-    public void Death()
-    {
-        IsDead = true;
-        enemyfire.enabled = false;
-        Debug.Log("dead");
-        if (!OnlyOnce)
-        {
+            enemy.SetActive(false);
             EndCondition.numberupdate();
-            OnlyOnce = true;
         }
+    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log(collision.collider.tag);
+    //    if(collision.collider.tag=="Bullet")
+    //    {
+    //        Debug.Log("damaged");
+    //        DamageOnce = true;
+    //        DoDamage();
+    //    }
+    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.tag);
+        if (other.tag == "Bullet")
+        {
+            Debug.Log("damaged");
+            DamageOnce = true;
+            DoDamage();
+        }
+    }
+    public void DoDamage()
+    {
+        if(DamageOnce)
+        {
+            CurrentHealth = CurrentHealth - damage;
+            DamageOnce = false;
+            health_bar.value = CurrentHealth;
+        }
+        
         
     }
 }
