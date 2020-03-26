@@ -6,6 +6,7 @@ public class enemyfire : MonoBehaviour
 {
 
     public enemy_movement enemy_Movement;
+    
     public Transform playerturret;
     public Transform generator;
     public Transform turret;
@@ -21,16 +22,27 @@ public class enemyfire : MonoBehaviour
     public float rotationspeed=0.01f;
     public LayerMask LayerMask;
     RaycastHit hit;
+    [Header("predictive Shooting")]
+    public Vector3 VelocityofPlayer;
+    public Rigidbody PlayerRigi;
+    public float PredictiveTime;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-       
-
+        PlayerRigi = player.GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        CalculateTime(enemy_Movement.DistanceBetweenTwo, speed);
+
+
+
+
         Debug.DrawRay(generator.position, generator.forward, Color.red);
         if (enemy_Movement.isdetected == true)
         {
@@ -65,18 +77,27 @@ public class enemyfire : MonoBehaviour
     }
     public void TurretRotation()
     {
+        VelocityofPlayer = PlayerRigi.velocity;
         direction = playerturret.position - turret.position;
-        rotation = Quaternion.LookRotation(direction);
+        rotation = Quaternion.LookRotation((direction+ VelocityofPlayer)*PredictiveTime);
         turret.rotation = Quaternion.Lerp(turret.rotation, rotation, Time.deltaTime * rotationspeed);
         
         if (Physics.Raycast(generator.position, turret.forward, out hit, 40))
         {
             Debug.Log("fire111");
+            Debug.Log(hit.transform.name);
             if (hit.transform.tag=="Player")
             {
                 
                 fire();
             }
         }
+    }
+
+
+    public void CalculateTime(float distance,float speedofshell)
+    {
+        PredictiveTime = distance / speedofshell;
+        
     }
 }

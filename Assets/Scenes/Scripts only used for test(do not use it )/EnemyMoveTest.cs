@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class enemy_movement : MonoBehaviour
+public class EnemyMoveTest : MonoBehaviour
 {
     [Header("The First Nav")]
     public float Firsttimer = 0f;
     public bool OnlyRunOneTime = false;
-    [Header("ForNav")]
+
     public Transform player;
     NavMeshAgent enemy;
     Vector3 destination;
@@ -15,7 +15,7 @@ public class enemy_movement : MonoBehaviour
     RaycastHit hit;
     RaycastHit linehit;
     public LayerMask LineMask;
-
+    
     public bool ReachDestination = false;
     public float timer = 0f;
     public float waittime = 3f;
@@ -31,12 +31,10 @@ public class enemy_movement : MonoBehaviour
     public int EnemyPreviousDecision = 10;
     public float StateTime = 0f;
     public float RandomNumber = 0f;
-    [Header("Death")]
-    public enemyHealth enemyHealth;
     // Start is called before the first frame update
     void Start()
     {
-        StateTime = Random.Range(20, 40);
+        StateTime = Random.Range(5, 10);
 
         enemy = this.GetComponent<NavMeshAgent>();
 
@@ -48,7 +46,7 @@ public class enemy_movement : MonoBehaviour
 
         DetectedDistance();
         DetectCollider();
-        if (!OnlyRunOneTime)
+        if(!OnlyRunOneTime)
         {
             Firsttimer += Time.deltaTime;
             if (Firsttimer > StateTime)
@@ -63,79 +61,72 @@ public class enemy_movement : MonoBehaviour
         }
         else
         {
-            if(isdetected)
+            timer += Time.deltaTime;
+            if (timer > StateTime)
             {
-                timer += Time.deltaTime;
-                if (timer > StateTime)
+                StateTime = Random.Range(5, 10);
+                RandomNumber= Random.Range(0, 99);
                 {
-                    StateTime = Random.Range(20, 40);
-                    RandomNumber = Random.Range(0, 99);
+                    if(EnemyPreviousDecision==0)
                     {
-                        if (EnemyPreviousDecision == 0)
+                        if(RandomNumber<=49)
                         {
-                            if (RandomNumber <= 49)
-                            {
-                                EnemyDecision = 2;
-                            }
-                            else
-                            {
-                                EnemyDecision = 3;
-                            }
+                            EnemyDecision = 2;
                         }
-                        else if (EnemyPreviousDecision == 1)
+                        else
                         {
-                            if (RandomNumber <= 49)
-                            {
-                                EnemyDecision = 2;
-                            }
-                            else
-                            {
-                                EnemyDecision = 3;
-                            }
-                        }
-                        else if (EnemyPreviousDecision == 2)
-                        {
-                            if (RandomNumber <= 49)
-                            {
-                                EnemyDecision = 0;
-                            }
-                            else
-                            {
-                                EnemyDecision = 1;
-                            }
-                        }
-                        else if (EnemyPreviousDecision == 3)
-                        {
-                            if (RandomNumber <= 49)
-                            {
-                                EnemyDecision = 0;
-                            }
-                            else
-                            {
-                                EnemyDecision = 1;
-                            }
+                            EnemyDecision = 3;
                         }
                     }
-
-                    timer = 0;
+                    else if(EnemyPreviousDecision == 1)
+                    {
+                        if (RandomNumber <= 49)
+                        {
+                            EnemyDecision = 2;
+                        }
+                        else
+                        {
+                            EnemyDecision = 3;
+                        }
+                    }
+                    else if(EnemyPreviousDecision == 2)
+                    {
+                        if (RandomNumber <= 49)
+                        {
+                            EnemyDecision = 0;
+                        }
+                        else
+                        {
+                            EnemyDecision = 1;
+                        }
+                    }
+                    else if (EnemyPreviousDecision == 3)
+                    {
+                        if (RandomNumber <= 49)
+                        {
+                            EnemyDecision = 0;
+                        }
+                        else
+                        {
+                            EnemyDecision = 1;
+                        }
+                    }
                 }
-                else
-                {
-                    selectState();
-                    EnemyPreviousDecision = EnemyDecision;
-
-                }
+                
+                timer = 0;
             }
-            
+            else
+            {
+                selectState();
+                EnemyPreviousDecision = EnemyDecision;
+
+            }
         }
-
-
-
-        if(enemyHealth.IsDead)
-        {
-            enemy.Stop(true);
-        }
-       
+        
+        
+        
+        
+        //ForwardState();
 
 
 
@@ -178,11 +169,11 @@ public class enemy_movement : MonoBehaviour
     }
     public void DetectStopDistance()
     {
-
+        
         if (DistanceBetweenTwo <= distance)
         {
 
-
+            
 
             ReachDestination = true;
 
@@ -196,18 +187,17 @@ public class enemy_movement : MonoBehaviour
     public void NormalState()
     {
         DetectStopDistance();
-        if (isdetected && ReachDestination && !collider_exist)
+        if (isdetected&&ReachDestination&&!collider_exist)
         {
-
             destination = transform.position;
             SetDestination();
         }
-        else if (isdetected && ReachDestination && collider_exist)
+        else if(isdetected && ReachDestination && collider_exist)
         {
             destination = player.transform.position;
             SetDestination();
         }
-        else if (isdetected && !ReachDestination)
+        else if(isdetected&&!ReachDestination)
         {
             destination = player.transform.position;
             SetDestination();
@@ -217,7 +207,7 @@ public class enemy_movement : MonoBehaviour
             destination = transform.position;
             SetDestination();
         }
-
+       
         //if ((ReachDestination == false || collider_exist == true) && isdetected == true)
         //{
 
@@ -236,12 +226,12 @@ public class enemy_movement : MonoBehaviour
         //    SetDestination();
         //}
 
-
+        
     }//in this state, enemy will follow player, and keep a distance with player
     public void ForwardState()
     {
-
-        if (collider_exist)
+       
+        if(collider_exist)
         {
             destination = player.transform.position;
             SetDestination();
@@ -264,7 +254,7 @@ public class enemy_movement : MonoBehaviour
             destination = player.transform.position + (player.transform.forward * -DestinationDistance);
             SetDestination();
         }
-
+        
     }
     public void RightState()
     {
@@ -278,7 +268,7 @@ public class enemy_movement : MonoBehaviour
             destination = player.transform.position + (player.transform.right * DestinationDistance);
             SetDestination();
         }
-
+        
     }
     public void LeftState()
     {
@@ -292,7 +282,7 @@ public class enemy_movement : MonoBehaviour
             destination = player.transform.position + (player.transform.right * -DestinationDistance);
             SetDestination();
         }
-
+        
     }
 
     public void selectState()
@@ -311,102 +301,10 @@ public class enemy_movement : MonoBehaviour
             case 3:
                 RightState();
                 break;
-
+            
             default:
                 NormalState();
                 break;
         }
     }
-    //public Transform player;
-    //NavMeshAgent enemy;
-    //Vector3 destination;
-    //public float distance=50;//the enemy will get close to the player and stop "distance" away from player
-    //RaycastHit hit;
-    //RaycastHit linehit;
-    //public LayerMask LineMask;
-    //public LayerMask layerMask;
-    //public bool ReachDestination = false;
-    //float timer = 0f;
-    //public float waittime = 3f;
-    //public bool collider_exist = false;
-    //public float DistanceBetweenTwo;
-
-    //public bool isdetected = false;
-    //public float detect_distance = 50;
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    enemy = this.GetComponent<NavMeshAgent>();
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    DistanceBetweenTwo= Vector3.Distance(transform.position, player.position);
-
-
-    //    if(DistanceBetweenTwo<=detect_distance)
-    //    {
-    //        isdetected = true;
-    //    }
-
-
-
-
-
-
-    //    if((ReachDestination==false||collider_exist==true)&&isdetected==true)
-    //    {
-
-    //        timer += Time.deltaTime;
-    //        if (timer > waittime)
-    //        {
-    //            destination = player.transform.position;
-    //            SetDestination();
-    //        }
-
-    //    }
-    //    else if(ReachDestination==true&&collider_exist==false)
-    //    {
-
-    //        destination = transform.position;
-    //        SetDestination();
-    //    }
-
-    //    if (DistanceBetweenTwo<=distance)
-    //    {
-
-    //            timer = 0f;
-
-    //            ReachDestination = true;
-
-
-    //    }
-    //    else
-    //    {
-    //        ReachDestination = false;
-    //    }
-
-
-    //    if(Physics.Linecast(transform.position,player.position,out linehit,LineMask))
-    //    {
-    //        collider_exist = true;
-    //    }
-    //    else
-    //    {
-    //        collider_exist = false;
-    //    }
-
-
-    //}
-    //public void SetDestination()
-    //{
-
-    //    enemy.SetDestination(destination);
-    //}
-    //IEnumerator wait()
-    //{
-    //    yield return new WaitForSeconds(3f);
-    //}
 }
