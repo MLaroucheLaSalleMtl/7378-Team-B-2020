@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 public class enemy_movement : MonoBehaviour
 {
-<<<<<<< HEAD
     [Header("The First Nav")]
     public float Firsttimer = 0f;
     public bool OnlyRunOneTime = false;
@@ -19,25 +18,12 @@ public class enemy_movement : MonoBehaviour
 
     public bool ReachDestination = false;
     public float timer = 0f;
-=======
-    public Transform player;
-    NavMeshAgent enemy;
-    Vector3 destination;
-    public float distance=50;//the enemy will get close to the player and stop "distance" away from player
-    RaycastHit hit;
-    RaycastHit linehit;
-    public LayerMask LayerMask;
-    public LayerMask layerMask;
-    public bool ReachDestination = false;
-    float timer = 0f;
->>>>>>> master
     public float waittime = 3f;
     public bool collider_exist = false;
     public float DistanceBetweenTwo;
 
     public bool isdetected = false;
     public float detect_distance = 50;
-<<<<<<< HEAD
 
     [Header("ForDifferentStates")]
     public float DestinationDistance = 5f;//it is used to figure out where the enemy goes
@@ -54,19 +40,11 @@ public class enemy_movement : MonoBehaviour
 
         enemy = this.GetComponent<NavMeshAgent>();
 
-=======
-    // Start is called before the first frame update
-    void Start()
-    {
-        enemy = this.GetComponent<NavMeshAgent>();
-        
->>>>>>> master
     }
 
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
 
         DetectedDistance();
         DetectCollider();
@@ -162,21 +140,11 @@ public class enemy_movement : MonoBehaviour
 
 
 
-=======
-        DistanceBetweenTwo= Vector3.Distance(transform.position, player.position);
-        
-
-        if(DistanceBetweenTwo<=detect_distance)
-        {
-            isdetected = true;
-        }
->>>>>>> master
 
 
 
 
 
-<<<<<<< HEAD
     }
     public void SetDestination()
     {
@@ -229,27 +197,11 @@ public class enemy_movement : MonoBehaviour
     {
         DetectStopDistance();
         if (isdetected && ReachDestination && !collider_exist)
-=======
-
-        if((ReachDestination==false||collider_exist==true)&&isdetected==true)
-        {
-
-            timer += Time.deltaTime;
-            if (timer > waittime)
-            {
-                destination = player.transform.position;
-                SetDestination();
-            }
-
-        }
-        else if(ReachDestination==true&&collider_exist==false)
->>>>>>> master
         {
 
             destination = transform.position;
             SetDestination();
         }
-<<<<<<< HEAD
         else if (isdetected && ReachDestination && collider_exist)
         {
             destination = player.transform.position;
@@ -457,42 +409,4 @@ public class enemy_movement : MonoBehaviour
     //{
     //    yield return new WaitForSeconds(3f);
     //}
-=======
-        
-        if (DistanceBetweenTwo<=distance)
-        {
-            
-                timer = 0f;
-                
-                ReachDestination = true;
-            
-            
-        }
-        else
-        {
-            ReachDestination = false;
-        }
-
-
-        if(Physics.Linecast(transform.position,player.position,out linehit,LayerMask))
-        {
-            collider_exist = true;
-        }
-        else
-        {
-            collider_exist = false;
-        }
-        
-
-    }
-    public void SetDestination()
-    {
-        
-        enemy.SetDestination(destination);
-    }
-    IEnumerator wait()
-    {
-        yield return new WaitForSeconds(3f);
-    }
->>>>>>> master
 }

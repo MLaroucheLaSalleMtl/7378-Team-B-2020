@@ -560,6 +560,7 @@ GameObject:
   - component: {fileID: 684939259}
   - component: {fileID: 684939265}
   - component: {fileID: 684939267}
+  - component: {fileID: 684939268}
   m_Layer: 19
   m_Name: Cube (1)
   m_TagString: Enemy
@@ -581,6 +582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentHealth: 0
   IsDead: 0
+  OnlyOnce: 0
+  EndCondition: {fileID: 0}
   health_bar: {fileID: 0}
 --- !u!54 &684939260
 Rigidbody:
@@ -753,6 +756,21 @@ MonoBehaviour:
   LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  VelocityofPlayer: {x: 0, y: 0, z: 0}
+  PlayerRigi: {fileID: 0}
+  PredictiveTime: 0
+--- !u!114 &684939268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684939258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6131ef0eb60aff1438bac236602db433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +983,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentHealth: 0
   IsDead: 0
+  OnlyOnce: 0
+  EndCondition: {fileID: 0}
   health_bar: {fileID: 0}
 --- !u!54 &1088689418
 Rigidbody:
@@ -1338,6 +1358,7 @@ MonoBehaviour:
   EnemyPreviousDecision: 10
   StateTime: 0
   RandomNumber: 0
+  enemyHealth: {fileID: 0}
 --- !u!195 &1409731402
 NavMeshAgent:
   m_ObjectHideFlags: 0
