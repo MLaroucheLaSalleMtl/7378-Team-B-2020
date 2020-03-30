@@ -37,6 +37,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private float m_SlipLimit;
     [SerializeField] private float m_BrakeTorque;
     [SerializeField] private float m_BoneOffset;
+    [SerializeField] private float m_TurnRate;
 
 
     private Quaternion[] m_WheelMeshLocalRotations;
@@ -47,6 +48,7 @@ public class CarController : MonoBehaviour
     private float m_OldRotation;
     private float m_CurrentTorque;
     public Rigidbody m_Rigidbody;
+    public Animator anim;
     private const float k_ReversingThreshold = 0.01f;
 
     public bool Skidding { get; private set; }
@@ -135,14 +137,18 @@ public class CarController : MonoBehaviour
             Quaternion quat;
             Vector3 position;
             m_WheelColliders[i].GetWorldPose(out position, out quat);//-0.66802
-            Vector3 b_Pos = new Vector3(position.x, position.y - m_BoneOffset, position.z);
-            if(i < 12)
-            {
-                m_TrackBones[i].transform.position = b_Pos;
-            }
+            Vector3 b_Pos = m_WheelColliders[i].transform.parent.InverseTransformPoint(position);
+            b_Pos.y -= m_BoneOffset;
+            //Vector3 b_Pos = new Vector3(position.x, position.y - m_BoneOffset, position.z);
+            m_TrackBones[i].transform.localPosition = b_Pos;
             m_WheelMeshes[i].transform.position = position;
-            m_WheelMeshes[i].transform.rotation = quat;
+            foreach (GameObject wm in m_WheelMeshes)
+            {
+                wm.transform.rotation = quat;
+            }
+            //m_WheelMeshes[i].transform.rotation = quat;
         }
+        anim.SetFloat("v", accel);
 
         //clamp input values
         steering = Mathf.Clamp(steering, -1, 1);
@@ -157,32 +163,30 @@ public class CarController : MonoBehaviour
         //m_WheelColliders[1].steerAngle = m_SteerAngle;
         if (steering < 0)
         {
-            Hull.transform.Rotate(0, -50 * Time.deltaTime, 0, Space.Self);
+            Hull.transform.Rotate(0, -m_TurnRate * Time.deltaTime, 0, Space.Self);
         }
         if (steering > 0)
         {
-            Hull.transform.Rotate(0, 50 * Time.deltaTime, 0, Space.Self);
+            Hull.transform.Rotate(0, m_TurnRate * Time.deltaTime, 0, Space.Self);
         }
 
         ApplyDrive(accel, footbrake);
         CapSpeed();
 
         //Set the handbrake.
-        //if ((accel == 0 && footbrake == 0) || handbrake > 0f)
-        //{
-        //    var hbTorque = 1 * m_MaxHandbrakeTorque;
-        //    for (int i = 0; i < m_WheelColliders.Length; i++)
-        //    {
-        //        m_WheelColliders[i].brakeTorque = hbTorque;
-        //    }
-        //}
-        //else
-        //{
-        //    for (int i = 0; i < m_WheelColliders.Length; i++)
-        //    {
-        //        m_WheelColliders[i].brakeTorque = handbrake;
-        //    }
-        //}
+        if ((accel == 0 && footbrake == 0) || handbrake > 0f)
+        {
+            var hbTorque = 1 * m_MaxHandbrakeTorque;
+            for (int i = 0; i < m_WheelColliders.Length; i++)
+            {
+                m_WheelColliders[i].brakeTorque = hbTorque;
+                anim.SetBool("Stop",true);
+            }
+        }
+        else
+        {
+            anim.SetBool("Stop", false);
+        }
 
 
         CalculateRevs();
@@ -308,7 +312,7 @@ public class CarController : MonoBehaviour
     private void CheckForWheelSpin()
     {
         // loop through all wheels
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < m_WheelColliders.Length; i++)
         {
             WheelHit wheelHit;
             m_WheelColliders[i].GetGroundHit(out wheelHit);
@@ -345,7 +349,7 @@ public class CarController : MonoBehaviour
         {
             case CarDriveType.FourWheelDrive:
                 // loop through all wheels
-                for (int i = 0; i < 12; i++)
+                for (int i = 0; i < m_WheelColliders.Length; i++)
                 {
                     m_WheelColliders[i].GetGroundHit(out wheelHit);
                     AdjustTorque(wheelHit.forwardSlip);
