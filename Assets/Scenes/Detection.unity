@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -556,18 +556,21 @@ GameObject:
   - component: {fileID: 684939262}
   - component: {fileID: 684939261}
   - component: {fileID: 684939266}
+  - component: {fileID: 684939269}
   - component: {fileID: 684939260}
   - component: {fileID: 684939259}
   - component: {fileID: 684939265}
   - component: {fileID: 684939267}
+  - component: {fileID: 684939271}
   - component: {fileID: 684939268}
+  - component: {fileID: 684939270}
   m_Layer: 19
   m_Name: Cube (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &684939259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,7 +707,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684939258}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b9ae2e38aa0c14bb13ced943e32d40, type: 3}
   m_Name: 
@@ -715,7 +718,7 @@ MonoBehaviour:
   distance: 2
   LineMask:
     serializedVersion: 2
-    m_Bits: 523831
+    m_Bits: 522807
   ReachDestination: 0
   timer: 0
   waittime: 1
@@ -735,7 +738,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684939258}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b69cee4bfcf2999468f3f25d01272902, type: 3}
   m_Name: 
@@ -766,11 +769,65 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684939258}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6131ef0eb60aff1438bac236602db433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &684939269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684939258}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1ec7e577ee84b4c9b61e740f5f24ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1088689422}
+  distance: 4
+  LineMask:
+    serializedVersion: 2
+    m_Bits: 522807
+  timer: 0
+  waittime: 3
+  collider_exist: 0
+  DistanceBetweenTwo: 0
+  isdetected: 0
+  detect_distance: 20
+  HeavyTankOnlyOnce: 0
+  enemyFireTest: {fileID: 684939270}
+  decision: 0
+--- !u!114 &684939270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684939258}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc28a8253f7f7844d8f8faa8ba9b78a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaitTime: 10
+  time: 0
+  fire: 0
+--- !u!114 &684939271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684939258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda0701da11f19c44ac4ad00fdd944af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1088689422}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,7 +844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -977,9 +1034,7 @@ GameObject:
   - component: {fileID: 1088689420}
   - component: {fileID: 1088689419}
   - component: {fileID: 1088689418}
-  - component: {fileID: 1088689417}
   - component: {fileID: 1088689423}
-  - component: {fileID: 1088689424}
   m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Player
@@ -987,23 +1042,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1088689417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088689416}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2a83743c326764684ebe992261a135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentHealth: 0
-  IsDead: 0
-  OnlyOnce: 0
-  EndCondition: {fileID: 0}
-  health_bar: {fileID: 0}
 --- !u!54 &1088689418
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1088,7 +1126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088689416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.24, y: 2.76, z: -12.18}
+  m_LocalPosition: {x: -15.24, y: 1.72, z: -20.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1109,37 +1147,6 @@ MonoBehaviour:
   test: {fileID: 382366685}
   distance: 10
   onlyonce: 0
---- !u!114 &1088689424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088689416}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8b9ae2e38aa0c14bb13ced943e32d40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Firsttimer: 0
-  OnlyRunOneTime: 0
-  player: {fileID: 0}
-  distance: 50
-  LineMask:
-    serializedVersion: 2
-    m_Bits: 0
-  ReachDestination: 0
-  timer: 0
-  waittime: 3
-  collider_exist: 0
-  DistanceBetweenTwo: 0
-  isdetected: 0
-  detect_distance: 50
-  DestinationDistance: 5
-  EnemyDecision: 0
-  EnemyPreviousDecision: 0
-  StateTime: 0
-  RandomNumber: 0
 --- !u!1 &1140599238
 GameObject:
   m_ObjectHideFlags: 0
