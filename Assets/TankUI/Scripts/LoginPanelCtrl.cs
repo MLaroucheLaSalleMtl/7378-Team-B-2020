@@ -15,6 +15,7 @@ public class LoginPanelCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -28,8 +29,20 @@ public class LoginPanelCtrl : MonoBehaviour
     }
 
     public void LoginBtnOnClick() {
+        /*if (userIdText.text == "123" && passwdText.text == "123")
+        {
+            menuPanel.SetActive(true);
+            loginPanel.SetActive(false);
+        }
+        else
+        {
+            passwdInput.GetComponent<InputField>().text = "";
+            passwdText.text = "";
+            passwdHolder.text = "wrong passwd!";
+            passwdHolder.fontStyle = FontStyle.Bold;
+            passwdHolder.color = Color.red;
+        }*/
         menuPanel.SetActive(true);
         loginPanel.SetActive(false);
-        GameSession.setUserId(userIdText.text);
     }
 }
