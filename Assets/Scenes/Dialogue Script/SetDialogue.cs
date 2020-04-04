@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManagerLelvel2 : MonoBehaviour
+public class SetDialogue : MonoBehaviour
 {
-    public bool Retreat = false;
-
+    public Dialogue dialogue;
     // Start is called before the first frame update
     void Start()
     {
