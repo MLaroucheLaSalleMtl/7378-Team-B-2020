@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - CameraPivot
   - Turrent
+  - destination
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - LightlyArmored
   - HeavilyArmored
   - TankBody
-  - 
+  - building
   - 
   - 
   - 
