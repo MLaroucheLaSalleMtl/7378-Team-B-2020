@@ -11,7 +11,6 @@ public class PlayerWeaponController : MonoBehaviour
     public static bool fire = false;
     public static bool canFire = false;
     public static bool fired = false;
-    private WeaponHandler wp = new WeaponHandler();
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +45,6 @@ public class PlayerWeaponController : MonoBehaviour
                 WeaponHandler.canCount = true;
                 WeaponHandler.doOnce = false;
                 WeaponHandler.reload = 5.0f;
-                wp.resetTimer();
                 fire = false;
             }
         }
