@@ -24,7 +24,6 @@ public class TankCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LookAt = GameObject.FindGameObjectWithTag("CameraPivot").transform;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         camTransform = transform;

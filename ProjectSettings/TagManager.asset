@@ -11,8 +11,6 @@ TagManager:
   - EnemyBullet
   - Canvas
   - Enemy
-  - CameraPivot
-  - Turrent
   layers:
   - Default
   - TransparentFX
@@ -24,7 +22,7 @@ TagManager:
   - 
   - 
   - InSideWheel
-  - 
+  - TankBody
   - TankTrack
   - Bullet
   - Armor Collider
@@ -33,7 +31,7 @@ TagManager:
   - Terrain
   - LightlyArmored
   - HeavilyArmored
-  - TankBody
+  - 
   - 
   - 
   - 

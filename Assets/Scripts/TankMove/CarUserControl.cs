@@ -1,12 +1,11 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof (CarController))]
-public class CarUserControl : MonoBehaviour
-{
-    private CarController m_Car; // the car controller we want to use
+    [RequireComponent(typeof (CarController))]
+    public class CarUserControl : MonoBehaviour
+    {
+        private CarController m_Car; // the car controller we want to use
     private TankTrackAnimation[] tracks;
-
 
 
 
@@ -15,7 +14,6 @@ public class CarUserControl : MonoBehaviour
             // get the car controller
             m_Car = GetComponent<CarController>();
             tracks = GetComponentsInChildren<TankTrackAnimation>();
-
     }
 
 
@@ -33,6 +31,7 @@ public class CarUserControl : MonoBehaviour
 
         if (v > 0)
         {
+            print("forward");
             foreach (TankTrackAnimation track in tracks)
             {
                 track.MoveTrack(new Vector2(1f, 0f));
@@ -40,6 +39,7 @@ public class CarUserControl : MonoBehaviour
         }
         else if (v < 0)
         {
+            print("backward");
             foreach (TankTrackAnimation track in tracks)
             {
                 track.MoveTrack(new Vector2(-1f, 0f));

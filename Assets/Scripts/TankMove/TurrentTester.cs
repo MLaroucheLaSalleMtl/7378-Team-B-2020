@@ -15,7 +15,6 @@ namespace TurretDemo
 
         void Start()
         {
-            turret[0] = GameObject.FindGameObjectWithTag("Turrent").GetComponent<TurretRotation>();
             cam = GetComponent<Camera>();
         }
         private void Update()
@@ -25,9 +24,9 @@ namespace TurretDemo
 
             Ray ray = cam.ScreenPointToRay(new Vector3(960, 583, 0));
 
-            LayerMask layerMask = 1 << 16;
+            int layerMask = 1 << 16;
             RaycastHit hit;
-            if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000, layerMask))
+            if (Physics.Raycast(ray.origin, ray.direction * 10, out hit, layerMask))
             {
                 Debug.DrawLine(ray.origin, hit.point, Color.yellow);
                 targetPos = hit.point;
