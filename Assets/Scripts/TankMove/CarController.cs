@@ -148,7 +148,7 @@ public class CarController : MonoBehaviour
             }
             //m_WheelMeshes[i].transform.rotation = quat;
         }
-        anim.SetFloat("v", accel);
+        //anim.SetFloat("v", accel);
 
         //clamp input values
         steering = Mathf.Clamp(steering, -1, 1);
@@ -180,12 +180,12 @@ public class CarController : MonoBehaviour
             for (int i = 0; i < m_WheelColliders.Length; i++)
             {
                 m_WheelColliders[i].brakeTorque = hbTorque;
-                anim.SetBool("Stop",true);
+                //anim.SetBool("Stop",true);
             }
         }
         else
         {
-            anim.SetBool("Stop", false);
+            //anim.SetBool("Stop", false);
         }
 
 

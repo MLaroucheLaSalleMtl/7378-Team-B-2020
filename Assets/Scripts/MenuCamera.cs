@@ -28,7 +28,6 @@ public class MenuCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         camTransform = transform;
         cam = Camera.main;
         currentX = cam.transform.localEulerAngles.y;
@@ -75,7 +74,7 @@ public class MenuCamera : MonoBehaviour
         //{
         //    m_distance = distance;//temp deprecated
         //}
-        int layerMask = 15 << 16;
+        int layerMask = 0 << 19;
         RaycastHit hit;
         if (Physics.Linecast(LookAt.position, this.transform.position, out hit, layerMask))
         {
