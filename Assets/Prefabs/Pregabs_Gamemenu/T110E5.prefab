@@ -1,65 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &446434928
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 446434929}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &446434929
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446434928}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 28.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7301584411504795010}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1301486090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1301486091}
-  m_Layer: 0
-  m_Name: EmptyTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1301486091
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1301486090}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 500}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7301584411504795010}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &44350620671477941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,9 +2395,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 446434929}
-  - {fileID: 1301486091}
+  m_Children: []
   m_Father: {fileID: 7511022648665636343}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4411,10 +4349,6 @@ MonoBehaviour:
   - {fileID: 5034646554677060341}
   - {fileID: 7877045550520616395}
   - {fileID: 5603651267809305796}
-  - {fileID: 8900893842220543954}
-  - {fileID: 7875044227230543845}
-  - {fileID: 5252519953226155874}
-  - {fileID: 1845285853888685381}
   m_WheelEffects: []
   m_TrackBones:
   - {fileID: 1000268120174883721}
@@ -4433,10 +4367,10 @@ MonoBehaviour:
   m_MaximumSteerAngle: 0
   m_SteerHelper: 0
   m_TractionControl: 0
-  m_FullTorqueOverAllWheels: 3000
-  m_ReverseTorque: 300
+  m_FullTorqueOverAllWheels: 0
+  m_ReverseTorque: 0
   m_MaxHandbrakeTorque: 1
-  m_Downforce: 3000
+  m_Downforce: 2000
   m_SpeedType: 1
   m_Topspeed: 35
   m_RevRangeBoundary: 1
@@ -4466,7 +4400,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7146329523053433696}
   serializedVersion: 2
-  m_Mass: 5000
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -5398,7 +5332,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7511022648665636343}
-  - component: {fileID: 341393855}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -5421,22 +5354,6 @@ Transform:
   m_Father: {fileID: 4771742941209892768}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &341393855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7511022648665636342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d158a25e4190e440b30b18e77fd2aa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: 5c07a9c445f6a464c83deaf35dd8cd37, type: 3}
-  projectile2: {fileID: 0}
-  playerShootPosition: {fileID: 446434928}
-  shellSpeed: 250
 --- !u!1 &7511022648676778820
 GameObject:
   m_ObjectHideFlags: 0
@@ -5446,7 +5363,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7511022648676778821}
-  - component: {fileID: 7511022648676778842}
   m_Layer: 0
   m_Name: TurrentBase
   m_TagString: Turrent
@@ -5469,31 +5385,6 @@ Transform:
   m_Father: {fileID: 6158537312556441971}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7511022648676778842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7511022648676778820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13955fd110140054e94fb2fa28849a22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runRotationsInFixed: 1
-  turretBase: {fileID: 4771742941209892768}
-  turretBarrels: {fileID: 7301584411504795010}
-  turnRate: 30
-  limitTraverse: 0
-  leftTraverse: 60
-  rightTraverse: 60
-  elevation: 30
-  depression: 10
-  showArcs: 0
-  showDebugRay: 1
-  emptyPoint: {fileID: 1301486091}
-  reticle: {fileID: 0}
 --- !u!1 &7511022648799089999
 GameObject:
   m_ObjectHideFlags: 0

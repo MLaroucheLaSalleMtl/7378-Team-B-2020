@@ -438,7 +438,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.75, y: 1}
+  m_AnchorMax: {x: 0.614, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1230,7 +1230,7 @@ GameObject:
   - component: {fileID: 254541952}
   - component: {fileID: 254541951}
   m_Layer: 5
-  m_Name: Accuracy
+  m_Name: Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1286,7 +1286,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Accuracy
+  m_Text: Armor
 --- !u!222 &254541952
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1785,7 +1785,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329776607}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1828,7 +1828,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: B.C 25T
+  m_Text: 
 --- !u!222 &329776610
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4439,7 +4439,7 @@ RectTransform:
   m_AnchorMin: {x: 0.06957104, y: 0.108}
   m_AnchorMax: {x: 0.06957104, y: 0.108}
   m_AnchoredPosition: {x: 537, y: 113}
-  m_SizeDelta: {x: 607, y: 441}
+  m_SizeDelta: {x: 700, y: 441}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531886169
 MonoBehaviour:
@@ -4459,7 +4459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f3585e4f46112b44cbde901d09a00d97, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c7cbff139322b9449e74eda54080e12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4619,7 +4619,7 @@ GameObject:
   - component: {fileID: 543182677}
   - component: {fileID: 543182678}
   m_Layer: 5
-  m_Name: ProgresBar
+  m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4685,7 +4685,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 53125494}
   m_HandleRect: {fileID: 0}
@@ -4693,7 +4693,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.75
+  m_Value: 0.614
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4808,7 +4808,7 @@ RectTransform:
   m_AnchorMin: {x: 0.06957104, y: 0.108}
   m_AnchorMax: {x: 0.06957104, y: 0.108}
   m_AnchoredPosition: {x: 144, y: 113}
-  m_SizeDelta: {x: 607, y: 441}
+  m_SizeDelta: {x: 700, y: 441}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &560627002
 MonoBehaviour:
@@ -4828,7 +4828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fa5a840fee3c5414783ed68237ad72fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f62d89a32742a5f4ca82bba6ca00c1fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5077,7 +5077,7 @@ GameObject:
   - component: {fileID: 640902158}
   - component: {fileID: 640902159}
   m_Layer: 5
-  m_Name: ProgresBar (2)
+  m_Name: Mobility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5143,10 +5143,10 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1951095169}
-  m_HandleRect: {fileID: 0}
+  m_HandleRect: {fileID: 1333954705}
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
@@ -6671,7 +6671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906428798}
   m_LocalRotation: {x: 0, y: -0.86602545, z: 0, w: 0.49999994}
-  m_LocalPosition: {x: 84.1, y: 3.39, z: 110.75}
+  m_LocalPosition: {x: 84.1, y: 0.76, z: 110.75}
   m_LocalScale: {x: 0.49999988, y: 0.5, z: 0.49999988}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7699,7 +7699,7 @@ RectTransform:
   m_AnchorMin: {x: 0.06957104, y: 0.108}
   m_AnchorMax: {x: 0.06957104, y: 0.108}
   m_AnchoredPosition: {x: 927, y: 113}
-  m_SizeDelta: {x: 607, y: 441}
+  m_SizeDelta: {x: 700, y: 441}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094861984
 MonoBehaviour:
@@ -7719,7 +7719,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8315b44f91d5fe64ebb80aecf8800155, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b17919a60266e24f9ca02fb99b47bde, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8661,7 +8661,7 @@ GameObject:
   - component: {fileID: 1310989081}
   - component: {fileID: 1310989082}
   m_Layer: 5
-  m_Name: ProgresBar (3)
+  m_Name: Reload Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8727,15 +8727,15 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1361628438}
-  m_HandleRect: {fileID: 0}
+  m_HandleRect: {fileID: 1571131221}
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.203
+  m_Value: 0.29
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8846,8 +8846,8 @@ RectTransform:
   m_Father: {fileID: 640902158}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.854, y: 0}
+  m_AnchorMax: {x: 0.854, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8957,7 +8957,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.203, y: 1}
+  m_AnchorMax: {x: 0.29, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9806,8 +9806,8 @@ RectTransform:
   m_Father: {fileID: 1310989081}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.29, y: 0}
+  m_AnchorMax: {x: 0.29, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10299,7 +10299,7 @@ GameObject:
   - component: {fileID: 1656991239}
   - component: {fileID: 1656991240}
   m_Layer: 5
-  m_Name: ProgresBar (1)
+  m_Name: Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10365,7 +10365,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 193623467}
   m_HandleRect: {fileID: 0}
@@ -10574,11 +10574,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88215a67587fdc4eb292ef200934dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IS4: {fileID: 2418303361120225345, guid: e5c9a9835b6e9c644ae23e0e003488f5, type: 3}
-  BC25T: {fileID: 295884573118625348, guid: 7611e5efbc1f33342b6cd3a2746d6284, type: 3}
-  Abram: {fileID: 5156836486341924430, guid: b5e9b1dc3ab82974ea408e222fea0b1d, type: 3}
+  IS4: {fileID: 7146329523053433696, guid: b289f79e8b563584b88baf150e2752de, type: 3}
+  BC25T: {fileID: 4979272188703929205, guid: baa3fb7041cad36418c092fa85883b39, type: 3}
+  Abram: {fileID: 8410736156689850628, guid: c8283cfc9b885ef43be263c7174c31ca, type: 3}
   spawner: {fileID: 906428799}
   tankname: {fileID: 329776609}
+  Damage: {fileID: 543182678}
+  Armor: {fileID: 1656991240}
+  Mobility: {fileID: 640902159}
+  ReloadSpeed: {fileID: 1310989082}
 --- !u!1 &1704311204
 GameObject:
   m_ObjectHideFlags: 0
@@ -14411,7 +14415,7 @@ GameObject:
   - component: {fileID: 2082241086}
   - component: {fileID: 2082241085}
   m_Layer: 5
-  m_Name: Magazine
+  m_Name: Mobility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14467,7 +14471,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Magazine
+  m_Text: Mobility
 --- !u!222 &2082241086
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21383,6 +21387,7 @@ MonoBehaviour:
   passwdText: {fileID: 2091501009282011594}
   passwdInput: {fileID: 2091501009607772615}
   passwdHolder: {fileID: 2091501010294181683}
+  tankSwitcher: {fileID: 1675612482}
 --- !u!222 &2091501010403934215
 CanvasRenderer:
   m_ObjectHideFlags: 0
