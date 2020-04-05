@@ -11,6 +11,7 @@ public class LoginPanelCtrl : MonoBehaviour
     public Text passwdText;
     public GameObject passwdInput;
     public Text passwdHolder;
+    public GameObject tankSwitcher;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class LoginPanelCtrl : MonoBehaviour
             passwdHolder.fontStyle = FontStyle.Bold;
             passwdHolder.color = Color.red;
         }*/
+        tankSwitcher.GetComponent<Menu_Switch>().Spawn_Light();
         menuPanel.SetActive(true);
         loginPanel.SetActive(false);
     }

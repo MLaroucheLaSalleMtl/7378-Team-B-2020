@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - light
+  - AP
+  - HE
+  - Bullet
+  - EnemyBullet
+  - Canvas
+  - Enemy
+  - CameraPivot
+  - Turrent
+  - destination
   layers:
   - Default
   - TransparentFX
@@ -14,19 +23,19 @@ TagManager:
   - UI
   - 
   - 
-  - OutSideWheel
+  - 
   - InSideWheel
-  - TankBody
+  - 
   - TankTrack
-  - 12 Bullet
-  - 13 Armor Collider
+  - Bullet
+  - Armor Collider
   - Safe
   - Suspension
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Terrain
+  - LightlyArmored
+  - HeavilyArmored
+  - TankBody
+  - building
   - 
   - 
   - 
