@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TelesopicView : MonoBehaviour
 {
-    public float zoomLevel = 12.0f;
-    public float zoomInSpeed = 100.0f;
+    public float zoomLevel = 2.0f;
+    public float zoomInSpeed = 5.0f;
     public float zoomOutSpeed = 100.0f;
 
     private float initFOV;
@@ -30,6 +30,8 @@ public class TelesopicView : MonoBehaviour
             //失活ui窗口
             obj.SetActive(false);
         }
+        print("1: " + (Camera.main.fieldOfView - zoomInSpeed));
+        print("2: " + initFOV / zoomLevel);
     }
 
     //放大摄像机的视野区域
@@ -39,7 +41,7 @@ public class TelesopicView : MonoBehaviour
         {
             Camera.main.fieldOfView = initFOV / zoomLevel;
         }
-        else if (Camera.main.fieldOfView - (Time.deltaTime * zoomInSpeed) >= (initFOV / zoomLevel))
+        else if (Camera.main.fieldOfView >= (initFOV / zoomLevel))
         {
             Camera.main.fieldOfView -= (Time.deltaTime * zoomInSpeed);
         }
