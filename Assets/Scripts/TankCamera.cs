@@ -9,7 +9,7 @@ public class TankCamera : MonoBehaviour
     private const float YLimit_Max = 89.0f;
 
     public Transform LookAt;
-    public Transform camTransform;
+    public Transform TPS_camTransform;
 
 
     public bool IsAiming;
@@ -27,7 +27,6 @@ public class TankCamera : MonoBehaviour
         LookAt = GameObject.FindGameObjectWithTag("CameraPivot").transform;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        camTransform = transform;
         cam = Camera.main;
     }
     private void clampCamera()
@@ -49,12 +48,12 @@ public class TankCamera : MonoBehaviour
 
         Vector3 dir = new Vector3(0, 0, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        camTransform.position = LookAt.position + rotation * dir;
-        if (transform.position.y <= LookAt.position.y - 3)
+        TPS_camTransform.position = LookAt.position + rotation * dir;
+        if (TPS_camTransform.position.y <= LookAt.position.y - 3)
         {
-            transform.position = new Vector3(transform.position.x, LookAt.position.y - 3, transform.position.z);
+            TPS_camTransform.position = new Vector3(TPS_camTransform.position.x, LookAt.position.y - 3, TPS_camTransform.position.z);
         }
-        camTransform.LookAt(LookAt.position);
+        TPS_camTransform.LookAt(LookAt.position);
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             distance += 1;
