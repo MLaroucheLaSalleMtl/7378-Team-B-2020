@@ -38,7 +38,8 @@ public class WeaponDamage : MonoBehaviour
         {
             if (APCollIgnoreTagArr.Contains(collision.gameObject.tag)) return;
         }
-        if (OnCollisionEnterCallBack != null) OnCollisionEnterCallBack(collision.gameObject);
+        if (ApCollTargetTagArr.Contains(collision.gameObject.tag)) 
+            if (OnCollisionEnterCallBack != null) OnCollisionEnterCallBack(collision.gameObject);
         if (ExplosionEffect && !ExplosionFlg)
         {
             print(collision.gameObject.name);

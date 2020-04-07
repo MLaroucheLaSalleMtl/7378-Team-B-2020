@@ -20,6 +20,7 @@ public class TurrentEnemyCtrl : MonoBehaviour
 
     [SerializeField] private Slider hpBar;
     [SerializeField] private float Hp = 100;
+    [SerializeField] private float apDamage=10f;
 
     private void Update()
     {
@@ -83,7 +84,7 @@ public class TurrentEnemyCtrl : MonoBehaviour
         foreach (var posObj in shootPosArr)
         {
           GameObject obj=  Instantiate(bullet, posObj.transform.position, posObj.transform.rotation);
-          obj.GetComponent<WeaponDamage>().SetAPConfig(new List<string>(){"AP"});
+          obj.GetComponent<WeaponDamage>().SetAPConfig(new List<string>(){"AP"},new List<string>(){"Player"},BulletAction);
           tempRb=obj.GetComponent<Rigidbody>();
           tempRb.velocity = transform.forward * bulletSpeed;
         }
@@ -91,7 +92,7 @@ public class TurrentEnemyCtrl : MonoBehaviour
 
     public void BulletAction(GameObject go)
     {
-        //todo playertakedmg
+        go.GetComponent<PlayerHealth>().DoDamage(apDamage);
     }
     public void OnTakeDamage(float dmg)
     {
