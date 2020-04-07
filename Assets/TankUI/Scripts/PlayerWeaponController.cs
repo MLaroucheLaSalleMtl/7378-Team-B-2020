@@ -38,7 +38,7 @@ public class PlayerWeaponController : MonoBehaviour
                         HE.GetComponent<Rigidbody>().velocity = HE.transform.forward * shellSpeed;
                         break;
                 }
-                this.gameObject.GetComponent<AudioSource>().Play();
+                //this.gameObject.GetComponent<AudioSource>().Play();
 
                 canFire = false;
                 fired = true;

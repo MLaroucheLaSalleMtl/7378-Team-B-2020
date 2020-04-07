@@ -5,27 +5,44 @@ using UnityEngine;
 public class WeaponDamage : MonoBehaviour
 {
     public GameObject ExplosionEffect;
-    private bool ExplosionFlg = false;
+    public bool ExplosionFlg = false;
+    public List<string> APCollIgnoreTagArr;
+
+    public List<string> ApCollTargetTagArr;
+
     // Start is called before the first frame update
+    public void SetAPConfig(List<string> ignoreArr = null, List<string> targetArr = null)
+    {
+        if (ignoreArr != null)
+            APCollIgnoreTagArr = ignoreArr;
+        if (ApCollTargetTagArr != null)
+            ApCollTargetTagArr = targetArr;
+    }
+
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-	private void OnCollisionEnter(Collision collision)
-	{
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (APCollIgnoreTagArr != null && APCollIgnoreTagArr.Count > 0)
+        {
+            if (APCollIgnoreTagArr.Contains(collision.gameObject.tag)) return;
+        }
+
         if (ExplosionEffect && !ExplosionFlg)
         {
+            print(collision.gameObject.name);
             ExplosionFlg = true;
-            GameObject obj = (GameObject)Instantiate(ExplosionEffect, this.transform.position, this.transform.rotation);
+            GameObject obj =
+                (GameObject) Instantiate(ExplosionEffect, this.transform.position, this.transform.rotation);
             Destroy(obj, 3);
             Destroy(this.gameObject, 0.3f);
         }
-	}
+    }
 }

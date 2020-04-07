@@ -38,6 +38,7 @@ namespace Turrets
         public bool showDebugRay = true;
 
         private Vector3 aimPoint;
+        public Transform emptyPoint;
         public Image reticle;
         private bool aiming = false;
         private bool atRest = false;
@@ -72,7 +73,7 @@ namespace Turrets
             }
             else
             {
-                Vector2 screenPos = cam.WorldToScreenPoint(turretBarrels.transform.forward * 1000);
+                Vector2 screenPos = cam.WorldToScreenPoint(emptyPoint.position);
                 reticle.rectTransform.position = screenPos;
             }
             if (!runRotationsInFixed && !lockTur)
