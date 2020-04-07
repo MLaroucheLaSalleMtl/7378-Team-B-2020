@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurrentEnemyCtrl : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class TurrentEnemyCtrl : MonoBehaviour
     [SerializeField] private GameObject[] shootPosArr=null;
     [SerializeField] private GameObject bullet=null;
     [SerializeField] private float bulletSpeed = 20f;
+
+    [SerializeField] private Slider hpBar;
+    [SerializeField] private float Hp = 100;
 
     private void Update()
     {
@@ -83,5 +87,21 @@ public class TurrentEnemyCtrl : MonoBehaviour
           tempRb=obj.GetComponent<Rigidbody>();
           tempRb.velocity = transform.forward * bulletSpeed;
         }
+    }
+
+    public void BulletAction(GameObject go)
+    {
+        //todo playertakedmg
+    }
+    public void OnTakeDamage(float dmg)
+    {
+        float val = Hp - dmg;
+        Hp = val <= 0 ? 0 : val;
+        SetHpUI(Hp/100);
+    }
+
+    public void SetHpUI(float HpRatio)
+    {
+        hpBar.value = HpRatio;
     }
 }
