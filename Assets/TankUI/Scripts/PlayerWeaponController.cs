@@ -31,6 +31,20 @@ public class PlayerWeaponController : MonoBehaviour
                         WeaponHandler.AP--;
                         GameObject AP = GameObject.Instantiate(projectile, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
                         AP.GetComponent<Rigidbody>().velocity = AP.transform.forward * shellSpeed;
+                        AP.GetComponent<WeaponDamage>().SetAPConfig(new List<string>(){"AP"},new List<string>(){"Enemy"},
+                            (go) =>
+                            {
+                                if (go.GetComponent<TurrentEnemyCtrl>())
+                                {
+                                    TurrentEnemyCtrl ctrl = go.GetComponent<TurrentEnemyCtrl>();
+                                    ctrl.OnTakeDamage(5);
+                                }
+                                if (go.GetComponent<enemyHealth>())
+                                {
+                                    enemyHealth ctrl = go.GetComponent<enemyHealth>();
+                                    ctrl.DoDamage(50);
+                                }
+                            });
                         break;
                     case 2:
                         WeaponHandler.HE--;
