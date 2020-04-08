@@ -35,7 +35,7 @@ public class TurrentEnemyCtrl : MonoBehaviour
     
     private void TryFindTarget()
     {
-           Collider[] coll= Physics.OverlapSphere(transform.position, findTargetRadius, 1<<10);
+           Collider[] coll= Physics.OverlapSphere(transform.position, findTargetRadius, 1<<19);
            if (coll != null && coll.Length > 0)
            {
                currentTarget = coll[0].transform;

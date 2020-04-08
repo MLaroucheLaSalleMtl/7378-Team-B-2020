@@ -39,6 +39,11 @@ public class PlayerWeaponController : MonoBehaviour
                                     TurrentEnemyCtrl ctrl = go.GetComponent<TurrentEnemyCtrl>();
                                     ctrl.OnTakeDamage(5);
                                 }
+                                if (go.GetComponent<enemyHealth>())
+                                {
+                                    enemyHealth ctrl = go.GetComponent<enemyHealth>();
+                                    ctrl.DoDamage(50);
+                                }
                             });
                         break;
                     case 2:
