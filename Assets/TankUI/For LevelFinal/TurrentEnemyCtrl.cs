@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurrentEnemyCtrl : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class TurrentEnemyCtrl : MonoBehaviour
     [SerializeField] private GameObject bullet=null;
     [SerializeField] private float bulletSpeed = 20f;
 
+    [SerializeField] private Slider hpBar;
+    [SerializeField] private float Hp = 100;
+    [SerializeField] private float apDamage=10f;
+
     private void Update()
     {
         TryFindTarget();
@@ -30,7 +35,7 @@ public class TurrentEnemyCtrl : MonoBehaviour
     
     private void TryFindTarget()
     {
-           Collider[] coll= Physics.OverlapSphere(transform.position, findTargetRadius, 1<<10);
+           Collider[] coll= Physics.OverlapSphere(transform.position, findTargetRadius, 1<<19);
            if (coll != null && coll.Length > 0)
            {
                currentTarget = coll[0].transform;
@@ -79,9 +84,25 @@ public class TurrentEnemyCtrl : MonoBehaviour
         foreach (var posObj in shootPosArr)
         {
           GameObject obj=  Instantiate(bullet, posObj.transform.position, posObj.transform.rotation);
-          obj.GetComponent<WeaponDamage>().SetAPConfig(new List<string>(){"AP"});
+          obj.GetComponent<WeaponDamage>().SetAPConfig(new List<string>(){"AP"},new List<string>(){"Player"},BulletAction);
           tempRb=obj.GetComponent<Rigidbody>();
           tempRb.velocity = transform.forward * bulletSpeed;
         }
+    }
+
+    public void BulletAction(GameObject go)
+    {
+        go.GetComponent<PlayerHealth>().DoDamage(apDamage);
+    }
+    public void OnTakeDamage(float dmg)
+    {
+        float val = Hp - dmg;
+        Hp = val <= 0 ? 0 : val;
+        SetHpUI(Hp/100);
+    }
+
+    public void SetHpUI(float HpRatio)
+    {
+        hpBar.value = HpRatio;
     }
 }
