@@ -28,6 +28,7 @@ public class TankCamera : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         cam = Camera.main;
+        TPS_camTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
     }
     private void clampCamera()
     {
