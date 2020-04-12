@@ -37,7 +37,9 @@ public class enemy_movement : MonoBehaviour
     void Start()
     {
         StateTime = Random.Range(20, 40);
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        
+        enemyHealth = transform.GetComponent<enemyHealth>();
         enemy = this.GetComponent<NavMeshAgent>();
 
     }

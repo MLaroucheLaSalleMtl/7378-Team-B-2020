@@ -33473,6 +33473,11 @@ PrefabInstance:
       propertyPath: PlayerRigi
       value: 
       objectReference: {fileID: 74872920}
+    - target: {fileID: 2668355583155164902, guid: dfc8e8fdd532f3949bb8d35fbf1f746d,
+        type: 3}
+      propertyPath: FireWaitTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4047935030088034150, guid: dfc8e8fdd532f3949bb8d35fbf1f746d,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -33878,6 +33883,11 @@ PrefabInstance:
       propertyPath: EndCondition
       value: 
       objectReference: {fileID: 1166936393}
+    - target: {fileID: 4047935032116966305, guid: dfc8e8fdd532f3949bb8d35fbf1f746d,
+        type: 3}
+      propertyPath: m_Speed
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4047935032116966313, guid: dfc8e8fdd532f3949bb8d35fbf1f746d,
         type: 3}
       propertyPath: m_LocalPosition.x
