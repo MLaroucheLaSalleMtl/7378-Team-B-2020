@@ -6,7 +6,7 @@ public class EnemyFireForHeavyTank : MonoBehaviour
 {
     public EnemyMovementForHeavyTank EnemyMovementForHeavyTank;
 
-    public Transform playerturret;
+    
     public Transform generator;
     public Transform turret;
     public bool isfiring = false;
@@ -20,7 +20,8 @@ public class EnemyFireForHeavyTank : MonoBehaviour
     public float rotationspeed = 0.01f;
     public LayerMask LayerMask;
     RaycastHit hit;
-    [Header("predictive Shooting")] public Vector3 VelocityofPlayer;
+    [Header("predictive Shooting")]
+    public Vector3 VelocityofPlayer;
     public Rigidbody PlayerRigi;
     public float PredictiveTime;
     public float FireWaitTime = 10f;
@@ -32,7 +33,9 @@ public class EnemyFireForHeavyTank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         PlayerRigi = player.GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -50,6 +53,7 @@ public class EnemyFireForHeavyTank : MonoBehaviour
 
         if (isfiring)
         {
+            
             TurretRotation();
         }
     }
@@ -60,52 +64,54 @@ public class EnemyFireForHeavyTank : MonoBehaviour
         GameObject shell = Instantiate(prefab, fire_position.position, fire_position.transform.rotation);
         shell.GetComponent<Rigidbody>().velocity = shell.transform.forward * speed;
     }
-    IEnumerator ContinueFire()
-    {
-        Debug.Log("Continue Fire");
-        for (int i = 0; i < maxAIShellCount; i++)
-        {
-            GameObject shell = Instantiate(prefab, fire_position.position, fire_position.transform.rotation);
-            shell.GetComponent<Rigidbody>().velocity = shell.transform.forward * speed;
-            yield return 1f;
-        }
-        time = 0f;
+    //IEnumerator ContinueFire()
+    //{
+    //    Debug.Log("Continue Fire");
+    //    for (int i = 0; i < maxAIShellCount; i++)
+    //    {
+    //        GameObject shell = Instantiate(prefab, fire_position.position, fire_position.transform.rotation);
+    //        shell.GetComponent<Rigidbody>().velocity = shell.transform.forward * speed;
+    //        yield return 1f;
+    //    }
+    //    time = 0f;
        
-    }
+    //}
     public void TurretRotation()
     {
         VelocityofPlayer = PlayerRigi.velocity;
-        direction = playerturret.position - turret.position;
+        direction = player.position - turret.position;
         rotation = Quaternion.LookRotation((direction + VelocityofPlayer) * PredictiveTime);
         turret.rotation = Quaternion.Lerp(turret.rotation, rotation, Time.deltaTime * rotationspeed);
+        Debug.Log("is running");
         time = time + Time.deltaTime;
         if (time >= FireWaitTime)
         {
-            ContinueAttackAI();
-          //  fire();
             Fired = true;
-          
+            fire();
+            time = 0;
+
         }
         else
         {
+            
             Fired = false;
         }
     }
 
-    private void ContinueAttackAI()
-    {
-        int randomVal = UnityEngine.Random.Range(0, 2);
-        switch (randomVal)
-        {
-        case 0:
-            fire();
-            time = 0f;
-            break;
-        case 1:
-            StartCoroutine(ContinueFire());
-            break;
-        }
-    }
+    //private void ContinueAttackAI()
+    //{
+    //    int randomVal = UnityEngine.Random.Range(0, 2);
+    //    switch (randomVal)
+    //    {
+    //    case 0:
+    //        fire();
+    //        time = 0f;
+    //        break;
+    //    case 1:
+    //        StartCoroutine(ContinueFire());
+    //        break;
+    //    }
+    //}
 
 
     public void CalculateTime(float distance, float speedofshell)
