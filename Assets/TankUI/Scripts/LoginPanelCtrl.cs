@@ -43,6 +43,7 @@ public class LoginPanelCtrl : MonoBehaviour
             passwdHolder.fontStyle = FontStyle.Bold;
             passwdHolder.color = Color.red;
         }*/
+        ModuleRoot.Ins.ModuleData.OnGameStart(userIdText.text);
         tankSwitcher.GetComponent<Menu_Switch>().Spawn_Light();
         menuPanel.SetActive(true);
         loginPanel.SetActive(false);

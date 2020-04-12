@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TankCamera : MonoBehaviour
 {
+    public static TankCamera Ins;
     private const float YLimit_Min = -50.0f;
     private const float YLimit_Max = 89.0f;
 
@@ -22,12 +24,29 @@ public class TankCamera : MonoBehaviour
     private float sensivityX = 4.0f;
     private float sensivityY = 1.0f;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Ins = this;
+    }
+
     void Start()
     {
         LookAt = GameObject.FindGameObjectWithTag("CameraPivot").transform;
+        LockCursor();
+        cam = Camera.main;
+        TPS_camTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+    }
+
+    public void  LockCursor()
+    {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        cam = Camera.main;
+    }
+
+    public void UnLockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     private void clampCamera()
     {

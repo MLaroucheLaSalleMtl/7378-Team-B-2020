@@ -19839,7 +19839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2091501009629214800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26934,7 +26934,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.111254185, y: 0.6384114}
   m_AnchorMax: {x: 0.88874555, y: 0.7877277}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.18737793, y: -46}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &7734574995451796967
@@ -27022,7 +27022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3343090cc255f2e46aec6d62d700a5d0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1731d8fbff2f57d439c2e597c3895891, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -27148,13 +27148,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 9
     m_MaxSize: 20
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter Account
+  m_Text: Enter Player Name
 --- !u!114 &7734574995468051119
 MonoBehaviour:
   m_ObjectHideFlags: 0

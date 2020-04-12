@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
 
-        PlayerHpText.text = CurrentHealth.ToString();
+        PlayerHpText.text = ((int)CurrentHealth).ToString();
 
 
 
