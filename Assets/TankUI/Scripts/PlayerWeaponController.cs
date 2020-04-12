@@ -44,6 +44,11 @@ public class PlayerWeaponController : MonoBehaviour
                                     enemyHealth ctrl = go.GetComponent<enemyHealth>();
                                     ctrl.DoDamage(50);
                                 }
+                                if (go.GetComponent<EnemyHealthAttributeCtrl>())
+                                {
+                                    EnemyHealthAttributeCtrl ctrl = go.GetComponent<EnemyHealthAttributeCtrl>();
+                                    ctrl.DoDamage(50);
+                                }
                             });
                         break;
                     case 2:
