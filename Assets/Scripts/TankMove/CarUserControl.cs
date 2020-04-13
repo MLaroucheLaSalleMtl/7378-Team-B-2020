@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof (CarController))]
@@ -9,15 +7,19 @@ public class CarUserControl : MonoBehaviour
     private CarController m_Car; // the car controller we want to use
     private TankTrackAnimation[] tracks;
 
-    private void Awake()
-    {
-        // get the car controller
-        m_Car = GetComponent<CarController>();
-        tracks = GetComponentsInChildren<TankTrackAnimation>();
+
+
+
+        private void Awake()
+        {
+            // get the car controller
+            m_Car = GetComponent<CarController>();
+            tracks = GetComponentsInChildren<TankTrackAnimation>();
+
     }
 
 
-        private void Update()
+        private void FixedUpdate()
         {
             // pass the input to the car!
             float h = Input.GetAxis("Horizontal");
@@ -28,7 +30,6 @@ public class CarUserControl : MonoBehaviour
 #else
             m_Car.Move(h, v, v, 0f);
 #endif
-
 
         if (v > 0)
         {
@@ -44,8 +45,5 @@ public class CarUserControl : MonoBehaviour
                 track.MoveTrack(new Vector2(-1f, 0f));
             }
         }
-
-        //print("Current: " + m_Car.CurrentSpeed + "  4s before: " + m_Car.m_PrevSpeed);
     }
-
-}
+    }
