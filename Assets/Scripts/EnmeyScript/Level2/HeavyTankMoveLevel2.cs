@@ -10,6 +10,10 @@ public class HeavyTankMoveLevel2 : MonoBehaviour
     public Transform player;
     public Vector3 destination;
     public Transform RetreatDestination;
+    //public Transform RetreatDestination2;
+    //public Transform RetreatDestination3;
+    //public Transform RetreatDestination4;
+    //public Transform RetreatDestination5;
     public Transform NormalDestination;
     NavMeshAgent enemy;
     public GameManagerLelvel2 GameManagerLelvel2;
@@ -27,8 +31,8 @@ public class HeavyTankMoveLevel2 : MonoBehaviour
         enemy = this.GetComponent<NavMeshAgent>();
         enemyrigi = this.GetComponent<Rigidbody>();
         GameManagerLelvel2 = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameManagerLelvel2>();
-        NormalDestination = GameObject.FindGameObjectWithTag("ND").transform;
-        RetreatDestination = GameObject.FindGameObjectWithTag("RD").transform;
+        //NormalDestination = GameObject.FindGameObjectWithTag("ND").transform;
+        //RetreatDestination = GameObject.FindGameObjectWithTag("RD").transform;
     }
 
     // Update is called once per frame
@@ -42,6 +46,27 @@ public class HeavyTankMoveLevel2 : MonoBehaviour
             destination = RetreatDestination.position;
             SetDestination();
         }
+        //else if(GameManagerLelvel2.Retreat2)
+        //{
+        //    destination = RetreatDestination2.position;
+        //    SetDestination();
+        //}
+        //else if (GameManagerLelvel2.Retreat3)
+        //{
+        //    destination = RetreatDestination3.position;
+        //    SetDestination();
+        //}
+        //else if (GameManagerLelvel2.Retreat4)
+        //{
+        //    destination = RetreatDestination4.position;
+        //    SetDestination();
+            
+        //}
+        //else if (GameManagerLelvel2.Retreat5)
+        //{
+        //    destination = RetreatDestination5.position;
+        //    SetDestination();
+        //}
         else
         {
             destination = NormalDestination.position;
