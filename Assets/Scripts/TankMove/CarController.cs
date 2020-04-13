@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 internal enum CarDriveType
@@ -12,6 +13,12 @@ internal enum SpeedType
 {
     MPH,
     KPH
+}
+internal enum Direction
+{
+    idle,
+    forward,
+    backward
 }
 
 public class CarController : MonoBehaviour
@@ -47,6 +54,10 @@ public class CarController : MonoBehaviour
     private float m_GearFactor;
     private float m_OldRotation;
     private float m_CurrentTorque;
+    private bool triggerAnime;
+    public float m_PrevSpeed = 0;
+    private Direction current_State;
+
     public Rigidbody m_Rigidbody;
     public Animator anim;
     private const float k_ReversingThreshold = 0.01f;
@@ -54,7 +65,7 @@ public class CarController : MonoBehaviour
     public bool Skidding { get; private set; }
     public float BrakeInput { get; private set; }
     public float CurrentSteerAngle { get { return m_SteerAngle; } }
-    public float CurrentSpeed { get { return m_Rigidbody.velocity.magnitude * 2.23693629f; } }
+    public float CurrentSpeed { get { return m_Rigidbody.velocity.magnitude * 3.6f; } }
     public float MaxSpeed { get { return m_Topspeed; } }
     public float Revs { get; private set; }
     public float AccelInput { get; private set; }
@@ -73,6 +84,8 @@ public class CarController : MonoBehaviour
 
         //m_Rigidbody = this.GetComponent<Rigidbody>();
         m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl * m_FullTorqueOverAllWheels);
+
+        triggerAnime = false;
     }
 
 
@@ -129,9 +142,17 @@ public class CarController : MonoBehaviour
         Revs = ULerp(revsRangeMin, revsRangeMax, m_GearFactor);
     }
 
+    private void FixedUpdate()
+    {
+        if (CurrentSpeed < 0.1f)
+        {
+            current_State = Direction.idle;
+        }
+    }
 
     public void Move(float steering, float accel, float footbrake, float handbrake)
     {
+        StartCoroutine(Savespeed(CurrentSpeed));
         for (int i = 0; i < m_WheelColliders.Length; i++)
         {
             Quaternion quat;
@@ -148,19 +169,23 @@ public class CarController : MonoBehaviour
             }
             //m_WheelMeshes[i].transform.rotation = quat;
         }
-        //anim.SetFloat("v", accel);
+        if(accel > 0)
+        {
+            anim.SetFloat("v", accel);
+        }
+        else if(footbrake < 0)
+        {
+            anim.SetFloat("v", footbrake);
+        }
 
+
+        //StopAnimation(Direction.forward);
         //clamp input values
         steering = Mathf.Clamp(steering, -1, 1);
         AccelInput = accel = Mathf.Clamp(accel, 0, 1);
         BrakeInput = footbrake = -1 * Mathf.Clamp(footbrake, -1, 0);
         handbrake = Mathf.Clamp(handbrake, 0, 1);
 
-        //Set the steer on the front wheels.
-        //Assuming that wheels 0 and 1 are the front wheels.
-        //m_SteerAngle = steering*m_MaximumSteerAngle;
-        //m_WheelColliders[0].steerAngle = m_SteerAngle;
-        //m_WheelColliders[1].steerAngle = m_SteerAngle;
         if (steering < 0)
         {
             Hull.transform.Rotate(0, -m_TurnRate * Time.deltaTime, 0, Space.Self);
@@ -170,8 +195,29 @@ public class CarController : MonoBehaviour
             Hull.transform.Rotate(0, m_TurnRate * Time.deltaTime, 0, Space.Self);
         }
 
+        if(Vector3.Angle(transform.forward, m_Rigidbody.velocity) < 50f)
+        {
+            current_State = Direction.forward;
+        }
+        else if(Vector3.Angle(-transform.forward, m_Rigidbody.velocity) < 50f)
+        {
+            current_State = Direction.backward;
+        }
+
+
+        switch(current_State)
+        {
+            case Direction.forward:
+                StopAnimation(Direction.forward);
+                break;
+            case Direction.backward:
+                StopAnimation(Direction.backward);
+                break;
+        }
+
         ApplyDrive(accel, footbrake);
-        CapSpeed();
+        CapSpeed(); 
+
 
         //Set the handbrake.
         if ((accel == 0 && footbrake == 0) || handbrake > 0f)
@@ -180,12 +226,7 @@ public class CarController : MonoBehaviour
             for (int i = 0; i < m_WheelColliders.Length; i++)
             {
                 m_WheelColliders[i].brakeTorque = hbTorque;
-                //anim.SetBool("Stop",true);
             }
-        }
-        else
-        {
-            //anim.SetBool("Stop", false);
         }
 
 
@@ -195,8 +236,52 @@ public class CarController : MonoBehaviour
         AddDownForce();
         CheckForWheelSpin();
         TractionControl();
+
+    }
+    IEnumerator Savespeed(float CurrentSpeed)
+    {
+        yield return new WaitForSeconds(0.1f);
+        m_PrevSpeed = CurrentSpeed;
     }
 
+    private void StopAnimation(Direction direction)
+    {
+        float speedDiff = m_PrevSpeed - CurrentSpeed;
+        //print("CurrentSpeed is: " + CurrentSpeed);
+        if (CurrentSpeed > 10)
+        {
+            triggerAnime = true;
+        }
+        else
+        {
+            triggerAnime = false;
+        }
+        //if (Input.GetKeyDown(KeyCode.Space) && triggerAnime)
+        //{
+        //    anim.SetTrigger("Stop");
+        //}
+        if (triggerAnime && speedDiff >= 20)
+        {
+            //anim.SetBool("Stop",true);
+            //print("Current: " + CurrentSpeed + "  1s before: " + m_PrevSpeed + "SpeedDiff is: " + speedDiff);
+            switch (direction)
+            {
+                case Direction.forward:
+                    anim.SetBool("Stop", true);
+                    triggerAnime = false;
+                    break;
+                case Direction.backward:
+                    anim.SetBool("BStop", true);
+                    triggerAnime = false;
+                    break;
+            }
+        }
+        else
+        {
+            anim.SetBool("Stop", false);
+            anim.SetBool("BStop", false);
+        }
+    }
 
     private void CapSpeed()
     {
@@ -221,47 +306,49 @@ public class CarController : MonoBehaviour
 
     private void ApplyDrive(float accel, float footbrake)
     {
-        float thrustTorque;
-        switch (m_CarDriveType)
-        {
-            case CarDriveType.FourWheelDrive:
-                thrustTorque = accel * (m_CurrentTorque / 4f);
-                for (int i = 0; i < m_WheelColliders.Length; i++)
-                {
-                    m_WheelColliders[i].motorTorque = thrustTorque;
-                }
-                break;
-
-            case CarDriveType.FrontWheelDrive:
-                thrustTorque = accel * (m_CurrentTorque / 2f);
-                m_WheelColliders[0].motorTorque = m_WheelColliders[1].motorTorque = thrustTorque;
-                break;
-
-            case CarDriveType.RearWheelDrive:
-                thrustTorque = accel * (m_CurrentTorque / 2f);
-                m_WheelColliders[2].motorTorque = m_WheelColliders[3].motorTorque = thrustTorque;
-                break;
-
-        }
-
+        float thrustTorque = accel * (m_CurrentTorque / 4f); ;
+        float reverseTorque = -m_ReverseTorque * footbrake;
+        print("accel:" + accel + " footbrake: " + footbrake);
         for (int i = 0; i < m_WheelColliders.Length; i++)
         {
-            if (accel == 0 && footbrake == 0)
+            if(accel > 0)
             {
-                m_WheelColliders[i].brakeTorque = m_MaxHandbrakeTorque;
+                if (CurrentSpeed > 5 && Vector3.Angle(-transform.forward, m_Rigidbody.velocity) < 50f)
+                {
+                    m_WheelColliders[i].brakeTorque = m_BrakeTorque * accel;
+                }
+                else
+                {
+                    if(Input.GetKeyDown(KeyCode.S))
+                    {
+                        m_WheelColliders[i].brakeTorque = m_MaxHandbrakeTorque;
+                    }
+                    else
+                    {
+                        m_WheelColliders[i].brakeTorque = 0;
+                        m_WheelColliders[i].motorTorque = thrustTorque;
+                    }
+                }
             }
-            else if (CurrentSpeed > 5 && Vector3.Angle(transform.forward, m_Rigidbody.velocity) < 50f)
+            if (footbrake > 0)
             {
-                m_WheelColliders[i].brakeTorque = m_BrakeTorque * footbrake;
-                print(m_WheelColliders[i].brakeTorque);
-            }
-            else if (footbrake > 0)
-            {
-                m_WheelColliders[i].brakeTorque = 0f;
-                m_WheelColliders[i].motorTorque = -m_ReverseTorque * footbrake;
-                print(m_WheelColliders[i].motorTorque);
-            }
-            else m_WheelColliders[i].brakeTorque = 0;
+                if (CurrentSpeed > 5 && Vector3.Angle(transform.forward, m_Rigidbody.velocity) < 50f) //backward while forwarding
+                {
+                    m_WheelColliders[i].brakeTorque = m_BrakeTorque * footbrake;
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.S))
+                    {
+                        m_WheelColliders[i].brakeTorque = m_MaxHandbrakeTorque;
+                    }
+                    else
+                    {
+                        m_WheelColliders[i].brakeTorque = 0;
+                        m_WheelColliders[i].motorTorque = reverseTorque;
+                    }
+                }
+            }        
         }
     }
 
@@ -271,7 +358,6 @@ public class CarController : MonoBehaviour
         for (int i = 0; i < m_WheelColliders.Length; i++)
         {
             m_WheelColliders[i].brakeTorque = hbTorque;
-            print(m_WheelColliders[i].brakeTorque);
         }
     }
 
