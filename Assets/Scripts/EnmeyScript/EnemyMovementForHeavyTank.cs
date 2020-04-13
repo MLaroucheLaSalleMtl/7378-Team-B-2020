@@ -27,11 +27,14 @@ public class EnemyMovementForHeavyTank : MonoBehaviour
     private float DestinationGoal = 40f;
     public EnemyFireForHeavyTank EnemyFireForHeavyTank;
     public float decision;
+    public enemyHealth enemyHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        EnemyFireForHeavyTank = this.GetComponent<EnemyFireForHeavyTank>();
+        enemyHealth = transform.GetComponent<enemyHealth>();
 
         enemy = this.GetComponent<NavMeshAgent>();
 
@@ -58,7 +61,10 @@ public class EnemyMovementForHeavyTank : MonoBehaviour
 
 
 
-
+        if (enemyHealth.IsDead)
+        {
+            enemy.Stop(true);
+        }
 
 
 

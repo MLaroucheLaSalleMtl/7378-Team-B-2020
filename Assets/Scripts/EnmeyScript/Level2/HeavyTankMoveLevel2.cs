@@ -23,8 +23,12 @@ public class HeavyTankMoveLevel2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         enemy = this.GetComponent<NavMeshAgent>();
         enemyrigi = this.GetComponent<Rigidbody>();
+        GameManagerLelvel2 = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameManagerLelvel2>();
+        NormalDestination = GameObject.FindGameObjectWithTag("ND").transform;
+        RetreatDestination = GameObject.FindGameObjectWithTag("RD").transform;
     }
 
     // Update is called once per frame
@@ -71,12 +75,15 @@ public class HeavyTankMoveLevel2 : MonoBehaviour
             collider_exist = false;
         }
     }
-    public void OnCollisionEnter(Collision collision)
+    
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.transform.tag == "destination")
+        if (other.transform.tag == "ND")
         {
 
-            enemy.Stop();
+            
+            enemyrigi.velocity = Vector3.zero;
+            enemyrigi.angularVelocity = Vector3.zero;
         }
     }
 }

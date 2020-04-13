@@ -40,7 +40,7 @@ public class InsTankMovement : MonoBehaviour
         StateTime = Random.Range(20, 40);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemy = this.GetComponent<NavMeshAgent>();
-
+        enemyHealth = player.GetComponent<enemyHealth>();
     }
 
     // Update is called once per frame

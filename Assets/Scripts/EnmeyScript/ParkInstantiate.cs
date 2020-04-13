@@ -4,37 +4,37 @@ using UnityEngine;
 
 public class ParkInstantiate : MonoBehaviour
 {
+    
     public GameObject LightTank;
-    public GameObject HeavyTank;
+    
     public float time;
     public float InstantiateTime = 5f;
-    public float decision;
-
+    
+    private SecureArea SecureArea;
     // Start is called before the first frame update
     void Start()
     {
-        
+        SecureArea = GameObject.FindGameObjectWithTag("SecureArea").GetComponent<SecureArea>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        time = time + Time.deltaTime;
-        if(time>=InstantiateTime)
+        if(SecureArea.Secured&&SecureArea.InArea)
         {
-            decision = Random.Range(0, 99);
-            if(decision<=49)
+            time = time + Time.deltaTime;
+            if (time >= InstantiateTime)
             {
+
+
                 Instantiate(LightTank, transform.position, transform.rotation);
+
+
+                time = 0f;
+
             }
-            else
-            {
-                Instantiate(HeavyTank, transform.position, transform.rotation);
-            }
-            time = 0f;
-            
         }
+        
         
     }
 }

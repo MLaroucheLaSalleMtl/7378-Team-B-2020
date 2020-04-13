@@ -10,7 +10,7 @@ public class SecureArea : MonoBehaviour
     public Slider SecureBar;
     public bool InArea = false;
     public bool EnemyIn = false;
-
+    public bool Secured = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,18 @@ public class SecureArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(SecureBar.value>=100f)
+        {
+            Secured = true;
+        }
+        else
+        {
+            Secured = false;
+        }
+
+
+
         if(InArea&&!EnemyIn)
         {
             timer += Time.deltaTime;
