@@ -4442,7 +4442,7 @@ MonoBehaviour:
   m_FullTorqueOverAllWheels: 3000
   m_ReverseTorque: 600
   m_MaxHandbrakeTorque: 1
-  m_Downforce: 3000
+  m_Downforce: 2500
   m_SpeedType: 1
   m_Topspeed: 35
   m_RevRangeBoundary: 1
