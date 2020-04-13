@@ -11,10 +11,10 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Menu_Win.SetActive(false);
-        Menu_Lose.SetActive(false);
-        Current_Level = 0;
-        SceneManager.LoadScene("TutorialField");
+        //Menu_Win.SetActive(false);
+        //Menu_Lose.SetActive(false);
+        //Current_Level = 0;
+        //SceneManager.LoadScene("TutorialField");
     }
 
     public void LoadLevel1()
