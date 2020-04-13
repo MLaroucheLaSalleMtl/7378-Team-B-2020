@@ -10,7 +10,7 @@ public class ParkInstantiate : MonoBehaviour
     public float time;
     public float InstantiateTime = 5f;
     
-    private SecureArea SecureArea;
+    public SecureArea SecureArea;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class ParkInstantiate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(SecureArea.Secured&&SecureArea.InArea)
+        if(!SecureArea.Secured&&SecureArea.InArea)
         {
             time = time + Time.deltaTime;
             if (time >= InstantiateTime)

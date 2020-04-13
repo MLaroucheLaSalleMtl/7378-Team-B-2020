@@ -21901,7 +21901,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InsTankMovement: {fileID: 4881233715465010269}
-  playerturret: {fileID: 0}
   generator: {fileID: 3821149696053143557}
   turret: {fileID: 3821149695811795807}
   isfiring: 0
@@ -21936,14 +21935,14 @@ MonoBehaviour:
   distance: 50
   LineMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1167415
   ReachDestination: 0
   timer: 0
   waittime: 3
   collider_exist: 0
   DistanceBetweenTwo: 0
   isdetected: 0
-  detect_distance: 50
+  detect_distance: 300
   DestinationDistance: 5
   EnemyDecision: 0
   EnemyPreviousDecision: 10

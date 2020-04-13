@@ -84,16 +84,13 @@ public class InsTankFire : MonoBehaviour
         time = time + Time.deltaTime;
         if (time >= FireWaitTime)
         {
-            if (InsTankMovement.collider_exist)
-            {
-
-            }
-            else
+            if (!InsTankMovement.collider_exist)
             {
                 fire();
                 Fired = true;
                 time = 0f;
             }
+            
 
         }
         else
