@@ -18,6 +18,7 @@ public class PlayerTrigger : MonoBehaviour
         if(other.transform.tag=="Player")
         {
             GameManagerLelvel2.Retreat = true;
+
         }
     }
 }
