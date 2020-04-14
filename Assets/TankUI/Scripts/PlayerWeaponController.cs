@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TankBehaviour;
 using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
@@ -44,10 +45,10 @@ public class PlayerWeaponController : MonoBehaviour
                                     enemyHealth ctrl = go.GetComponent<enemyHealth>();
                                     ctrl.DoDamage(50);
                                 }
-                                if (go.GetComponent<EnemyHealthAttributeCtrl>())
+                                if (go.GetComponent<EnemyTankAttributeCtrl>())
                                 {
-                                    EnemyHealthAttributeCtrl ctrl = go.GetComponent<EnemyHealthAttributeCtrl>();
-                                    ctrl.DoDamage(50);
+                                    EnemyTankAttributeCtrl ctrl = go.GetComponent<EnemyTankAttributeCtrl>();
+                                    ctrl.OnTakeDamage(50);
                                 }
                             });
                         break;
