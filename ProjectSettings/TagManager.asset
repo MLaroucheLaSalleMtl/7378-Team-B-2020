@@ -15,6 +15,13 @@ TagManager:
   - Turrent
   - destination
   - PlayerTurrent
+  - ND
+  - RD
+  - SecureArea
+  - Displayer
+  - MT
+  - LT
+  - HT
   layers:
   - Default
   - TransparentFX

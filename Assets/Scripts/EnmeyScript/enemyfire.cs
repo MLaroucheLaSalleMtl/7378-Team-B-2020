@@ -26,12 +26,17 @@ public class enemyfire : MonoBehaviour
     public Vector3 VelocityofPlayer;
     public Rigidbody PlayerRigi;
     public float PredictiveTime;
-    
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerturret = player.Find("TurrentBase");
         PlayerRigi = player.GetComponent<Rigidbody>();
+        
         
     }
 
@@ -60,38 +65,44 @@ public class enemyfire : MonoBehaviour
    public void fire()
     {
 
-        timer += Time.deltaTime;
-        if (timer >= waittime)
-        {
-            Debug.Log("fire");
+        
+            
+           
             //this.gameObject.GetComponent<AudioSource>().Play();
             GameObject shell = Instantiate(prefab, fire_position.position, fire_position.transform.rotation);
             shell.GetComponent<Rigidbody>().velocity = shell.transform.forward * speed;
-        }
-        if (timer > waittime)
-        {
-            timer = 0f;
-        }
+            
+        
+        //if (timer > waittime)
+        //{
+        //    timer = 0f;
+        //}
 
 
     }
     public void TurretRotation()
     {
         VelocityofPlayer = PlayerRigi.velocity;
-        direction = playerturret.position - turret.position;
-        rotation = Quaternion.LookRotation((direction+ VelocityofPlayer)*PredictiveTime);
+       
+        direction = player.position - turret.position;
+        rotation = Quaternion.LookRotation((direction+  VelocityofPlayer)*PredictiveTime);
         turret.rotation = Quaternion.Lerp(turret.rotation, rotation, Time.deltaTime * rotationspeed);
-        
-        if (Physics.Raycast(generator.position, turret.forward, out hit, 40))
+
+        //if (Physics.Raycast(generator.position, turret.forward, out hit, 40))
+        //{
+        timer += Time.deltaTime;
+        if (timer >= waittime)
         {
-            Debug.Log("fire111");
-            Debug.Log(hit.transform.name);
-            if (hit.transform.tag=="Player")
-            {
-                
-                fire();
-            }
+            fire();
+            timer = 0;
         }
+
+            //if (hit.transform.tag=="Player")
+            //{
+
+            
+            //}
+        //}
     }
 
 

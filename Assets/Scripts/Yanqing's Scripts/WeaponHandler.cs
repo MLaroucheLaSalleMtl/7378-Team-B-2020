@@ -19,7 +19,7 @@ public class WeaponHandler : MonoBehaviour
     void Start()
     {
         currentShell = 1;
-        reload = 5.0f;
+        reload = 1.0f;
         AP = 20;
         HE = 20;
         APammo.text = AP.ToString();
@@ -60,7 +60,7 @@ public class WeaponHandler : MonoBehaviour
     public void resetTimer()
     {
         PlayerWeaponController.canFire = false;
-        reload = 5.0f;
+        reload = 1.0f;
         canCount = true;
         doOnce = false;
     }

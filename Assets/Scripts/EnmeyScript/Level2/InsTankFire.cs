@@ -6,7 +6,7 @@ public class InsTankFire : MonoBehaviour
 {
     public InsTankMovement InsTankMovement;
 
-    public Transform playerturret;
+    
     public Transform generator;
     public Transform turret;
     public bool isfiring = false;
@@ -36,7 +36,7 @@ public class InsTankFire : MonoBehaviour
         PlayerObj= GameObject.FindGameObjectWithTag("Player");
         player = PlayerObj.transform;
         PlayerRigi = player.GetComponent<Rigidbody>();
-        playerturret = GameObject.Find("BC25T/TurrentBase").transform;
+       
 
     }
 
@@ -78,22 +78,19 @@ public class InsTankFire : MonoBehaviour
     public void TurretRotation()
     {
         VelocityofPlayer = PlayerRigi.velocity;
-        direction = playerturret.position - turret.position;
+        direction = player.position - turret.position;
         rotation = Quaternion.LookRotation((direction + VelocityofPlayer) * PredictiveTime);
         turret.rotation = Quaternion.Lerp(turret.rotation, rotation, Time.deltaTime * rotationspeed);
         time = time + Time.deltaTime;
         if (time >= FireWaitTime)
         {
-            if (InsTankMovement.collider_exist)
-            {
-
-            }
-            else
+            if (!InsTankMovement.collider_exist)
             {
                 fire();
                 Fired = true;
                 time = 0f;
             }
+            
 
         }
         else

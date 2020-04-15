@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health")]
-    private float maxhealth = 1000f;
-    public float CurrentHealth;
+    private readonly float maxhealth = 1000f;
+    private float CurrentHealth;
     [Header("Death")]
     public bool IsDead = false;
     public bool OnlyOnce = false;
@@ -26,8 +26,6 @@ public class PlayerHealth : MonoBehaviour
     {
         CurrentHealth = maxhealth;
         PlayerHpText.text = CurrentHealth.ToString();
-        
-
     }
     // Start is called before the first frame update
 
@@ -37,9 +35,6 @@ public class PlayerHealth : MonoBehaviour
     {
 
         PlayerHpText.text = ((int)CurrentHealth).ToString();
-
-
-
         if (CurrentHealth <= 0)
         {
             Debug.Log("dead");
@@ -47,12 +42,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void DoDamage(float damage)
     {
-
         CurrentHealth = CurrentHealth - damage;
-
-
-
-
 
     }
     //public void Death()

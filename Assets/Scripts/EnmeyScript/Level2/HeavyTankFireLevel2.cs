@@ -6,7 +6,7 @@ public class HeavyTankFireLevel2 : MonoBehaviour
 {
     public HeavyTankMoveLevel2 HeavyTankMoveLevel2;
 
-    public Transform playerturret;
+    
     public Transform generator;
     public Transform turret;
     public bool isfiring = false;
@@ -31,7 +31,9 @@ public class HeavyTankFireLevel2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         PlayerRigi = player.GetComponent<Rigidbody>();
+        HeavyTankMoveLevel2 = this.GetComponent<HeavyTankMoveLevel2>();
 
     }
 
@@ -73,7 +75,7 @@ public class HeavyTankFireLevel2 : MonoBehaviour
     public void TurretRotation()
     {
         VelocityofPlayer = PlayerRigi.velocity;
-        direction = playerturret.position - turret.position;
+        direction = player.position - turret.position;
         rotation = Quaternion.LookRotation((direction + VelocityofPlayer) * PredictiveTime);
         turret.rotation = Quaternion.Lerp(turret.rotation, rotation, Time.deltaTime * rotationspeed);
         time = time + Time.deltaTime;
