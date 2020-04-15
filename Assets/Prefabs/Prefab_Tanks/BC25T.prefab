@@ -3250,9 +3250,10 @@ GameObject:
   - component: {fileID: 4979272188703929203}
   - component: {fileID: 4979272188703929202}
   - component: {fileID: 1727422453}
+  - component: {fileID: 1749130311}
   m_Layer: 19
   m_Name: BC25T
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3452,6 +3453,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1749130311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4979272188703929205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce35f7f397acdd44c8f0dc8fc0a9b79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsDead: 0
+  OnlyOnce: 0
+  PlayerHpText: {fileID: 0}
 --- !u!1 &5019531084064772527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7001,9 +7017,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 100000, guid: 5c07a9c445f6a464c83deaf35dd8cd37, type: 3}
-  projectile2: {fileID: 0}
+  projectile2: {fileID: 100000, guid: cea64dc63790c4b46a6c79c06c6a2a84, type: 3}
   playerShootPosition: {fileID: 8685635308418814831}
+  wp: {fileID: 0}
   shellSpeed: 250
+  APdamage: 390
+  HEdamage: 450
+  MaxReload: 4.7
 --- !u!82 &8685635307787058177
 AudioSource:
   m_ObjectHideFlags: 0
