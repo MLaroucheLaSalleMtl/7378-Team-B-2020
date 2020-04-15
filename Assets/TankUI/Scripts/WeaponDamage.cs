@@ -8,10 +8,10 @@ public class WeaponDamage : MonoBehaviour
     public GameObject ExplosionEffect;
     public bool ExplosionFlg = false;
     public List<string> APCollIgnoreTagArr;
-
     public List<string> ApCollTargetTagArr;
     private Action<GameObject> OnCollisionEnterCallBack;
     private GameObject Display;
+    private int damage;
     // Start is called before the first frame update
     public void SetAPConfig(List<string> ignoreArr = null, List<string> targetArr = null,Action<GameObject> callBack=null)
     {
@@ -25,12 +25,14 @@ public class WeaponDamage : MonoBehaviour
 
     void Start()
     {
+        CalculateDamage();
         Display = GameObject.FindGameObjectWithTag("Displayer");
     }
 
     // Update is called once per frame
     void Update()
     {
+        print(damage);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -59,14 +61,14 @@ public class WeaponDamage : MonoBehaviour
         switch (collision.transform.tag)
         {
             case "LT":
-                Display.GetComponent<DisplayDamage>().Pen(300, collision.transform);
-                collision.gameObject.GetComponent<enemyHealth>().DoDamage(220);
+                Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
+                collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
                 break;
             case "MT":
                 if(PenetrationChecking(vel, normal, 25))
                 {
-                    Display.GetComponent<DisplayDamage>().Pen(300, collision.transform);
-                    collision.gameObject.GetComponent<enemyHealth>().DoDamage(220);
+                    Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
+                    collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
                     break;
                 }
                 else
@@ -77,8 +79,8 @@ public class WeaponDamage : MonoBehaviour
             case "HT":
                 if (PenetrationChecking(vel, normal, 40))
                 {
-                    Display.GetComponent<DisplayDamage>().Pen(300, collision.transform);
-                    collision.gameObject.GetComponent<enemyHealth>().DoDamage(220);
+                    Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
+                    collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
                     break;
                 }
                 else
@@ -102,6 +104,21 @@ public class WeaponDamage : MonoBehaviour
         else
         {
             return true;
+        }
+    }
+
+    private void CalculateDamage()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
+        switch (this.tag)
+        {
+            case "AP":
+                damage = player.GetComponentInChildren<PlayerWeaponController>().APdamage;
+                break;
+            case "HE":
+                damage = player.GetComponentInChildren<PlayerWeaponController>().HEdamage;
+                break;
         }
     }
 }

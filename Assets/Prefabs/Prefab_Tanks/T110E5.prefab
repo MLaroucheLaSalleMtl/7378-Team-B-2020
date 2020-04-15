@@ -4324,7 +4324,7 @@ GameObject:
   - component: {fileID: 7146329523053433701}
   m_Layer: 0
   m_Name: T110E5
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5437,7 +5437,11 @@ MonoBehaviour:
   projectile: {fileID: 100000, guid: 5c07a9c445f6a464c83deaf35dd8cd37, type: 3}
   projectile2: {fileID: 0}
   playerShootPosition: {fileID: 446434928}
+  wp: {fileID: 0}
   shellSpeed: 250
+  APdamage: 490
+  HEdamage: 600
+  MaxReload: 6.1
 --- !u!1 &7511022648676778820
 GameObject:
   m_ObjectHideFlags: 0
