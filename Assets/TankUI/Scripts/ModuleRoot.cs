@@ -6,6 +6,7 @@ using UnityEngine;
 public class ModuleRoot : MonoBehaviour
 {
     public static ModuleRoot Ins;
+    public MainUICtrl UIModule;
 
     private void Awake()
     {
