@@ -64,18 +64,7 @@ public class EnemyFireForHeavyTank : MonoBehaviour
         GameObject shell = Instantiate(prefab, fire_position.position, fire_position.transform.rotation);
         shell.GetComponent<Rigidbody>().velocity = shell.transform.forward * speed;
     }
-    //IEnumerator ContinueFire()
-    //{
-    //    Debug.Log("Continue Fire");
-    //    for (int i = 0; i < maxAIShellCount; i++)
-    //    {
-    //        GameObject shell = Instantiate(prefab, fire_position.position, fire_position.transform.rotation);
-    //        shell.GetComponent<Rigidbody>().velocity = shell.transform.forward * speed;
-    //        yield return 1f;
-    //    }
-    //    time = 0f;
-       
-    //}
+    
     public void TurretRotation()
     {
         VelocityofPlayer = PlayerRigi.velocity;
@@ -98,20 +87,7 @@ public class EnemyFireForHeavyTank : MonoBehaviour
         }
     }
 
-    //private void ContinueAttackAI()
-    //{
-    //    int randomVal = UnityEngine.Random.Range(0, 2);
-    //    switch (randomVal)
-    //    {
-    //    case 0:
-    //        fire();
-    //        time = 0f;
-    //        break;
-    //    case 1:
-    //        StartCoroutine(ContinueFire());
-    //        break;
-    //    }
-    //}
+   
 
 
     public void CalculateTime(float distance, float speedofshell)

@@ -1,16 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager Ins;
     private static int Current_Level;
     public GameObject Menu_Win;
     public GameObject Menu_Lose;
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        Ins = this;
+    }
+
     void Start()
     {
+        Menu_Win = ModuleRoot.Ins.UIModule.WinWnd;
+        Menu_Lose = ModuleRoot.Ins.UIModule.LoseWnd;
         //Menu_Win.SetActive(false);
         //Menu_Lose.SetActive(false);
         //Current_Level = 0;
@@ -32,14 +41,24 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("LevelFinal");
     }
 
-    public void LevelEndWin()
+    public void LevelEndWin(int levelIndex)
     {
-        Menu_Win.SetActive(true);
+        Action act;
+        if (levelIndex == 1)
+        { 
+            ModuleRoot.Ins.UIModule.ShowWnd(true,WndType.WND_WIN,LoadLevel1);
+        }
+        else
+        {
+            ModuleRoot.Ins.UIModule.ShowWnd(true,WndType.WND_WIN,LoadLevel2);
+        }
+         // Menu_Win.SetActive(true);
     }
 
     public void levelEndLose()
     {
-        Menu_Lose.SetActive(true);
+        ModuleRoot.Ins.UIModule.ShowWnd(true,WndType.WND_LOSE,null);
+      //  Menu_Lose.SetActive(true);
     }
 
     // Update is called once per frame
