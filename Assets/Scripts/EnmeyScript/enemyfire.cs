@@ -7,7 +7,7 @@ public class enemyfire : MonoBehaviour
 
     public enemy_movement enemy_Movement;
     
-    public Transform playerturret;
+    
     public Transform generator;
     public Transform turret;
     public bool isfiring = false;
@@ -34,9 +34,9 @@ public class enemyfire : MonoBehaviour
     {
         
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerturret = player.Find("TurrentBase");
-        PlayerRigi = player.GetComponent<Rigidbody>();
         
+        PlayerRigi = player.GetComponent<Rigidbody>();
+        enemy_Movement = this.GetComponent<enemy_movement>();
         
     }
 
@@ -91,18 +91,13 @@ public class enemyfire : MonoBehaviour
         //if (Physics.Raycast(generator.position, turret.forward, out hit, 40))
         //{
         timer += Time.deltaTime;
-        if (timer >= waittime)
+        if (timer >= waittime&&!enemy_Movement.collider_exist)
         {
             fire();
             timer = 0;
         }
 
-            //if (hit.transform.tag=="Player")
-            //{
-
             
-            //}
-        //}
     }
 
 
