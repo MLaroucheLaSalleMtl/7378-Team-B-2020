@@ -33,6 +33,7 @@ public class enemy_movement : MonoBehaviour
     public float RandomNumber = 0f;
     [Header("Death")]
     public enemyHealth enemyHealth;
+    private enemyfire enemyfire;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +42,7 @@ public class enemy_movement : MonoBehaviour
         
         enemyHealth = transform.GetComponent<enemyHealth>();
         enemy = this.GetComponent<NavMeshAgent>();
-
+        enemyfire = this.GetComponent<enemyfire>();
     }
 
     // Update is called once per frame
@@ -135,6 +136,7 @@ public class enemy_movement : MonoBehaviour
 
         if(enemyHealth.IsDead)
         {
+            enemyfire.enabled = false;
             enemy.Stop(true);
         }
        
