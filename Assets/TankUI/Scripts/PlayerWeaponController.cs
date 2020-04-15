@@ -64,7 +64,7 @@ public class PlayerWeaponController : MonoBehaviour
                 fired = true;
                 WeaponHandler.canCount = true;
                 WeaponHandler.doOnce = false;
-                WeaponHandler.reload = 5.0f;
+                WeaponHandler.reload = 1.0f;
                 fire = false;
             }
         }
