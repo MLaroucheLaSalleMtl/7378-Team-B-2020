@@ -32,7 +32,7 @@ public class WeaponDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(damage);
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -53,7 +53,7 @@ public class WeaponDamage : MonoBehaviour
             Destroy(this.gameObject, 0.3f);
         }
 
-        Vector3 normal = collision.contacts[0].normal;
+        Vector3 normal = collision.contacts[0].point.normalized;
         Vector3 vel = rigidbody.velocity;
         var orthogonalVector = collision.contacts[0].point - transform.position;
         var collisionAngle = Vector3.Angle(orthogonalVector, rigidbody.velocity);
@@ -62,30 +62,35 @@ public class WeaponDamage : MonoBehaviour
         {
             case "LT":
                 Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
-                collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
+                //collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
+                Destroy(this);
                 break;
             case "MT":
                 if(PenetrationChecking(vel, normal, 25))
                 {
                     Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
-                    collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
+                    //collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
+                    Destroy(this);
                     break;
                 }
                 else
                 {
                     Display.GetComponent<DisplayDamage>().Ricochet(collision.transform);
+                    Destroy(this);
                     break;
                 }
             case "HT":
                 if (PenetrationChecking(vel, normal, 40))
                 {
                     Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
-                    collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
+                    //collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
+                    Destroy(this);
                     break;
                 }
                 else
                 {
                     Display.GetComponent<DisplayDamage>().Ricochet(collision.transform);
+                    Destroy(this);
                     break;
                 }
 
@@ -96,7 +101,7 @@ public class WeaponDamage : MonoBehaviour
     private bool PenetrationChecking(Vector3 vel, Vector3 normal, float maxAngle)
     {
         // measure angle
-        //print(Vector3.Angle(vel, normal));
+        print(Vector3.Angle(vel, normal));
         if (Vector3.Angle(vel, -normal) > maxAngle)
         {
             return false;
