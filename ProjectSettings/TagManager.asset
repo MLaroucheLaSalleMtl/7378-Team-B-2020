@@ -22,6 +22,8 @@ TagManager:
   - MT
   - LT
   - HT
+  - ShootCamera
+  - ShootCamBase
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class EndCondition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemynumber = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        enemynumber = GameObject.FindGameObjectsWithTag("LT").Length + GameObject.FindGameObjectsWithTag("MT").Length + GameObject.FindGameObjectsWithTag("HT").Length;
         Debug.Log(enemynumber);
     }
 

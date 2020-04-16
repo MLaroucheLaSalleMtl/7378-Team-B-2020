@@ -144,5 +144,10 @@ public class EnemyMovementForHeavyTank : MonoBehaviour
 
             }
         }
+        else
+        {
+            destination = transform.position;
+            SetDestination();
+        }
     }
 }

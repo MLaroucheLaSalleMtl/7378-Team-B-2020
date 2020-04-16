@@ -4487,7 +4487,11 @@ MonoBehaviour:
   projectile: {fileID: 100000, guid: 5c07a9c445f6a464c83deaf35dd8cd37, type: 3}
   projectile2: {fileID: 100000, guid: 5c07a9c445f6a464c83deaf35dd8cd37, type: 3}
   playerShootPosition: {fileID: 5264777654563512504}
+  wp: {fileID: 0}
   shellSpeed: 250
+  APdamage: 440
+  HEdamage: 560
+  MaxReload: 5.9
 --- !u!82 &5344220618172015168
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6443,11 +6447,11 @@ GameObject:
   - component: {fileID: 1198903062}
   m_Layer: 19
   m_Name: 121
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4819896275184816919
 Transform:
   m_ObjectHideFlags: 0
