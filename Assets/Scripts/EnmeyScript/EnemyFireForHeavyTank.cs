@@ -18,7 +18,7 @@ public class EnemyFireForHeavyTank : MonoBehaviour
     public Vector3 direction;
     public Quaternion rotation;
     public float rotationspeed = 0.01f;
-    public LayerMask LayerMask;
+    
     RaycastHit hit;
     [Header("predictive Shooting")]
     public Vector3 VelocityofPlayer;
@@ -73,11 +73,14 @@ public class EnemyFireForHeavyTank : MonoBehaviour
         turret.rotation = Quaternion.Lerp(turret.rotation, rotation, Time.deltaTime * rotationspeed);
         Debug.Log("is running");
         time = time + Time.deltaTime;
-        if (time >= FireWaitTime)
+        if (time >= FireWaitTime&& !EnemyMovementForHeavyTank.collider_exist)
         {
-            Fired = true;
-            fire();
-            time = 0;
+            
+                Fired = true;
+                fire();
+                time = 0;
+            
+            
 
         }
         else

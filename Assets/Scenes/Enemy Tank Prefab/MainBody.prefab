@@ -22472,7 +22472,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3017258400252359979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
@@ -22913,6 +22913,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentHealth: 0
   IsDead: 0
+  OnlyOnce: 0
+  EndCondition: {fileID: 0}
   health_bar: {fileID: 3017258400252359978}
 --- !u!195 &3017258400288653153
 NavMeshAgent:
@@ -22967,6 +22969,7 @@ MonoBehaviour:
   EnemyPreviousDecision: 10
   StateTime: 0
   RandomNumber: 0
+  enemyHealth: {fileID: 0}
 --- !u!114 &3017258400288653160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22980,7 +22983,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_Movement: {fileID: 3017258400288653182}
-  playerturret: {fileID: 0}
   generator: {fileID: 3017258398713497662}
   turret: {fileID: 3017258399005088612}
   isfiring: 0
@@ -22995,6 +22997,9 @@ MonoBehaviour:
   LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  VelocityofPlayer: {x: 0, y: 0, z: 0}
+  PlayerRigi: {fileID: 0}
+  PredictiveTime: 0
 --- !u!1 &3017258400290766131
 GameObject:
   m_ObjectHideFlags: 0
