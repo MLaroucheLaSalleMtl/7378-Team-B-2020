@@ -186,14 +186,8 @@ public class CarController : MonoBehaviour
         BrakeInput = footbrake = -1 * Mathf.Clamp(footbrake, -1, 0);
         handbrake = Mathf.Clamp(handbrake, 0, 1);
 
-        if (steering < 0)
-        {
-            Hull.transform.Rotate(0, -m_TurnRate * Time.deltaTime, 0, Space.Self);
-        }
-        if (steering > 0)
-        {
-            Hull.transform.Rotate(0, m_TurnRate * Time.deltaTime, 0, Space.Self);
-        }
+        SteerHelper(steering, footbrake);
+
 
         if(Vector3.Angle(transform.forward, m_Rigidbody.velocity) < 50f)
         {
@@ -260,7 +254,7 @@ public class CarController : MonoBehaviour
         //{
         //    anim.SetTrigger("Stop");
         //}
-        if (triggerAnime && speedDiff >= 5)
+        if (triggerAnime && speedDiff >= 10)
         {
             //anim.SetBool("Stop",true);
             //print("Current: " + CurrentSpeed + "  1s before: " + m_PrevSpeed + "SpeedDiff is: " + speedDiff);
@@ -361,24 +355,31 @@ public class CarController : MonoBehaviour
         }
     }
 
-    private void SteerHelper()
+    private void SteerHelper(float steering, float footbrake)
     {
-        for (int i = 0; i < 4; i++)
+        if (footbrake > 0)
         {
-            WheelHit wheelhit;
-            m_WheelColliders[i].GetGroundHit(out wheelhit);
-            if (wheelhit.normal == Vector3.zero)
-                return; // wheels arent on the ground so dont realign the rigidbody velocity
+            //foreach (TankTrackAnimation track in tracks)
+            //{
+            //    track.MoveTrack(new Vector2(0.5f, 0));
+            //}
+            if (steering < 0)
+            {
+                Hull.transform.Rotate(0, m_TurnRate * Time.deltaTime, 0, Space.Self);
+            }
+            if (steering > 0)
+            {
+                Hull.transform.Rotate(0, -m_TurnRate * Time.deltaTime, 0, Space.Self);
+            }
         }
-
-        // this if is needed to avoid gimbal lock problems that will make the car suddenly shift direction
-        if (Mathf.Abs(m_OldRotation - transform.eulerAngles.y) < 10f)
+        else if (steering < 0)
         {
-            var turnadjust = (transform.eulerAngles.y - m_OldRotation) * m_SteerHelper;
-            Quaternion velRotation = Quaternion.AngleAxis(turnadjust, Vector3.up);
-            m_Rigidbody.velocity = velRotation * m_Rigidbody.velocity;
+            Hull.transform.Rotate(0, -m_TurnRate * Time.deltaTime, 0, Space.Self);
         }
-        m_OldRotation = transform.eulerAngles.y;
+        else if (steering > 0)
+        {
+            Hull.transform.Rotate(0, m_TurnRate * Time.deltaTime, 0, Space.Self);
+        }
     }
 
 

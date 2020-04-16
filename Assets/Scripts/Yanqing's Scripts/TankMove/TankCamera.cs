@@ -107,10 +107,11 @@ public class TankCamera : MonoBehaviour
         {
             distance -= 1;
         }
-        if(distance >= 20)
-        {
-            distance = 20;
-        }
+        //if(distance >= 20)
+        //{
+        //    distance = 20;
+        //}
+        distance = Mathf.Clamp(distance, 4, 20);
         currentX += Input.GetAxis("Mouse X");
         currentY -= Input.GetAxis("Mouse Y");
         currentY = Mathf.Clamp(currentY, YLimit_Min, YLimit_Max);

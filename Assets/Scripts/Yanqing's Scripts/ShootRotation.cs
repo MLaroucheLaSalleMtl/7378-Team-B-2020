@@ -13,6 +13,7 @@ public class ShootRotation : MonoBehaviour
     void Start()
     {
         turret = GameObject.FindGameObjectWithTag("Turrent").GetComponent<TurretRotation>();
+        cam = this.GetComponent<Camera>();
     }
 
     // Update is called once per frame

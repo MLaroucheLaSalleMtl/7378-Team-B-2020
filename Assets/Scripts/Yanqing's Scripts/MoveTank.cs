@@ -49,29 +49,6 @@ public class MoveTank : MonoBehaviour
             //RightRoll.AddRelativeTorque(Vector3.right*wheelTorque,ForceMode.Acceleration);
 
         }
-        if (Input.GetKey(KeyCode.S))
-        {
-            foreach (TankTrackAnimation track in tracks)
-            {
-                track.MoveTrack(new Vector2(0.5f, 0));
-            }
-            hull.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * -25000);
-            if (Input.GetKey(KeyCode.A))
-            {
-                hull.transform.Rotate(0, 35 * Time.deltaTime, 0, Space.Self);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                hull.transform.Rotate(0, -35 * Time.deltaTime, 0, Space.Self);
-            }
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            hull.transform.Rotate(0, -35 * Time.deltaTime, 0, Space.Self);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            hull.transform.Rotate(0, 35 * Time.deltaTime, 0, Space.Self);
-        }
+        
     }
 }
