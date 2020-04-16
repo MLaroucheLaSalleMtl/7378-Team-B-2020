@@ -4,8 +4,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class triggerButtonWithKey : MonoBehaviour
 {
-
     public KeyCode key;
+    public KeyCode key1;
 
     public Button button { get; private set; }
 
@@ -32,11 +32,11 @@ public class triggerButtonWithKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(key))
+        if (Input.GetKeyDown(key) || Input.GetKeyDown(key1))
         {
             Down();
         }
-        else if (Input.GetKeyUp(key))
+        else if (Input.GetKeyUp(key) || Input.GetKeyUp(key1))
         {
             Up();
         }

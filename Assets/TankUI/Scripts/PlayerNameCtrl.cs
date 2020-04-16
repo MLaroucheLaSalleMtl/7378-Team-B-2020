@@ -10,6 +10,6 @@ public class PlayerNameCtrl : MonoBehaviour
 
   private void Start()
   {
-    playerName.text = ModuleRoot.Ins.ModuleData.PlayName;
+        //playerName.text = ModuleRoot.Ins.ModuleData.PlayName;
   }
 }

@@ -6,68 +6,88 @@ namespace TurretDemo
     public class TurrentTester : MonoBehaviour
     {
         public TurretRotation[] turret;
+        public GameObject ShootCam;
+        public Transform ShootCamBase;
         public Vector3 targetPos;
         public Transform targetTransform;
         private bool lockTur;
+        public static bool isAiming = false;
         Camera cam;
         [Space]
         public bool turretsIdle = false;
 
         void Start()
         {
+            ShootCam = GameObject.FindGameObjectWithTag("ShootCamera");
+            ShootCam.SetActive(false);
             turret[0] = GameObject.FindGameObjectWithTag("Turrent").GetComponent<TurretRotation>();
             cam = GetComponent<Camera>();
         }
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
-                turretsIdle = !turretsIdle;
+            if(!isAiming)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                    turretsIdle = !turretsIdle;
 
-            Ray ray = cam.ScreenPointToRay(new Vector3(960, 583, 0));
+                Ray ray = cam.ScreenPointToRay(new Vector3(960, 583, 0));
 
-            LayerMask layerMask = 1 << 16;
-            RaycastHit hit;
-            if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000, layerMask))
-            {
-                Debug.DrawLine(ray.origin, hit.point, Color.yellow);
-                targetPos = hit.point;
-                //Debug.Log("Did Hit");
-            }
-            else
-            {
-                Debug.DrawLine(ray.origin, ray.GetPoint(1000), Color.white);
-                targetPos = ray.GetPoint(1000);
-                //Debug.Log("did not hit");
-            }
-            if (Input.GetMouseButton(1))
-            {
-                lockTur = true;
-            }
-            else
-            {
-                lockTur = false;
-            }
-
-            foreach (TurretRotation tur in turret)
-            {
-                if(lockTur)
+                LayerMask layerMask = 1 << 16;
+                RaycastHit hit;
+                if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000, layerMask))
                 {
-                    tur.LockTur = lockTur;
+                    Debug.DrawLine(ray.origin, hit.point, Color.yellow);
+                    targetPos = hit.point;
+                    //Debug.Log("Did Hit");
                 }
                 else
                 {
-                    tur.LockTur = false;
+                    Debug.DrawLine(ray.origin, ray.GetPoint(1000), Color.white);
+                    targetPos = ray.GetPoint(1000);
+                    //Debug.Log("did not hit");
                 }
-                if (targetTransform == null)
-                    tur.SetAimpoint(targetPos);
+                if (Input.GetMouseButton(1))
+                {
+                    lockTur = true;
+                }
                 else
-                    tur.SetAimpoint(targetTransform.position);
+                {
+                    lockTur = false;
+                }
+                ShootCamBase.LookAt(targetPos);
 
-                tur.SetIdle(turretsIdle);
+                foreach (TurretRotation tur in turret)
+                {
+                    if (lockTur)
+                    {
+                        tur.LockTur = lockTur;
+                    }
+                    else
+                    {
+                        tur.LockTur = false;
+                    }
+                    if (targetTransform == null)
+                        tur.SetAimpoint(targetPos);
+                    else
+                        tur.SetAimpoint(targetTransform.position);
+
+                    tur.SetIdle(turretsIdle);
+                }
             }
-            
+            ActivateShoot();
         }
 
+        public void ActivateShoot()
+        {
+            if(isAiming)
+            {
+                ShootCam.SetActive(true);
+            }
+            else
+            {
+                ShootCam.SetActive(false);
+            }
+        }
         private void OnDrawGizmos()
         {
             Gizmos.DrawWireSphere(targetPos, 1.0f);

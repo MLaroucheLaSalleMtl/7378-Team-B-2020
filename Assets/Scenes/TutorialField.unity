@@ -7606,6 +7606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 49
+  key1: 332
 --- !u!114 &143424454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9646,6 +9647,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret:
   - {fileID: 567980804}
+  ShootCam: {fileID: 861887822}
+  ShootCamBase: {fileID: 636191230}
   targetPos: {x: 0, y: 0, z: 0}
   targetTransform: {fileID: 0}
   turretsIdle: 0
@@ -32508,6 +32511,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633524717}
   m_Mesh: {fileID: 4300006, guid: 36e98307853c9004681113ce5c51bbe9, type: 3}
+--- !u!4 &636191230 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8689641168364896699, guid: b99c43deb514d674f9cffd4eaad2059c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8685635307390269086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &637189144
 GameObject:
   m_ObjectHideFlags: 0
@@ -45465,6 +45474,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859549305}
   m_Mesh: {fileID: 4300002, guid: 36e98307853c9004681113ce5c51bbe9, type: 3}
+--- !u!1 &861887822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 861887822, guid: b99c43deb514d674f9cffd4eaad2059c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8685635307390269086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &861887823 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 861887823, guid: b99c43deb514d674f9cffd4eaad2059c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8685635307390269086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &861887824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861887822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cc3794d026f5c4ea5f5a8542ab822a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 0}
+  cam: {fileID: 861887825}
+--- !u!20 &861887825 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 861887825, guid: b99c43deb514d674f9cffd4eaad2059c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8685635307390269086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &861980602
 GameObject:
   m_ObjectHideFlags: 0
@@ -79614,6 +79655,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LookAt: {fileID: 1074507028}
   TPS_camTransform: {fileID: 171995974}
+  ShootCam: {fileID: 861887823}
+  ShootCamBase: {fileID: 636191230}
   IsAiming: 0
 --- !u!4 &1448784815
 Transform:
@@ -114352,6 +114395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 50
+  key1: 331
 --- !u!114 &2041245164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119852,6 +119896,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 861887823, guid: b99c43deb514d674f9cffd4eaad2059c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 861887825, guid: b99c43deb514d674f9cffd4eaad2059c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1749130311, guid: b99c43deb514d674f9cffd4eaad2059c, type: 3}
       propertyPath: PlayerHpText
       value: 
@@ -119931,10 +119983,20 @@ PrefabInstance:
       propertyPath: reticle
       value: 
       objectReference: {fileID: 1230948668}
+    - target: {fileID: 8685635306831791514, guid: b99c43deb514d674f9cffd4eaad2059c,
+        type: 3}
+      propertyPath: ShootCam
+      value: 
+      objectReference: {fileID: 861887825}
     - target: {fileID: 8685635307473942511, guid: b99c43deb514d674f9cffd4eaad2059c,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 171995973}
+    - target: {fileID: 8685635307787058176, guid: b99c43deb514d674f9cffd4eaad2059c,
+        type: 3}
+      propertyPath: MaxReload
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b99c43deb514d674f9cffd4eaad2059c, type: 3}
