@@ -18,8 +18,8 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        //Menu_Win = ModuleRoot.Ins.UIModule.WinWnd;
-        //Menu_Lose = ModuleRoot.Ins.UIModule.LoseWnd;
+        Menu_Win = ModuleRoot.Ins.UIModule.WinWnd;
+        Menu_Lose = ModuleRoot.Ins.UIModule.LoseWnd;
         //Menu_Win.SetActive(false);
         //Menu_Lose.SetActive(false);
         //Current_Level = 0;
