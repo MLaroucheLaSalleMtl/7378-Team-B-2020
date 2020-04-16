@@ -29,22 +29,111 @@ public class CarUserControl : MonoBehaviour
             m_Car.Move(h, v, v, 0f);
 #endif
 
-
         if (v > 0)
         {
-            foreach (TankTrackAnimation track in tracks)
+            if (h < 0)
             {
-                track.MoveTrack(new Vector2(1f, 0f));
+                foreach (TankTrackAnimation track in tracks)
+                {
+                    if (track.right)
+                    {
+                        track.MoveTrack(new Vector2(1f, 0f));
+                    }
+                    if (track.left)
+                    {
+                        track.MoveTrack(new Vector2(0.3f, 0f));
+                    }
+                }
             }
+            else if (h > 0)
+            {
+                foreach (TankTrackAnimation track in tracks)
+                {
+                    if (track.right)
+                    {
+                        track.MoveTrack(new Vector2(0.3f, 0f));
+                    }
+                    if (track.left)
+                    {
+                        track.MoveTrack(new Vector2(1f, 0f));
+                    }
+                }
+            }
+            else
+            {
+                foreach (TankTrackAnimation track in tracks)
+                {
+                    track.MoveTrack(new Vector2(1f, 0f));
+                }
+            }
+
         }
         else if (v < 0)
         {
-            foreach (TankTrackAnimation track in tracks)
+            if (h < 0)
             {
-                track.MoveTrack(new Vector2(-1f, 0f));
+                foreach (TankTrackAnimation track in tracks)
+                {
+                    if(track.right)
+                    {
+                        track.MoveTrack(new Vector2(-1f, 0f));
+                    }
+                    if(track.left)
+                    {
+                        track.MoveTrack(new Vector2(-0.3f, 0f));
+                    }
+                }
+            }
+            else if (h > 0)
+            {
+                foreach (TankTrackAnimation track in tracks)
+                {
+                    if (track.right)
+                    {
+                        track.MoveTrack(new Vector2(-0.3f, 0f));
+                    }
+                    if (track.left)
+                    {
+                        track.MoveTrack(new Vector2(-1f, 0f));
+                    }
+                }
+            }
+            else
+            {
+                foreach (TankTrackAnimation track in tracks)
+                {
+                    track.MoveTrack(new Vector2(-1f, 0f));
+                }
             }
         }
-
+        else if (h < 0)
+        {
+            foreach (TankTrackAnimation track in tracks)
+            {
+                if (track.right)
+                {
+                    track.MoveTrack(new Vector2(1f, 0f));
+                }
+                if (track.left)
+                {
+                    track.MoveTrack(new Vector2(-1f, 0f));
+                }
+            }
+        }
+        else if (h > 0)
+        {
+            foreach (TankTrackAnimation track in tracks)
+            {
+                if (track.right)
+                {
+                    track.MoveTrack(new Vector2(-1f, 0f));
+                }
+                if (track.left)
+                {
+                    track.MoveTrack(new Vector2(1f, 0f));
+                }
+            }
+        }
         //print("Current: " + m_Car.CurrentSpeed + "  4s before: " + m_Car.m_PrevSpeed);
     }
 

@@ -110,6 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 861887823}
   - component: {fileID: 861887825}
+  - component: {fileID: 861887824}
   m_Layer: 19
   m_Name: Camera
   m_TagString: ShootCamera
@@ -125,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861887822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.82}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8689641168364896699}
@@ -156,7 +157,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34.5
+  field of view: 35
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -174,6 +175,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &861887824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861887822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cc3794d026f5c4ea5f5a8542ab822a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 0}
+  cam: {fileID: 861887825}
 --- !u!1 &865385785
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,6 +3371,7 @@ GameObject:
   - component: {fileID: 4979272188703929202}
   - component: {fileID: 1727422453}
   - component: {fileID: 1749130311}
+  - component: {fileID: 8685635307390269088}
   m_Layer: 19
   m_Name: BC25T
   m_TagString: Player
@@ -3573,6 +3589,19 @@ MonoBehaviour:
   IsDead: 0
   OnlyOnce: 0
   PlayerHpText: {fileID: 0}
+--- !u!114 &8685635307390269088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4979272188703929205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
 --- !u!1 &5019531084064772527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,6 +4936,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UVDirection: {x: 0, y: 3}
+  right: 1
+  left: 0
 --- !u!1 &6208257271760059755
 GameObject:
   m_ObjectHideFlags: 0
@@ -5059,6 +5090,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UVDirection: {x: 0, y: 3}
+  right: 0
+  left: 1
 --- !u!1 &6565876395428801394
 GameObject:
   m_ObjectHideFlags: 0
@@ -6588,6 +6621,7 @@ MonoBehaviour:
   showDebugRay: 1
   emptyPoint: {fileID: 7175037447923775510}
   reticle: {fileID: 0}
+  ShootCam: {fileID: 861887825}
 --- !u!1 &8685635306962541086
 GameObject:
   m_ObjectHideFlags: 0
@@ -7129,7 +7163,7 @@ MonoBehaviour:
   shellSpeed: 250
   APdamage: 390
   HEdamage: 450
-  MaxReload: 4.7
+  MaxReload: 4
 --- !u!82 &8685635307787058177
 AudioSource:
   m_ObjectHideFlags: 0

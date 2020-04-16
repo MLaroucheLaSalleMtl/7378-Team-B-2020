@@ -42,7 +42,7 @@ public class WeaponHandler : MonoBehaviour
             canFire = true;
             canCount = false;
             doOnce = true;
-            ReloadTime.text = "5.0sec";
+            ReloadTime.text = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerWeaponController>().MaxReload + "sec";
             reload = 0.0f;
         }
         APammo.text = AP.ToString();
