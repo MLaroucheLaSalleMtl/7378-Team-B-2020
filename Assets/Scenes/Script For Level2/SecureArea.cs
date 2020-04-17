@@ -20,6 +20,14 @@ public class SecureArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(SecureBar.value<=0)
+        {
+            SecureBar.gameObject.SetActive(false);
+        }
+        else
+        {
+            SecureBar.gameObject.SetActive(true);
+        }
 
         if(SecureBar.value>=100f)
         {

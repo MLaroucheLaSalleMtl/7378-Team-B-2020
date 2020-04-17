@@ -79,18 +79,14 @@ public class HeavyTankFireLevel2 : MonoBehaviour
         rotation = Quaternion.LookRotation((direction + VelocityofPlayer) * PredictiveTime);
         turret.rotation = Quaternion.Lerp(turret.rotation, rotation, Time.deltaTime * rotationspeed);
         time = time + Time.deltaTime;
-        if (time >= FireWaitTime)
+        if (time >= FireWaitTime&&!HeavyTankMoveLevel2.collider_exist)
         {
-            if(HeavyTankMoveLevel2.collider_exist)
-            {
-
-            }
-            else
-            {
+            
+            
                 fire();
                 Fired = true;
                 time = 0f;
-            }
+            
             
         }
         else

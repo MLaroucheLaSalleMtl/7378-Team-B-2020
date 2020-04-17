@@ -33,14 +33,14 @@ public class InsTankMovement : MonoBehaviour
     public float RandomNumber = 0f;
     public bool SetDestinationOnce=false;
     [Header("Death")]
-    public enemyHealth enemyHealth;
+    public EnemyHealth2 enemyHealth;
     // Start is called before the first frame update
     void Start()
     {
         StateTime = Random.Range(20, 40);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemy = this.GetComponent<NavMeshAgent>();
-        enemyHealth = player.GetComponent<enemyHealth>();
+        enemyHealth =this.GetComponent<EnemyHealth2>();
     }
 
     // Update is called once per frame
