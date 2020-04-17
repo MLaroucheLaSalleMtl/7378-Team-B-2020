@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class enemyHealth : MonoBehaviour
 {
     [Header("Health")]
-    private float maxhealth;
-    public float CurrentHealth;
+    private int maxhealth;
+    public int CurrentHealth;
     public GameObject smoke;
     public bool onlyOnceSmoke = false;
     [Header("Death")]
@@ -15,7 +15,7 @@ public class enemyHealth : MonoBehaviour
     public EndCondition EndCondition;
     [Header("Display Hp")]
     public Slider health_bar;
-    enemyfire enemyfire;
+   
 
 
 
@@ -38,7 +38,7 @@ public class enemyHealth : MonoBehaviour
         }
         CurrentHealth = maxhealth;
         health_bar.value = (CurrentHealth/maxhealth)*100;
-        enemyfire = gameObject.GetComponent<enemyfire>();
+        
         EndCondition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<EndCondition>();
 
     }
@@ -75,7 +75,7 @@ public class enemyHealth : MonoBehaviour
             Death();
         }
     }
-    public void DoDamage(float damage)
+    public void DoDamage(int damage)
     {
 
         CurrentHealth = CurrentHealth - damage;
@@ -88,7 +88,7 @@ public class enemyHealth : MonoBehaviour
     public void Death()
     {
         IsDead = true;
-        enemyfire.enabled = false;
+       
         Debug.Log("dead");
         if (!OnlyOnce)
         {

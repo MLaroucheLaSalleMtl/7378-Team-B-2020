@@ -83,7 +83,7 @@ public class explosion2 : MonoBehaviour
         if (collision.transform.tag == "Enemy")
         {
             enemyHealth enemyhp = collision.transform.GetComponent<enemyHealth>();
-            enemyhp.DoDamage(50f);
+            enemyhp.DoDamage(50);
         }
 
 
