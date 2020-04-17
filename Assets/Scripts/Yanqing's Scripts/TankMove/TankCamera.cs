@@ -81,6 +81,7 @@ public class TankCamera : MonoBehaviour
             {
                 case false:
                     TurrentTester.isAiming = true;
+                    
                     distance = 4;
                     break;
                 case true:

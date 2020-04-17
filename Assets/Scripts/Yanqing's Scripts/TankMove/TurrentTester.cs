@@ -81,10 +81,12 @@ namespace TurretDemo
         {
             if(isAiming)
             {
+                turret[0].runRotationsInFixed = true;
                 ShootCam.SetActive(true);
             }
             else
             {
+                turret[0].runRotationsInFixed = false;
                 ShootCam.SetActive(false);
             }
         }

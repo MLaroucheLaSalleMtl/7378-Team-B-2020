@@ -53,6 +53,7 @@ namespace Turrets
             MainCam = Camera.main;
             reticle = GameObject.FindGameObjectWithTag("Reticle").GetComponent<Image>();
             ShootCam = GameObject.FindGameObjectWithTag("ShootCamera").GetComponent<Camera>();
+            print("find");
             if (aiming == false)
                 aimPoint = transform.TransformPoint(Vector3.forward * 100.0f);
         }
