@@ -110,7 +110,7 @@ public class explosion : MonoBehaviour
                 ExplodeDistance = Vector3.Distance(transform.position, colliders[i].transform.position);
                 if (damageonce)
                 {
-                    enemyhp.DoDamage(50f);
+                    enemyhp.DoDamage(50);
                     damageonce = false;
                 }
             }
