@@ -9,17 +9,20 @@ public class WeaponHandler : MonoBehaviour
     public Text ReloadTime;
     public Text APammo;
     public Text HEammo;
-    public static int AP;
-    public static int HE;
-    public static int currentShell;
-    public static float reload;
-    public static bool canCount = true;
-    public static bool doOnce = false;
+    public  int AP;
+    public  int HE;
+    public  int currentShell;
+    private float reload;
+    private  bool canCount = true;
+    private  bool doOnce = false;
+    public bool canFire = false;
     // Start is called before the first frame update
     void Start()
     {
         currentShell = 1;
-        reload = 1.0f;
+        shell_indicator.text = "AP Loaded";
+
+        reload = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerWeaponController>().MaxReload;
         AP = 20;
         HE = 20;
         APammo.text = AP.ToString();
@@ -36,10 +39,10 @@ public class WeaponHandler : MonoBehaviour
         }
         else if (reload <= 0.0f && !doOnce)
         {
-            PlayerWeaponController.canFire = true;
+            canFire = true;
             canCount = false;
             doOnce = true;
-            ReloadTime.text = "5.0sec";
+            ReloadTime.text = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerWeaponController>().MaxReload + "sec";
             reload = 0.0f;
         }
         APammo.text = AP.ToString();
@@ -59,8 +62,8 @@ public class WeaponHandler : MonoBehaviour
 
     public void resetTimer()
     {
-        PlayerWeaponController.canFire = false;
-        reload = 1.0f;
+        canFire = false;
+        reload = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerWeaponController>().MaxReload;
         canCount = true;
         doOnce = false;
     }

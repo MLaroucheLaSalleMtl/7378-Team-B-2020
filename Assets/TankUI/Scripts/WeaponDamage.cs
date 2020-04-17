@@ -8,10 +8,10 @@ public class WeaponDamage : MonoBehaviour
     public GameObject ExplosionEffect;
     public bool ExplosionFlg = false;
     public List<string> APCollIgnoreTagArr;
-
     public List<string> ApCollTargetTagArr;
     private Action<GameObject> OnCollisionEnterCallBack;
     private GameObject Display;
+    private int damage;
     // Start is called before the first frame update
     public void SetAPConfig(List<string> ignoreArr = null, List<string> targetArr = null,Action<GameObject> callBack=null)
     {
@@ -25,12 +25,14 @@ public class WeaponDamage : MonoBehaviour
 
     void Start()
     {
+        CalculateDamage();
         Display = GameObject.FindGameObjectWithTag("Displayer");
     }
 
     // Update is called once per frame
     void Update()
     {
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -51,7 +53,7 @@ public class WeaponDamage : MonoBehaviour
             Destroy(this.gameObject, 0.3f);
         }
 
-        Vector3 normal = collision.contacts[0].normal;
+        Vector3 normal = collision.contacts[0].point.normalized;
         Vector3 vel = rigidbody.velocity;
         var orthogonalVector = collision.contacts[0].point - transform.position;
         var collisionAngle = Vector3.Angle(orthogonalVector, rigidbody.velocity);
@@ -59,31 +61,36 @@ public class WeaponDamage : MonoBehaviour
         switch (collision.transform.tag)
         {
             case "LT":
-                Display.GetComponent<DisplayDamage>().Pen(300, collision.transform);
-                collision.gameObject.GetComponent<enemyHealth>().DoDamage(220);
+                Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
+                //collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
+                Destroy(this);
                 break;
             case "MT":
                 if(PenetrationChecking(vel, normal, 25))
                 {
-                    Display.GetComponent<DisplayDamage>().Pen(300, collision.transform);
-                    collision.gameObject.GetComponent<enemyHealth>().DoDamage(220);
+                    Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
+                    //collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
+                    Destroy(this);
                     break;
                 }
                 else
                 {
                     Display.GetComponent<DisplayDamage>().Ricochet(collision.transform);
+                    Destroy(this);
                     break;
                 }
             case "HT":
                 if (PenetrationChecking(vel, normal, 40))
                 {
-                    Display.GetComponent<DisplayDamage>().Pen(300, collision.transform);
-                    collision.gameObject.GetComponent<enemyHealth>().DoDamage(220);
+                    Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
+                    //collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
+                    Destroy(this);
                     break;
                 }
                 else
                 {
                     Display.GetComponent<DisplayDamage>().Ricochet(collision.transform);
+                    Destroy(this);
                     break;
                 }
 
@@ -94,7 +101,7 @@ public class WeaponDamage : MonoBehaviour
     private bool PenetrationChecking(Vector3 vel, Vector3 normal, float maxAngle)
     {
         // measure angle
-        //print(Vector3.Angle(vel, normal));
+        print(Vector3.Angle(vel, normal));
         if (Vector3.Angle(vel, -normal) > maxAngle)
         {
             return false;
@@ -102,6 +109,21 @@ public class WeaponDamage : MonoBehaviour
         else
         {
             return true;
+        }
+    }
+
+    private void CalculateDamage()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
+        switch (this.tag)
+        {
+            case "AP":
+                damage = player.GetComponentInChildren<PlayerWeaponController>().APdamage;
+                break;
+            case "HE":
+                damage = player.GetComponentInChildren<PlayerWeaponController>().HEdamage;
+                break;
         }
     }
 }

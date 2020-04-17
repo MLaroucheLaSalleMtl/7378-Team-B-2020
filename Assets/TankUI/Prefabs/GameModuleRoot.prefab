@@ -680,6 +680,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: 
+  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
+    type: 3}
+  PlayerQuad: {fileID: 1792250627024119916, guid: 1291314f943a3b648a838cd7fbb21cea,
+    type: 3}
 --- !u!1 &2761912742792906121
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ public class TankTrackAnimation : MonoBehaviour
 {
     Renderer render;
     public Vector2 UVDirection = new Vector2(1, 0);
+    public bool right;
+    public bool left;
     void Start()
     {
         render = GetComponent<Renderer>();

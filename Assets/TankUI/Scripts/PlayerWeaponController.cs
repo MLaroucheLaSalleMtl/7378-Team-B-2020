@@ -8,28 +8,29 @@ public class PlayerWeaponController : MonoBehaviour
     public GameObject projectile;
     public GameObject projectile2;
     public GameObject playerShootPosition;
+    public WeaponHandler wp;
     public float shellSpeed = 250;
-    public static bool fire = false;
-    public static bool canFire = false;
-    public static bool fired = false;
+    public int APdamage;
+    public int HEdamage;
+    public float MaxReload;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        wp = GameObject.Find("Weaponmanager").GetComponent<WeaponHandler>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canFire)
+        if (wp.canFire)
         {
-            if (Input.GetMouseButtonDown(0) || fire)
+            if (Input.GetMouseButtonDown(0))
             {
-                switch (WeaponHandler.currentShell)
+                switch (wp.currentShell)
                 {
                     case 1:
-                        WeaponHandler.AP--;
+                        wp.AP--;
                         GameObject AP = GameObject.Instantiate(projectile, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
                         AP.GetComponent<Rigidbody>().velocity = AP.transform.forward * shellSpeed;
                         AP.GetComponent<WeaponDamage>().SetAPConfig(new List<string>(){"AP"},new List<string>(){"Enemy"},
@@ -53,19 +54,13 @@ public class PlayerWeaponController : MonoBehaviour
                             });
                         break;
                     case 2:
-                        WeaponHandler.HE--;
+                        wp.HE--;
                         GameObject HE = GameObject.Instantiate(projectile2, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
                         HE.GetComponent<Rigidbody>().velocity = HE.transform.forward * shellSpeed;
                         break;
                 }
                 //this.gameObject.GetComponent<AudioSource>().Play();
-
-                canFire = false;
-                fired = true;
-                WeaponHandler.canCount = true;
-                WeaponHandler.doOnce = false;
-                WeaponHandler.reload = 1.0f;
-                fire = false;
+                wp.resetTimer();
             }
         }
     }
