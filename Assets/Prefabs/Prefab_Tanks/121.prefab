@@ -4220,7 +4220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13955fd110140054e94fb2fa28849a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runRotationsInFixed: 0
+  runRotationsInFixed: 1
   turretBase: {fileID: 6764213089322461594}
   turretBarrels: {fileID: 1450098372320253074}
   turnRate: 50
@@ -4233,7 +4233,7 @@ MonoBehaviour:
   showDebugRay: 1
   emptyPoint: {fileID: 9127304215120248953}
   reticle: {fileID: 0}
-  ShootCam: {fileID: 0}
+  ShootCam: {fileID: 2937200665668497926}
 --- !u!1 &5264777656413491509
 GameObject:
   m_ObjectHideFlags: 0
@@ -5686,7 +5686,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2823102737329793143}
   - component: {fileID: 2937200665668497926}
-  - component: {fileID: 5563665654578393006}
   - component: {fileID: 3169353925637703953}
   m_Layer: 19
   m_Name: Camera
@@ -5752,14 +5751,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5563665654578393006
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7130483574636164362}
-  m_Enabled: 1
 --- !u!114 &3169353925637703953
 MonoBehaviour:
   m_ObjectHideFlags: 0

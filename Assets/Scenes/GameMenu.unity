@@ -1624,7 +1624,7 @@ GameObject:
   - component: {fileID: 308567016}
   m_Layer: 16
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6950,7 +6950,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LookAt: {fileID: 1509859510}
   camTransform: {fileID: 963194228}
-  testball: {fileID: 0}
   IsAiming: 0
 --- !u!1 &973335922
 GameObject:

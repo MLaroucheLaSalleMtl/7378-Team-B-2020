@@ -6608,7 +6608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13955fd110140054e94fb2fa28849a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runRotationsInFixed: 0
+  runRotationsInFixed: 1
   turretBase: {fileID: 8415230062270234146}
   turretBarrels: {fileID: 3734892632368056538}
   turnRate: 55.5
