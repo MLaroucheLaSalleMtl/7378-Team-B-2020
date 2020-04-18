@@ -1740,6 +1740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UVDirection: {x: 0, y: 1}
+  right: 0
+  left: 0
 --- !u!114 &74872917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,6 +1755,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UVDirection: {x: 0, y: 1}
+  right: 0
+  left: 0
 --- !u!1 &74872918 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 221143145670855559, guid: 30a7b53216c98ed448d07002fed969de,
@@ -14141,9 +14145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &420891583
 PrefabInstance:
@@ -19929,9 +19930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &502330992
 PrefabInstance:
@@ -28006,9 +28004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &738776371
 PrefabInstance:
@@ -32815,8 +32810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 0}
-  PlayerQuad: {fileID: 0}
   Type: 1
 --- !u!114 &858572964
 MonoBehaviour:
@@ -37080,9 +37073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &939588526
 PrefabInstance:
@@ -43701,9 +43691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &1097853538
 PrefabInstance:
@@ -50894,9 +50881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1 &1350983314 stripped
 GameObject:
@@ -50916,9 +50900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &1351965189
 PrefabInstance:
@@ -56688,9 +56669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &1536980474
 PrefabInstance:
@@ -56983,9 +56961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &1552633837
 PrefabInstance:
@@ -59072,9 +59047,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &1626008117
 PrefabInstance:
@@ -64923,9 +64895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &1760504479
 PrefabInstance:
@@ -65194,6 +65163,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -2.2799683
       objectReference: {fileID: 0}
+    - target: {fileID: 3434067293120319956, guid: debf51f99309b4444be77f2ddfb41ec9,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.30000016
+      objectReference: {fileID: 0}
     - target: {fileID: 3434460133817933176, guid: debf51f99309b4444be77f2ddfb41ec9,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -65208,6 +65182,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434518643043946100, guid: debf51f99309b4444be77f2ddfb41ec9,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.2000001
       objectReference: {fileID: 0}
     - target: {fileID: 3435697391206977302, guid: debf51f99309b4444be77f2ddfb41ec9,
         type: 3}
@@ -66821,9 +66800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &1841542392
 PrefabInstance:
@@ -68323,9 +68299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1 &1952082293
 GameObject:
@@ -69119,9 +69092,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &1993838005
 PrefabInstance:
@@ -69806,9 +69776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85361d65d6d8a4e9450047a090a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyQuad: {fileID: 6211540718209180131, guid: 24af1d8a4d354544ebbc7486132c4b27,
-    type: 3}
-  PlayerQuad: {fileID: 0}
   Type: 0
 --- !u!1001 &2027001961
 PrefabInstance:
