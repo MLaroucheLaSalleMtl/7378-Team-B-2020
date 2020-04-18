@@ -13,6 +13,7 @@ public class PlayerWeaponController : MonoBehaviour
     public int APdamage;
     public int HEdamage;
     public float MaxReload;
+    public AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
@@ -33,30 +34,32 @@ public class PlayerWeaponController : MonoBehaviour
                         wp.AP--;
                         GameObject AP = GameObject.Instantiate(projectile, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
                         AP.GetComponent<Rigidbody>().velocity = AP.transform.forward * shellSpeed;
-                        AP.GetComponent<WeaponDamage>().SetAPConfig(new List<string>(){"AP"},new List<string>(){"Enemy"},
-                            (go) =>
-                            {
-                                if (go.GetComponent<TurrentEnemyCtrl>())
-                                {
-                                    TurrentEnemyCtrl ctrl = go.GetComponent<TurrentEnemyCtrl>();
-                                    ctrl.OnTakeDamage(5);
-                                }
-                                if (go.GetComponent<enemyHealth>())
-                                {
-                                    enemyHealth ctrl = go.GetComponent<enemyHealth>();
-                                    ctrl.DoDamage(50);
-                                }
-                                if (go.GetComponent<EnemyTankAttributeCtrl>())
-                                {
-                                    EnemyTankAttributeCtrl ctrl = go.GetComponent<EnemyTankAttributeCtrl>();
-                                    ctrl.OnTakeDamage(50);
-                                }
-                            });
+                        //AP.GetComponent<WeaponDamage>().SetAPConfig(new List<string>(){"AP"},new List<string>(){"Enemy"},
+                        //    (go) =>
+                        //    {
+                        //        if (go.GetComponent<TurrentEnemyCtrl>())
+                        //        {
+                        //            TurrentEnemyCtrl ctrl = go.GetComponent<TurrentEnemyCtrl>();
+                        //            ctrl.OnTakeDamage(5);
+                        //        }
+                        //        if (go.GetComponent<enemyHealth>())
+                        //        {
+                        //            enemyHealth ctrl = go.GetComponent<enemyHealth>();
+                        //            ctrl.DoDamage(50);
+                        //        }
+                        //        if (go.GetComponent<EnemyTankAttributeCtrl>())
+                        //        {
+                        //            EnemyTankAttributeCtrl ctrl = go.GetComponent<EnemyTankAttributeCtrl>();
+                        //            ctrl.OnTakeDamage(50);
+                        //        }
+                        //    });
+                        audio.Play();
                         break;
                     case 2:
                         wp.HE--;
                         GameObject HE = GameObject.Instantiate(projectile2, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
                         HE.GetComponent<Rigidbody>().velocity = HE.transform.forward * shellSpeed;
+                        audio.Play();
                         break;
                 }
                 //this.gameObject.GetComponent<AudioSource>().Play();

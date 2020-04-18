@@ -3011,6 +3011,7 @@ GameObject:
   - component: {fileID: 4979272188703929200}
   - component: {fileID: 4979272188703929203}
   - component: {fileID: 4979272188703929202}
+  - component: {fileID: -7509961195823574450}
   m_Layer: 19
   m_Name: BC25T
   m_TagString: Untagged
@@ -3145,8 +3146,9 @@ MonoBehaviour:
   m_BrakeTorque: 20000
   m_BoneOffset: 0.55
   m_TurnRate: 0
+  m_PrevSpeed: 0
   m_Rigidbody: {fileID: 4979272188703929203}
-  anim: {fileID: 0}
+  anim: {fileID: -7509961195823574450}
 --- !u!114 &4979272188703929200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3188,6 +3190,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.94, y: 2, z: 6.61}
   m_Center: {x: 0, y: 1.63, z: 0}
+--- !u!95 &-7509961195823574450
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4979272188703929205}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5019531084064772527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4407,6 +4428,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UVDirection: {x: 0, y: 3}
+  right: 0
+  left: 0
 --- !u!1 &6208257271760059755
 GameObject:
   m_ObjectHideFlags: 0
@@ -4562,6 +4585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UVDirection: {x: 0, y: 3}
+  right: 0
+  left: 0
 --- !u!1 &6565876395428801394
 GameObject:
   m_ObjectHideFlags: 0
@@ -6531,9 +6556,10 @@ AudioSource:
   m_GameObject: {fileID: 8685635307787058178}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -907128450943007339, guid: 8b5fe1ce7c0713f4b93b3bc218142a5e,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: c19569ac00ed3a9408b86d849f1f023f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
