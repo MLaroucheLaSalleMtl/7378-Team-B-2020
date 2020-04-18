@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6981620480034812923}
   - component: {fileID: 4616620095788545989}
   - component: {fileID: 2676373473684482909}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 08~Track_VT_R3_BlendBone~08~track_r_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7632098695133217610}
   - component: {fileID: 2429838662863276716}
   - component: {fileID: 7527714737074711004}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 09~WD_L2_BlendBone~09~exportchassl1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 4553620185114444070}
   - component: {fileID: 2142114446055071633}
   - component: {fileID: 6553023498279839954}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 12~WD_L5_BlendBone~12~exportchassl1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 8875834355694493876}
   - component: {fileID: 8399939089981747142}
   - component: {fileID: 8185793940413645683}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 09~WD_R2_BlendBone~09~exportchassr1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 3894763640398938900}
   - component: {fileID: 2117044425498735297}
   - component: {fileID: 7937852379572147694}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 07~WD_R0_BlendBone~07~exportchassr1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 5366205382737433979}
   - component: {fileID: 81667812214049886}
   - component: {fileID: 1138200471765434968}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RB1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 212241511504919866}
   - component: {fileID: 6800259623379187981}
   - component: {fileID: 7737909428764652237}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 07~WD_L0_BlendBone~07~exportchassl1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 5407547685509025338}
   - component: {fileID: 3391279982366650728}
   - component: {fileID: 5912735370885093437}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 08~Track_VT_L3_BlendBone~08~track_l_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 2241907562676287766}
   - component: {fileID: 5483039601221348393}
   - component: {fileID: 2913071804876778158}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 10~WD_L3_BlendBone~10~exportchassl1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 2454822054135739158}
   - component: {fileID: 2251180204343884345}
   - component: {fileID: 8534973204130564050}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LB2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 7387808064229273600}
   - component: {fileID: 6944298166805148240}
   - component: {fileID: 3132863140451788463}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RB2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,7 +880,7 @@ GameObject:
   - component: {fileID: 5998008031039656948}
   - component: {fileID: 5501865800358806452}
   - component: {fileID: 5649673876927842979}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LB6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 4771742941209892768}
   - component: {fileID: 6835410852396070583}
   - component: {fileID: 2200706957731088356}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: american\A69_T110E5\normal\l\Turret_01.pri~10~6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1039,7 +1039,7 @@ GameObject:
   - component: {fileID: 5701967539946757347}
   - component: {fileID: 6742301359535260930}
   - component: {fileID: 2126758206681740488}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1118,7 +1118,7 @@ GameObject:
   - component: {fileID: 2861841961660409738}
   - component: {fileID: 4382121512503378970}
   - component: {fileID: 4600719684728118646}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 11~WD_L4_BlendBone~11~exportchassl1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1195,7 +1195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5605312408245557598}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: exportchassl1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1234,7 +1234,7 @@ GameObject:
   - component: {fileID: 6997735562158165598}
   - component: {fileID: 5890173003336205367}
   - component: {fileID: 8032522302601237818}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: american\A69_T110E5\normal\l\Chassis.pri~10~2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 2929624933832764145}
   - component: {fileID: 4554641643893418352}
   - component: {fileID: 7541705835200592084}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 09~Track_VT_R4_BlendBone~09~track_r_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1392,7 +1392,7 @@ GameObject:
   - component: {fileID: 6840693144051146877}
   - component: {fileID: 657692168321854053}
   - component: {fileID: 5186540747825062782}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LB1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1471,7 +1471,7 @@ GameObject:
   - component: {fileID: 3621298816375743553}
   - component: {fileID: 130568386828636676}
   - component: {fileID: 577420959072119995}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RB5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 1846919364440428610}
   - component: {fileID: 1904227396338183985}
   - component: {fileID: 6465782296780974350}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LW1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,7 +1629,7 @@ GameObject:
   - component: {fileID: 6479763332091672465}
   - component: {fileID: 202114422322538463}
   - component: {fileID: 467260183641493738}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LW2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1708,7 +1708,7 @@ GameObject:
   - component: {fileID: 5527572112336818079}
   - component: {fileID: 5410713070977518261}
   - component: {fileID: 243187845865916111}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RW5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1787,7 +1787,7 @@ GameObject:
   - component: {fileID: 7874161571790289636}
   - component: {fileID: 281230945210234389}
   - component: {fileID: 1525713686281966974}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 10~WD_R3_BlendBone~10~exportchassr1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1866,7 +1866,7 @@ GameObject:
   - component: {fileID: 3186095014278852400}
   - component: {fileID: 645055411218554785}
   - component: {fileID: 4246925077033906492}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 12~Track_VT_L0_BlendBone~12~track_l_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1945,7 +1945,7 @@ GameObject:
   - component: {fileID: 7630601383388277376}
   - component: {fileID: 7385538423982939240}
   - component: {fileID: 8404662042881473624}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 11~Track_VT_L1_BlendBone~11~track_l_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2024,7 +2024,7 @@ GameObject:
   - component: {fileID: 6180475158943250506}
   - component: {fileID: 6760457763359149695}
   - component: {fileID: 224282717416408979}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 10~Track_VT_R5_BlendBone~10~track_r_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,7 +2103,7 @@ GameObject:
   - component: {fileID: 3584309527114654475}
   - component: {fileID: 6777623850225966413}
   - component: {fileID: 7724902480768043272}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 14~Track_VD_R1_BlendBone~14~track_r_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2182,7 +2182,7 @@ GameObject:
   - component: {fileID: 3963475394834306580}
   - component: {fileID: 6879774285160724483}
   - component: {fileID: 3060083716317685541}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 09~Track_VT_L4_BlendBone~09~track_l_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2259,7 +2259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4276447695488316997}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: track_l_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2299,7 +2299,7 @@ GameObject:
   - component: {fileID: 8510866322091893789}
   - component: {fileID: 7424614672846919107}
   - component: {fileID: 6706842576945087839}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RW4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2378,7 +2378,7 @@ GameObject:
   - component: {fileID: 7301584411504795010}
   - component: {fileID: 7446634861994726333}
   - component: {fileID: 1868994886837602120}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: american\A69_T110E5\normal\l\Gun_01.pri~10~7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2457,7 +2457,7 @@ GameObject:
   - component: {fileID: 2667977963476162608}
   - component: {fileID: 7288797850030994671}
   - component: {fileID: 4523745816307449929}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: american\A69_T110E5\normal\l\Chassis.pri~10~3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2563,6 +2563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UVDirection: {x: 0, y: 5}
+  right: 0
+  left: 0
 --- !u!1 &4534636607240040370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,7 +2576,7 @@ GameObject:
   - component: {fileID: 3035755182552407714}
   - component: {fileID: 2827467481376767194}
   - component: {fileID: 2152381866470395226}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LW3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2653,7 +2655,7 @@ GameObject:
   - component: {fileID: 401183034653285439}
   - component: {fileID: 8803774721822079714}
   - component: {fileID: 1226030267626673215}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 14~Track_VD_L1_BlendBone~14~track_l_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2732,7 +2734,7 @@ GameObject:
   - component: {fileID: 4031194456319717698}
   - component: {fileID: 7514876708016278237}
   - component: {fileID: 4016771822037320077}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 12~WD_R5_BlendBone~12~exportchassr1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2811,7 +2813,7 @@ GameObject:
   - component: {fileID: 6027234189129606470}
   - component: {fileID: 7487579558818279261}
   - component: {fileID: 2448997134944769916}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RB6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2890,7 +2892,7 @@ GameObject:
   - component: {fileID: 8139163248380270412}
   - component: {fileID: 4570231809503092129}
   - component: {fileID: 9089259378038487904}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 11~WD_R4_BlendBone~11~exportchassr1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2969,7 +2971,7 @@ GameObject:
   - component: {fileID: 3578775122362183806}
   - component: {fileID: 1254028471778397947}
   - component: {fileID: 7904759349075430259}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 06~Track_VD_R0_BlendBone~06~track_r_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3048,7 +3050,7 @@ GameObject:
   - component: {fileID: 4372065681563753968}
   - component: {fileID: 1030613629346883503}
   - component: {fileID: 8914933336869605486}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LW4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3127,7 +3129,7 @@ GameObject:
   - component: {fileID: 2892580180840496599}
   - component: {fileID: 3009986083746572939}
   - component: {fileID: 8841974366968153901}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LB3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3206,7 +3208,7 @@ GameObject:
   - component: {fileID: 7126401267229144995}
   - component: {fileID: 892958819151910822}
   - component: {fileID: 4366490478345133841}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3285,7 +3287,7 @@ GameObject:
   - component: {fileID: 1276404307228582981}
   - component: {fileID: 62408006219331669}
   - component: {fileID: 3808286325328884069}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RW3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3364,7 +3366,7 @@ GameObject:
   - component: {fileID: 160841987096683017}
   - component: {fileID: 5286163919271885899}
   - component: {fileID: 460450946915607678}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LW6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3443,7 +3445,7 @@ GameObject:
   - component: {fileID: 2855722648045907836}
   - component: {fileID: 5400051287062454210}
   - component: {fileID: 518017234334341604}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 13~WD_L6_BlendBone~13~exportchassl1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3522,7 +3524,7 @@ GameObject:
   - component: {fileID: 3965776061700699462}
   - component: {fileID: 5562926494722532877}
   - component: {fileID: 5762560060484924075}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: american\A69_T110E5\normal\l\Chassis.pri~10~4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3628,6 +3630,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UVDirection: {x: 0, y: 5}
+  right: 0
+  left: 0
 --- !u!1 &5877603828362827284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3639,7 +3643,7 @@ GameObject:
   - component: {fileID: 2522541879640800870}
   - component: {fileID: 1036524757388056879}
   - component: {fileID: 1487921658613961864}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 12~Track_VT_R0_BlendBone~12~track_r_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3716,7 +3720,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9055065894141172056}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: exportchassr1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3756,7 +3760,7 @@ GameObject:
   - component: {fileID: 6331416729197106493}
   - component: {fileID: 2320976921218553345}
   - component: {fileID: 5910263323825539097}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: american\A69_T110E5\normal\l\Hull.pri~10~5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3849,7 +3853,7 @@ GameObject:
   - component: {fileID: 6005089682381504984}
   - component: {fileID: 8477864097468893219}
   - component: {fileID: 6949514589172698873}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 08~WD_R1_BlendBone~08~exportchassr1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3928,7 +3932,7 @@ GameObject:
   - component: {fileID: 9068672401669895436}
   - component: {fileID: 6897470068590559732}
   - component: {fileID: 8456760770906288159}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LB5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4007,7 +4011,7 @@ GameObject:
   - component: {fileID: 3009896174516206946}
   - component: {fileID: 1954536494071687932}
   - component: {fileID: 292714859465232434}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 06~Track_VD_L0_BlendBone~06~track_l_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4086,7 +4090,7 @@ GameObject:
   - component: {fileID: 7992981666051343546}
   - component: {fileID: 1202004791892841395}
   - component: {fileID: 6879059212218127013}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RW1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4165,7 +4169,7 @@ GameObject:
   - component: {fileID: 3782269345011088021}
   - component: {fileID: 2834425443047607637}
   - component: {fileID: 4416925866331537689}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RW6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4243,11 +4247,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6158537312556441971}
   - component: {fileID: 7146329523053433700}
-  - component: {fileID: 7146329523053433703}
   - component: {fileID: 7146329523053433702}
   - component: {fileID: 7146329523053433697}
   - component: {fileID: 7146329523053433701}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: T110E5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4378,20 +4381,9 @@ MonoBehaviour:
   m_BrakeTorque: 20000
   m_BoneOffset: 0.6
   m_TurnRate: 30
+  m_PrevSpeed: 0
   m_Rigidbody: {fileID: 7146329523053433702}
   anim: {fileID: 7146329523053433701}
---- !u!114 &7146329523053433703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7146329523053433696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96468c245ae8e0d4f8f1c7a7b8b0542e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &7146329523053433702
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4451,7 +4443,7 @@ GameObject:
   - component: {fileID: 2037991975393756982}
   - component: {fileID: 822513573722717705}
   - component: {fileID: 7953066533632777015}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: american\A69_T110E5\normal\l\Chassis.pri~10~1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4530,7 +4522,7 @@ GameObject:
   - component: {fileID: 4486617457729704224}
   - component: {fileID: 5760534693386496227}
   - component: {fileID: 2888577601985076415}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LB4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4609,7 +4601,7 @@ GameObject:
   - component: {fileID: 939023528910043618}
   - component: {fileID: 4515789232680055496}
   - component: {fileID: 7946755436149214438}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RW2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4686,7 +4678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8799953529146392966}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: track_r_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4726,7 +4718,7 @@ GameObject:
   - component: {fileID: 6560778772086095962}
   - component: {fileID: 5524435896430742642}
   - component: {fileID: 5610585242902272416}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RB3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4804,7 +4796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022647594169543}
   - component: {fileID: 7511022647594169540}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4835,10 +4827,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -4864,7 +4856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7511022647600643190}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RightColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4901,7 +4893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022647854832658}
   - component: {fileID: 7511022647854832659}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4932,10 +4924,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -4961,7 +4953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7511022647963670089}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: CameraPivot
   m_TagString: CameraPivot
   m_Icon: {fileID: 0}
@@ -4991,7 +4983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7511022647993786068}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LeftColiders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5028,7 +5020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022648237786352}
   - component: {fileID: 7511022648237786353}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5059,10 +5051,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5089,7 +5081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022648312452885}
   - component: {fileID: 7511022648312452842}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5120,10 +5112,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5150,7 +5142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022648386672551}
   - component: {fileID: 7511022648386672548}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5181,10 +5173,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5211,7 +5203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022648388075608}
   - component: {fileID: 7511022648388075611}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5242,10 +5234,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5272,7 +5264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022648498722495}
   - component: {fileID: 7511022648498722492}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5303,10 +5295,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5332,7 +5324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7511022648665636343}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5363,7 +5355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7511022648676778821}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: TurrentBase
   m_TagString: Turrent
   m_Icon: {fileID: 0}
@@ -5395,7 +5387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022648799089997}
   - component: {fileID: 7511022648799089996}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5426,10 +5418,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5456,7 +5448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022649137477130}
   - component: {fileID: 7511022649137477131}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5487,10 +5479,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5517,7 +5509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022649290558080}
   - component: {fileID: 7511022649290558081}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5548,10 +5540,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5578,7 +5570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022649478835452}
   - component: {fileID: 7511022649478835453}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5609,10 +5601,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5639,7 +5631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511022649574985295}
   - component: {fileID: 7511022649574985292}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5670,10 +5662,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.57
   m_SuspensionSpring:
-    spring: 70000
+    spring: 30000
     damper: 4500
     targetPosition: 0
-  m_SuspensionDistance: 1.18
+  m_SuspensionDistance: 1.36
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5701,7 +5693,7 @@ GameObject:
   - component: {fileID: 3027013059380819136}
   - component: {fileID: 1724544240807718609}
   - component: {fileID: 3331534950233734566}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 10~Track_VT_L5_BlendBone~10~track_l_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5780,7 +5772,7 @@ GameObject:
   - component: {fileID: 8803206464297284726}
   - component: {fileID: 4981858751676252258}
   - component: {fileID: 5489465174643100998}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 13~WD_R6_BlendBone~13~exportchassr1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5859,7 +5851,7 @@ GameObject:
   - component: {fileID: 8216986529452487563}
   - component: {fileID: 6880699158226582008}
   - component: {fileID: 3244177492655283352}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: RB4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5938,7 +5930,7 @@ GameObject:
   - component: {fileID: 6656489087047828112}
   - component: {fileID: 6399929160369229139}
   - component: {fileID: 7932375969794201711}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 07~Track_VT_L2_BlendBone~07~track_l_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6017,7 +6009,7 @@ GameObject:
   - component: {fileID: 4539180520244183539}
   - component: {fileID: 2111089194099962204}
   - component: {fileID: 3418230863976788114}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: BR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6096,7 +6088,7 @@ GameObject:
   - component: {fileID: 4430488304876261570}
   - component: {fileID: 2963662045851082218}
   - component: {fileID: 305697855914472451}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: LW5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6175,7 +6167,7 @@ GameObject:
   - component: {fileID: 174852649723793666}
   - component: {fileID: 1493215494275858689}
   - component: {fileID: 6822507641862209262}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 07~Track_VT_R2_BlendBone~07~track_r_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6254,7 +6246,7 @@ GameObject:
   - component: {fileID: 8838677070163533647}
   - component: {fileID: 5270137433807625415}
   - component: {fileID: 3476394714611677813}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 11~Track_VT_R1_BlendBone~11~track_r_shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6333,7 +6325,7 @@ GameObject:
   - component: {fileID: 8149700539486391299}
   - component: {fileID: 3267634260373680459}
   - component: {fileID: 1434427991396727975}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: BL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6412,7 +6404,7 @@ GameObject:
   - component: {fileID: 6229172275158374381}
   - component: {fileID: 1807549213530653623}
   - component: {fileID: 1443067241968727725}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: 08~WD_L1_BlendBone~08~exportchassl1_shape1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

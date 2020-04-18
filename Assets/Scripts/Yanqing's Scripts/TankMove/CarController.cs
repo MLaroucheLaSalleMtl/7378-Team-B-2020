@@ -60,6 +60,7 @@ public class CarController : MonoBehaviour
 
     public Rigidbody m_Rigidbody;
     public Animator anim;
+    public AudioSource engine;
     private const float k_ReversingThreshold = 0.01f;
 
     public bool Skidding { get; private set; }
@@ -208,7 +209,7 @@ public class CarController : MonoBehaviour
                 StopAnimation(Direction.backward);
                 break;
         }
-
+        SoundControl();
         ApplyDrive(accel, footbrake);
         CapSpeed(); 
 
@@ -478,7 +479,11 @@ public class CarController : MonoBehaviour
         }
     }
 
-
+    private void SoundControl()
+    {
+        float offset = CurrentSpeed / this.MaxSpeed;
+        engine.pitch = 0.6f * offset + 1;
+    }
     private bool AnySkidSoundPlaying()
     {
         for (int i = 0; i < 4; i++)
