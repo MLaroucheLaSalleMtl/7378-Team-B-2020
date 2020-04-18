@@ -11,7 +11,9 @@ public class WeaponDamage : MonoBehaviour
     public List<string> ApCollTargetTagArr;
     private Action<GameObject> OnCollisionEnterCallBack;
     private GameObject Display;
+    Rigidbody rigidbody;
     private int damage;
+    Vector3 vel;
     // Start is called before the first frame update
     public void SetAPConfig(List<string> ignoreArr = null, List<string> targetArr = null,Action<GameObject> callBack=null)
     {
@@ -27,12 +29,13 @@ public class WeaponDamage : MonoBehaviour
     {
         CalculateDamage();
         Display = GameObject.FindGameObjectWithTag("Displayer");
+        rigidbody = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        vel = rigidbody.velocity;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -53,63 +56,48 @@ public class WeaponDamage : MonoBehaviour
             Destroy(this.gameObject, 0.3f);
         }
 
-        Vector3 normal = collision.contacts[0].point.normalized;
-        Vector3 vel = rigidbody.velocity;
-        var orthogonalVector = collision.contacts[0].point - transform.position;
-        var collisionAngle = Vector3.Angle(orthogonalVector, rigidbody.velocity);
-        print(collisionAngle);
+        Vector3 normal = collision.contacts[0].normal;
+        var collisionAngle = Mathf.Abs(90 - (Vector3.Angle(vel, normal)));
         switch (collision.transform.tag)
         {
             case "LT":
                 Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
                 //collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
-                Destroy(this);
+                Destroy(this.gameObject);
                 break;
             case "MT":
-                if(PenetrationChecking(vel, normal, 25))
+                if(collisionAngle > 30)
                 {
                     Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
                     //collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
-                    Destroy(this);
+                    Destroy(this.gameObject);
                     break;
                 }
                 else
                 {
                     Display.GetComponent<DisplayDamage>().Ricochet(collision.transform);
-                    Destroy(this);
+                    Destroy(this.gameObject);
                     break;
                 }
             case "HT":
-                if (PenetrationChecking(vel, normal, 40))
+                print(collisionAngle);
+                if (collisionAngle > 50)
                 {
                     Display.GetComponent<DisplayDamage>().Pen(damage, collision.transform);
                     //collision.gameObject.GetComponent<enemyHealth>().DoDamage(damage);
-                    Destroy(this);
+                    Destroy(this.gameObject);
                     break;
                 }
                 else
                 {
                     Display.GetComponent<DisplayDamage>().Ricochet(collision.transform);
-                    Destroy(this);
+                    Destroy(this.gameObject);
                     break;
                 }
 
 
         }
 
-    }
-    private bool PenetrationChecking(Vector3 vel, Vector3 normal, float maxAngle)
-    {
-        // measure angle
-        print(Vector3.Angle(vel, normal));
-        if (Vector3.Angle(vel, -normal) > maxAngle)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
     }
 
     private void CalculateDamage()

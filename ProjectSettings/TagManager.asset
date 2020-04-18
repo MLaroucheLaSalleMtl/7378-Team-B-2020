@@ -25,6 +25,7 @@ TagManager:
   - ShootCamera
   - ShootCamBase
   - Reticle
+  - HP
   layers:
   - Default
   - TransparentFX

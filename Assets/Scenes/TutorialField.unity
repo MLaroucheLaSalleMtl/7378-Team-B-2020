@@ -24036,7 +24036,7 @@ GameObject:
   - component: {fileID: 469171177}
   m_Layer: 5
   m_Name: HPText
-  m_TagString: Untagged
+  m_TagString: HP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106945,6 +106945,121 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5264777654730625141, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 850000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777654730625141, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655197949259, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 850000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655197949259, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655542772722, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 850000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655542772722, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655620094787, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 850000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655620094787, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655852333927, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 850000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655852333927, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655878325529, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 850000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655878325529, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655919769844, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 850000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777655919769844, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777656014399429, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 850000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777656014399429, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777656421968423, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 850000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777656421968423, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777656606667764, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 850000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264777656606667764, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344220618172015169, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 100000, guid: 5c07a9c445f6a464c83deaf35dd8cd37, type: 3}
+    - target: {fileID: 5344220618172015169, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: MaxReload
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344220618172015169, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: projectile2
+      value: 
+      objectReference: {fileID: 100000, guid: cea64dc63790c4b46a6c79c06c6a2a84, type: 3}
     - target: {fileID: 8410736156689850628, guid: 0d063f1efeeaf7946999124513701d69,
         type: 3}
       propertyPath: m_Name
@@ -106953,7 +107068,27 @@ PrefabInstance:
     - target: {fileID: 8410736156689850628, guid: 0d063f1efeeaf7946999124513701d69,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410736156689850632, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410736156689850632, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_ReverseTorque
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410736156689850632, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_Downforce
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410736156689850634, guid: 0d063f1efeeaf7946999124513701d69,
+        type: 3}
+      propertyPath: m_Mass
+      value: 39000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d063f1efeeaf7946999124513701d69, type: 3}
@@ -120149,10 +120284,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 861887824, guid: b99c43deb514d674f9cffd4eaad2059c, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1749130311, guid: b99c43deb514d674f9cffd4eaad2059c, type: 3}
       propertyPath: PlayerHpText
       value: 
@@ -120167,6 +120298,11 @@ PrefabInstance:
       propertyPath: obj
       value: 
       objectReference: {fileID: 107832656}
+    - target: {fileID: 4979272188703929201, guid: b99c43deb514d674f9cffd4eaad2059c,
+        type: 3}
+      propertyPath: m_ReverseTorque
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 4979272188703929205, guid: b99c43deb514d674f9cffd4eaad2059c,
         type: 3}
       propertyPath: m_Name

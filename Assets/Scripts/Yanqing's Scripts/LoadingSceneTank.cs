@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class LoadingSceneTank : MonoBehaviour
 {
     private TankTrackAnimation[] tracks;
+    public GameObject projectile;
+    public Transform playerShootPosition;
+    public AudioSource audio;
     public Transform Turret;
     public Transform target;
     private float TankSpeed = 5f;
@@ -59,7 +62,9 @@ public class LoadingSceneTank : MonoBehaviour
     private IEnumerator Fire()
     {
         yield return new WaitForSeconds(2.0f);
-        //PlayerWeaponController.fire = true;
+        GameObject AP = GameObject.Instantiate(projectile, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
+        audio.Play();
+        AP.GetComponent<Rigidbody>().velocity = AP.transform.forward * 250;
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("GameMenu");
     }
