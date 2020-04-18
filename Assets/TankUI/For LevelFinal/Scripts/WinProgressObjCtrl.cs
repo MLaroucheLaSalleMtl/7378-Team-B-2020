@@ -28,10 +28,12 @@ public class WinProgressObjCtrl : MonoBehaviour
             if (slider != null) slider.value = curProgress;
             if (slider.value >= 0.99f)
             {
-                if (onProgressEndCallBack != null)
-                {
-                    onProgressEndCallBack();
-                }
+                FinalLevelManager.Ins.AddProgress();
+                Destroy(gameObject);
+                // if (onProgressEndCallBack != null)
+                // {
+                //     onProgressEndCallBack();
+                // }
 
             }
         }
