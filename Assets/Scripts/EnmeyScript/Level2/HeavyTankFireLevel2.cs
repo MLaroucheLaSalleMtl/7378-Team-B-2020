@@ -5,8 +5,8 @@ using UnityEngine;
 public class HeavyTankFireLevel2 : MonoBehaviour
 {
     public HeavyTankMoveLevel2 HeavyTankMoveLevel2;
+    private AudioSource AudioSource;
 
-    
     public Transform generator;
     public Transform turret;
     public bool isfiring = false;
@@ -34,7 +34,7 @@ public class HeavyTankFireLevel2 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         PlayerRigi = player.GetComponent<Rigidbody>();
         HeavyTankMoveLevel2 = this.GetComponent<HeavyTankMoveLevel2>();
-
+        AudioSource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -62,7 +62,7 @@ public class HeavyTankFireLevel2 : MonoBehaviour
     public void fire()
     {
 
-
+        AudioSource.Play();
         Debug.Log("fire");
         //this.gameObject.GetComponent<AudioSource>().Play();
         GameObject shell = Instantiate(prefab, fire_position.position, fire_position.transform.rotation);

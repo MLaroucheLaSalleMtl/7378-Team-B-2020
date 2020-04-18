@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyFireForHeavyTank : MonoBehaviour
 {
     public EnemyMovementForHeavyTank EnemyMovementForHeavyTank;
-
+    private AudioSource AudioSource;
     
     public Transform generator;
     public Transform turret;
@@ -35,7 +35,7 @@ public class EnemyFireForHeavyTank : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         PlayerRigi = player.GetComponent<Rigidbody>();
-
+        AudioSource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -60,6 +60,7 @@ public class EnemyFireForHeavyTank : MonoBehaviour
 
     public void fire()
     {
+        AudioSource.Play();
         Debug.Log("Nomal Fire");
         GameObject shell = Instantiate(prefab, fire_position.position, fire_position.transform.rotation);
         shell.GetComponent<Rigidbody>().velocity = shell.transform.forward * speed;

@@ -22365,7 +22365,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7aedf46d0c7f8d8468d76f92c201d7d6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98ee43f119dde354a9d69cbe815e5a98, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -22630,21 +22630,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_Movement: {fileID: -7199395172187020139}
+  AudioSource: {fileID: 0}
   generator: {fileID: 3017258398713497662, guid: 1e757a54f9bdc3343895bdcf3223c471,
     type: 3}
   turret: {fileID: 3419837056852428226}
   isfiring: 0
   player: {fileID: 0}
   fire_position: {fileID: 3419694162049878064}
-  prefab: {fileID: 5166914046056828060, guid: 527027c0f213b0345a4bed0d4d4e4ffc, type: 3}
+  prefab: {fileID: 6727943931987059613, guid: c6c317c9e7b6c5149a8a2f94ba8e37e2, type: 3}
   timer: 0
   waittime: 2
   direction: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   rotationspeed: 2
-  LayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   VelocityofPlayer: {x: 0, y: 0, z: 0}
   PlayerRigi: {fileID: 0}
   PredictiveTime: 0
