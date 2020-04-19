@@ -26,7 +26,9 @@ public class PlayerWeaponController : MonoBehaviour
     {
         if (wp.canFire)
         {
-            if (Input.GetMouseButtonDown(0))
+            float a;
+            a = Input.GetAxis("Trigger");
+            if (Input.GetMouseButtonDown(0) || a == 1)
             {
                 switch (wp.currentShell)
                 {

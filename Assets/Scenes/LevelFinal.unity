@@ -18302,6 +18302,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: -0.4700001
       objectReference: {fileID: 0}
+    - target: {fileID: 5077239082623410298, guid: 3d3157042fdc88844967f41a32be396a,
+        type: 3}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5077239082628216780, guid: 3d3157042fdc88844967f41a32be396a,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -22097,13 +22102,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435326529}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0.9997358, z: -0, w: -0.022988452}
   m_LocalPosition: {x: 357.01, y: 2.9, z: 121.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -182.635, z: 0}
 --- !u!64 &1437960394
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29828,7 +29833,7 @@ MonoBehaviour:
   _agent: {fileID: 0}
   _turret: {fileID: 0}
   _bulletSpawnPos: {fileID: 0}
-  _bullet: {fileID: 5166914046056828060, guid: 527027c0f213b0345a4bed0d4d4e4ffc, type: 3}
+  _bullet: {fileID: 100000, guid: 5c07a9c445f6a464c83deaf35dd8cd37, type: 3}
   _rb: {fileID: 0}
 --- !u!114 &1975049240
 MonoBehaviour:
@@ -55937,7 +55942,7 @@ MonoBehaviour:
   _agent: {fileID: 0}
   _turret: {fileID: 0}
   _bulletSpawnPos: {fileID: 0}
-  _bullet: {fileID: 5166914046056828060, guid: 527027c0f213b0345a4bed0d4d4e4ffc, type: 3}
+  _bullet: {fileID: 100000, guid: 5c07a9c445f6a464c83deaf35dd8cd37, type: 3}
   _rb: {fileID: 0}
 --- !u!114 &4047935030544654684
 MonoBehaviour:

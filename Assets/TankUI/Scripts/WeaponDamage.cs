@@ -99,7 +99,7 @@ public class WeaponDamage : MonoBehaviour
     {
         if(go.tag == "Player")
         {
-            go.GetComponent<PlayerHealth>().DoDamage(damage);
+            go.GetComponent<PlayerHealth>().DoDamage(damage * 0.2f);
         }
         else
         {
@@ -112,6 +112,11 @@ public class WeaponDamage : MonoBehaviour
             if (go.GetComponent<enemyHealth>())
             {
                 enemyHealth ctrl = go.GetComponent<enemyHealth>();
+                ctrl.DoDamage(damage);
+            }
+            if (go.GetComponent<EnemyHealth2>())
+            {
+                EnemyHealth2 ctrl = go.GetComponent<EnemyHealth2>();
                 ctrl.DoDamage(damage);
             }
             if (go.GetComponent<EnemyTankAttributeCtrl>())

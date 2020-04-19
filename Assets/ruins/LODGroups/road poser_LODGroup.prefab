@@ -20,13 +20,13 @@ GameObject:
   - component: {fileID: 6854552020325814691}
   - component: {fileID: 2926327633652128146}
   - component: {fileID: 235028390268652722}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: road poser_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4480841474456930
 Transform:
   m_ObjectHideFlags: 0
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 1812368031795926520}
   - component: {fileID: 5968742677437085300}
   - component: {fileID: 7542183919831807214}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: road poser_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ MeshCollider:
   m_GameObject: {fileID: 1638527595994632}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
@@ -371,7 +371,7 @@ BoxCollider:
   m_GameObject: {fileID: 1638527595994632}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 69.784996, y: 0.60671324, z: 5.736372}
   m_Center: {x: 0, y: -0.0892919, z: -18.30185}
@@ -384,7 +384,7 @@ BoxCollider:
   m_GameObject: {fileID: 1638527595994632}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 8.464272, y: 0.60671324, z: 30.911715}
   m_Center: {x: 8.075214, y: -0.0892919, z: 8.141643}
@@ -397,10 +397,10 @@ BoxCollider:
   m_GameObject: {fileID: 1638527595994632}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 69.784996, y: 0.14051437, z: 7.959793}
-  m_Center: {x: 0, y: -0.071395576, z: -11.397413}
+  m_Center: {x: 0, y: 0.11, z: -11.397413}
 --- !u!65 &5968742677437085300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -426,7 +426,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 7.833591, y: 0.025801599, z: 31.017054}
-  m_Center: {x: -0.18279433, y: -0.051237434, z: 8.088973}
+  m_Center: {x: -0.18279433, y: 0.19, z: 8.088973}
 --- !u!1 &1646713075786516
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,13 +447,13 @@ GameObject:
   - component: {fileID: 4739996602339221856}
   - component: {fileID: 5800007860812934243}
   - component: {fileID: 3338709477297050917}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: road poser_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4367789989197600
 Transform:
   m_ObjectHideFlags: 0
@@ -650,7 +650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4422109362141756}
   - component: {fileID: 205614830696354392}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: road poser_LODGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
