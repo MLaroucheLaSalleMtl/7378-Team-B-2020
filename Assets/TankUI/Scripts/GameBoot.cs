@@ -12,6 +12,7 @@ public class GameBoot : MonoBehaviour
         if (ModuleRoot.Ins == null)
         {
             Instantiate(ModuleRootObject);
+            SceneManager.LoadSceneAsync(1);
         }
 
     }

@@ -58,7 +58,11 @@ public class OptionButton : MonoBehaviour
 
     public void MenuExitGame()
     {
-        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif
     }
 
     public void ShowVideoOptionsPanel() {
@@ -96,6 +100,13 @@ public class OptionButton : MonoBehaviour
     public void LoadingGameScence(string gameScenceNam)
     {
         LoadPanel.SetActive(true);
+        if(gameScenceNam == "TutorialField")
+        {
+            if(Instruction.Completed)
+            {
+                gameScenceNam = "Level1";
+            }
+        }
         StartCoroutine(LoadingGameScenceAsync(gameScenceNam));
     }
 

@@ -40,7 +40,7 @@ public class HeavyTankMoveLevel2 : MonoBehaviour
     {
         DetectedDistance();
         DetectCollider();
-        if(GameManagerLelvel2.Retreat)
+        if(GameManagerLelvel2.Retreat == true)
         {
             enemy.Resume();
             destination = RetreatDestination.position;

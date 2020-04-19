@@ -25,7 +25,11 @@ public class MainUICtrl : MonoBehaviour
         {
             if (nextLevelCallBack != null) WinWndOnNextLevelClickCallBack = nextLevelCallBack;
             Time.timeScale = 0f;
-            TankCamera.Ins.UnLockCursor();
+            if(Cursor.lockState == CursorLockMode.Locked)
+            {
+                TankCamera.Ins.UnLockCursor();
+            }
+
             switch (type)
             {
                 case WndType.WND_OPTION:
@@ -41,7 +45,10 @@ public class MainUICtrl : MonoBehaviour
         }
         else
         {
-            TankCamera.Ins.LockCursor();
+            if (Cursor.lockState == CursorLockMode.None)
+            {
+                TankCamera.Ins.LockCursor();
+            }
             Time.timeScale = 1f;
             switch (type)
             {
@@ -69,33 +76,40 @@ public class MainUICtrl : MonoBehaviour
     }
     public void OnWinWndNextLevelClick()
     {
+        WinWnd.SetActive(false);
         if (WinWndOnNextLevelClickCallBack != null)
             WinWndOnNextLevelClickCallBack();
     }
 
     public void OnWinWndGameMenuClick()
     {
+        WinWnd.SetActive(false);
+        LoseWnd.SetActive(false);
+        OptionWnd.SetActive(false);
         ShowWnd(false, WndType.WND_WIN);
         SceneManager.LoadScene(2);
     }
 
     public void OnLoseWndGameMenuClick()
     {
+        WinWnd.SetActive(false);
+        LoseWnd.SetActive(false);
+        OptionWnd.SetActive(false);
         ShowWnd(false, WndType.WND_LOSE);
         SceneManager.LoadScene(2);
     }
     public void BackToMenu()
     {
         ShowWnd(false);
-       WinWnd.SetActive(false);
-       LoseWnd.SetActive(false);
-       OptionWnd.SetActive(false);
-        SceneManager.LoadScene(2);
+        WinWnd.SetActive(false);
+        LoseWnd.SetActive(false);
+        OptionWnd.SetActive(false);
+        SceneManager.LoadScene(1);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             if (TankCamera.Ins != null)
             {

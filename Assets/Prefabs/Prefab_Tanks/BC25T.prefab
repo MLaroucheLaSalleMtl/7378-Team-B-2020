@@ -3944,6 +3944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce35f7f397acdd44c8f0dc8fc0a9b79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhealth: 1800
   IsDead: 0
   OnlyOnce: 0
   PlayerHpText: {fileID: 0}

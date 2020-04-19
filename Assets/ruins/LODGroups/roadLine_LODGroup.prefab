@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4587477669641978786}
   - component: {fileID: 1746196239245290765}
   - component: {fileID: 8681062243854528282}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: roadLine_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ MeshCollider:
   m_GameObject: {fileID: 1115535505668862}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
@@ -127,7 +127,7 @@ BoxCollider:
   m_GameObject: {fileID: 1115535505668862}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 69.784996, y: 0.25, z: 8.2398}
   m_Center: {x: 0, y: 0.087697044, z: -8.194792}
@@ -140,10 +140,10 @@ BoxCollider:
   m_GameObject: {fileID: 1115535505668862}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 69.784996, y: 0.13128662, z: 7.8862753}
-  m_Center: {x: 0, y: -0.09031582, z: 0.04987669}
+  m_Center: {x: 0, y: 0.15, z: 0.04987669}
 --- !u!65 &8681062243854528282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ BoxCollider:
   m_GameObject: {fileID: 1115535505668862}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 69.784996, y: 0.25, z: 8.1677265}
   m_Center: {x: 0, y: 0.087697044, z: 8.202911}
@@ -173,13 +173,13 @@ GameObject:
   - component: {fileID: 4933971169966906253}
   - component: {fileID: 5237814895300765543}
   - component: {fileID: 1144612436750232743}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: roadLine_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4346451342785166
 Transform:
   m_ObjectHideFlags: 0
@@ -330,13 +330,13 @@ GameObject:
   - component: {fileID: 5011631659240756811}
   - component: {fileID: 347528461898958726}
   - component: {fileID: 6037295280283707432}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: roadLine_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4759980371024172
 Transform:
   m_ObjectHideFlags: 0
@@ -481,7 +481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4118114960883578}
   - component: {fileID: 205944471213688550}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: roadLine_LODGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}

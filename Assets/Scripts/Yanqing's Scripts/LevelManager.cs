@@ -28,16 +28,17 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel1()
     {
-        Menu_Win.SetActive(false);
-        Menu_Lose.SetActive(false);
         Current_Level = 1;
         SceneManager.LoadScene("Level1");
     }
     public void LoadLevel2()
     {
-        Menu_Win.SetActive(false);
-        Menu_Lose.SetActive(false);
         Current_Level = 2;
+        SceneManager.LoadScene("terrain");
+    }
+    public void LoadLevel3()
+    {
+        Current_Level = 3;
         SceneManager.LoadScene("LevelFinal");
     }
 

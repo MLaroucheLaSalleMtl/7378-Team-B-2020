@@ -13,6 +13,7 @@ public class TankCamera : MonoBehaviour
     private const float YLimit_Max = 89.0f;
     private static float Shoot_Y_Min;
     private static float Shoot_Y_Max;
+    private bool gettrigger;
 
     public Transform LookAt;
     public Transform TPS_camTransform;
@@ -27,7 +28,7 @@ public class TankCamera : MonoBehaviour
     private Camera cam;
 
     private float distance = 10.0f;
-    private float currentX = 0.0f;
+    private float currentX = 90f;
     private float currentY = 0.0f;
     private float sensivityX = 4.0f;
     private float sensivityY = 1.0f;
@@ -35,10 +36,12 @@ public class TankCamera : MonoBehaviour
     private void Awake()
     {
         Ins = this;
+        
     }
 
     void Start()
     {
+        gettrigger = true;
         ShootCamBase = GameObject.FindGameObjectWithTag("ShootCamBase").transform;
         LookAt = GameObject.FindGameObjectWithTag("CameraPivot").transform;
         LockCursor();
@@ -75,13 +78,12 @@ public class TankCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift) || distance == 5 )
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Joystick1Button4) || distance == 5 )
         {       
             switch(TurrentTester.isAiming)
             {
                 case false:
-                    TurrentTester.isAiming = true;
-                    
+                    TurrentTester.isAiming = true;                  
                     distance = 4;
                     break;
                 case true:
@@ -89,6 +91,7 @@ public class TankCamera : MonoBehaviour
                     distance = 6;
                     break;
             }
+            gettrigger = false;
         }
         if(!TurrentTester.isAiming)
         {
@@ -133,7 +136,7 @@ public class TankCamera : MonoBehaviour
     {
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         ShootCamBase.transform.rotation = rotation;
-        currentY = Mathf.Clamp(currentY, Shoot_Y_Min, Shoot_Y_Max);
+        //currentY = Mathf.Clamp(currentY, Shoot_Y_Min, Shoot_Y_Max);
     }
    
 }
