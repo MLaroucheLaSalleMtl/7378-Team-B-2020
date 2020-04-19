@@ -6,7 +6,7 @@ public class enemyfire : MonoBehaviour
 {
 
     public enemy_movement enemy_Movement;
-    
+    private AudioSource AudioSource;
     
     public Transform generator;
     public Transform turret;
@@ -20,7 +20,7 @@ public class enemyfire : MonoBehaviour
     public Vector3 direction;
     public Quaternion rotation;
     public float rotationspeed=0.01f;
-    public LayerMask LayerMask;
+   
     RaycastHit hit;
     [Header("predictive Shooting")]
     public Vector3 VelocityofPlayer;
@@ -37,6 +37,7 @@ public class enemyfire : MonoBehaviour
         
         PlayerRigi = player.GetComponent<Rigidbody>();
         enemy_Movement = this.GetComponent<enemy_movement>();
+        AudioSource = this.GetComponent<AudioSource>();
         
     }
 
@@ -65,10 +66,9 @@ public class enemyfire : MonoBehaviour
    public void fire()
     {
 
-        
-            
-           
-            //this.gameObject.GetComponent<AudioSource>().Play();
+
+
+        AudioSource.Play();
             GameObject shell = Instantiate(prefab, fire_position.position, fire_position.transform.rotation);
             shell.GetComponent<Rigidbody>().velocity = shell.transform.forward * speed;
             

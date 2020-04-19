@@ -5,8 +5,8 @@ using UnityEngine;
 public class InsTankFire : MonoBehaviour
 {
     public InsTankMovement InsTankMovement;
+    private AudioSource AudioSource;
 
-    
     public Transform generator;
     public Transform turret;
     public bool isfiring = false;
@@ -36,7 +36,7 @@ public class InsTankFire : MonoBehaviour
         PlayerObj= GameObject.FindGameObjectWithTag("Player");
         player = PlayerObj.transform;
         PlayerRigi = player.GetComponent<Rigidbody>();
-       
+        AudioSource = this.GetComponent<AudioSource>();
 
     }
 
@@ -67,7 +67,7 @@ public class InsTankFire : MonoBehaviour
 
 
         Debug.Log("fire");
-        //this.gameObject.GetComponent<AudioSource>().Play();
+        AudioSource.Play();
         GameObject shell = Instantiate(prefab, fire_position.position, fire_position.transform.rotation);
         shell.GetComponent<Rigidbody>().velocity = shell.transform.forward * speed;
 
