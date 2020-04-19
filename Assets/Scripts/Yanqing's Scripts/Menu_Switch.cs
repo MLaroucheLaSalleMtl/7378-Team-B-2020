@@ -10,7 +10,9 @@ public class Menu_Switch : MonoBehaviour
     public Transform spawner;
     private GameObject Selected_Vehicle;
     public Text tankname;
-    public static int tank_id;
+    public static int tank_id = 1;
+    public static bool Tutorial_finished;
+    public GameObject TutorialButton;
 
     public Slider Damage;
     public Slider Armor;
@@ -19,7 +21,7 @@ public class Menu_Switch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Spawn_Light();
+        
     }
 
     public void Spawn_Light()
@@ -60,6 +62,9 @@ public class Menu_Switch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Tutorial_finished)
+        {
+            TutorialButton.SetActive(true);
+        }
     }
 }

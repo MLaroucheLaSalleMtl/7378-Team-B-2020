@@ -2,30 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class AudioPanelcontrol : MonoBehaviour
 {
     public GameObject homeCanves;
-    public AudioClip[] audios;
-    public Slider TotalVolumnProgressBar;
-    public Slider MusicVolumnProgressBar;
+    public AudioMixer audioMixer;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetMasterVolume(float volume)
     {
-        float baseVolumn = TotalVolumnProgressBar.value;
-        homeCanves.GetComponent<AudioSource>().volume = MusicVolumnProgressBar.value * baseVolumn;
+        audioMixer.SetFloat("MasterVolume", volume);
     }
 
-    public void Music1BtnClick(int chose) 
+    public void SetMusicVolume(float volume)
     {
-        homeCanves.GetComponent<AudioSource>().clip = audios[chose];
-        homeCanves.GetComponent<AudioSource>().Play();
+        audioMixer.SetFloat("MusicVolume", volume);
     }
+
+    public void SetSoundEffectVolume(float volume)
+    {
+        audioMixer.SetFloat("SoundEffectVolume", volume);
+    }
+
 }
+

@@ -12,6 +12,7 @@ public class LoginPanelCtrl : MonoBehaviour
     public GameObject passwdInput;
     public Text passwdHolder;
     public GameObject tankSwitcher;
+    public GameObject bgVideo;
 
     // Start is called before the first frame update
     void Start()
@@ -47,5 +48,6 @@ public class LoginPanelCtrl : MonoBehaviour
         tankSwitcher.GetComponent<Menu_Switch>().Spawn_Light();
         menuPanel.SetActive(true);
         loginPanel.SetActive(false);
+        bgVideo.SetActive(false);
     }
 }

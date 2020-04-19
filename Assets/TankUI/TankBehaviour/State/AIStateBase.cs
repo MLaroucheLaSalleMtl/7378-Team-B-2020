@@ -64,7 +64,6 @@ public class AIStateMove : AIStateBase
             }
             else
             {
-                Debug.Log("Move");
                 _owner.Agent.SetDestination(GetMoveToPos());
             }
         }

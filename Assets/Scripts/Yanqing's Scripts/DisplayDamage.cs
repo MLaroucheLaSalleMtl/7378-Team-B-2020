@@ -6,7 +6,7 @@ public class DisplayDamage : MonoBehaviour
 {
     public GameObject pen;
     public GameObject Unpen;
-    private static GameObject canvas;
+    public GameObject canvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +17,7 @@ public class DisplayDamage : MonoBehaviour
     public void Pen(int damage, Transform location)
     {
         GameObject dmg = Instantiate(pen);
+        print("Pem");
         Vector2 screenPosition = Camera.main.WorldToScreenPoint(location.position);
         dmg.transform.SetParent(canvas.transform, false);
         dmg.transform.position = screenPosition;

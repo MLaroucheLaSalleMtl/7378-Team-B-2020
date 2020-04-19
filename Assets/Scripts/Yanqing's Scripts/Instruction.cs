@@ -12,6 +12,7 @@ public class Instruction : MonoBehaviour
     private void Awake()
     {
         Spawn(Menu_Switch.tank_id);
+
     }
     void Start()
     {

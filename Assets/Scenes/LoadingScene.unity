@@ -939,6 +939,7 @@ MonoBehaviour:
   APdamage: 0
   HEdamage: 0
   MaxReload: 0
+  audio: {fileID: 0}
 --- !u!82 &1124593753
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1352,6 +1353,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1537267417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537267415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e241361dbe9ce05489681b6253ce6258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ModuleRootObject: {fileID: 2761912742914317094, guid: f0b0af63d47f8914a9c08b08791370cd,
+    type: 3}
 --- !u!114 &1537267418
 MonoBehaviour:
   m_ObjectHideFlags: 0
