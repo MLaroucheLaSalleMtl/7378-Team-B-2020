@@ -15,7 +15,7 @@ namespace TankBehaviour
         [HideInInspector] [SerializeField] private NavMeshAgent _agent;
         [HideInInspector] [SerializeField] private Transform _turret;
         [HideInInspector] [SerializeField] private Transform _bulletSpawnPos;
-        [HideInInspector] [SerializeField] private GameObject _bullet;
+        [SerializeField] private GameObject _bullet;
         [HideInInspector] [SerializeField] private Rigidbody _rb;
         public Transform TargetTran => _curTargetTran;
         public NavMeshAgent Agent => _agent;

@@ -20,12 +20,15 @@ namespace TurretDemo
         {
             ShootCam = GameObject.FindGameObjectWithTag("ShootCamera");
             ShootCam.SetActive(false);
+            ShootCamBase = GameObject.FindGameObjectWithTag("ShootCamBase").transform;
             turret[0] = GameObject.FindGameObjectWithTag("Turrent").GetComponent<TurretRotation>();
-            cam = GetComponent<Camera>();
+            cam = Camera.main;
+            print("finished");
         }
         private void Update()
         {
-            if(!isAiming)
+
+            if (!isAiming)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                     turretsIdle = !turretsIdle;

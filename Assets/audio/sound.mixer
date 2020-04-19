@@ -33,6 +33,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-867319577886139120
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Music
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 956a50d1187ea764da1143fe3516cd1a
+  m_Children: []
+  m_Volume: e34e17cd91ecab54a89c7d316b90a706
+  m_Pitch: db0a21635ab7cd74b948548e801d2d1b
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 6211792334373011982}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -49,12 +68,17 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: cab224c6dca504c469a6286db86f907c
+    name: MasterVolume
+  - guid: e34e17cd91ecab54a89c7d316b90a706
+    name: MusicVolume
   - guid: 9fb76604c3418524da5709a16d2fd60d
     name: SFXVolume
   m_AudioMixerGroupViews:
   - guids:
     - caa8b8db1b384954592d61a64e5294a4
     - b968bce7c2d5772409e19fe7a2f64910
+    - 956a50d1187ea764da1143fe3516cd1a
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -69,6 +93,7 @@ AudioMixerGroupController:
   m_GroupID: caa8b8db1b384954592d61a64e5294a4
   m_Children:
   - {fileID: -907128450943007339}
+  - {fileID: -867319577886139120}
   m_Volume: cab224c6dca504c469a6286db86f907c
   m_Pitch: 8811d289883b1234abbd60c7fcbe1d23
   m_Send: 00000000000000000000000000000000
@@ -105,3 +130,17 @@ AudioMixerSnapshotController:
     9fb76604c3418524da5709a16d2fd60d: -11.9
     cab224c6dca504c469a6286db86f907c: -15.9
   m_TransitionOverrides: {}
+--- !u!244 &6211792334373011982
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 4fcd04e62d4e9694f87430e9dfc31d20
+  m_EffectName: Attenuation
+  m_MixLevel: 03e19dd3485ab8040a2a345d1a414b14
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
