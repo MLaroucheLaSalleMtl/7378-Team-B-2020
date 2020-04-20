@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class enemyHealth : MonoBehaviour
 {
     [Header("Health")]
-    private int maxhealth;
-    public int CurrentHealth;
+    public float maxhealth;
+    public float CurrentHealth;
     public GameObject smoke;
     public bool onlyOnceSmoke = false;
     [Header("Death")]
@@ -16,10 +16,6 @@ public class enemyHealth : MonoBehaviour
     [Header("Display Hp")]
     public Slider health_bar;
    
-
-
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -89,7 +85,6 @@ public class enemyHealth : MonoBehaviour
     {
         IsDead = true;
        
-        Debug.Log("dead");
         if (!OnlyOnce)
         {
             EndCondition.numberupdate();

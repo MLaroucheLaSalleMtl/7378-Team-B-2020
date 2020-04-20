@@ -7,32 +7,33 @@ namespace TankBehaviour
     public class EnemyTankAttributeCtrl : MonoBehaviour
     {
         [SerializeField] private Slider _hpBar = null;
-        [SerializeField] private int _maxHp = 100;
-        [SerializeField] private int _curHp = 100;
+        public float _maxHp = 2500;
+        public float _curHp;
         private EnemyTankCtrl _owner;
-        [HideInInspector] public float _atkDist = 1000;
+        [HideInInspector] public float _atkDist = 4000;
         [HideInInspector] public bool _isMoving = false;
         [HideInInspector] public float _rotateSpeed = 1;
         [HideInInspector] public float _atkDelay = 5f;
         [HideInInspector] public float _nextAtkTime = 5f;
         [HideInInspector] public float _bulletSpeed = 100f;
 
-        public int CurHp
-        {
-            get => _curHp;
-            set
-            {
-                if (_curHp <= 0)
-                    OnDead();
-                else
-                    _curHp = value;
-                UpdateUIView();
-            }
-        }
+        //public int CurHp
+        //{
+        //    get => _curHp;
+        //    set
+        //    {
+        //        if (_curHp <= 0)
+        //            OnDead();
+        //        else
+        //            _curHp = value;
+        //        UpdateUIView();
+        //    }
+        //}
 
         private void Awake()
         {
             _hpBar = GetComponentInChildren<Slider>();
+            _curHp = 2500;
         }
 
         private void Start()
@@ -40,20 +41,26 @@ namespace TankBehaviour
         
         }
 
+        private void Update()
+        {
+            if (_curHp <= 0) OnDead();
+            UpdateUIView();
+        }
+
         public void Init(EnemyTankCtrl owner)
         {
             _owner = owner;
-            CurHp = _maxHp;
+            _curHp = _maxHp;
         }
 
         public void OnTakeDamage(int dmg)
         {
-            CurHp -= dmg;
+            _curHp-= dmg;
         }
 
         public void UpdateUIView()
         {
-            _hpBar.value = _curHp;
+            _hpBar.value = (_curHp/_maxHp) * 100;
         }
 
         public void OnDead()

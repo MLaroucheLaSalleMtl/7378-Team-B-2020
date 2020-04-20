@@ -28,16 +28,20 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel1()
     {
-        Menu_Win.SetActive(false);
-        Menu_Lose.SetActive(false);
+        ModuleRoot.Ins.UIModule.ShowWnd(false,WndType.WND_WIN);
         Current_Level = 1;
         SceneManager.LoadScene("Level1");
     }
     public void LoadLevel2()
     {
-        Menu_Win.SetActive(false);
-        Menu_Lose.SetActive(false);
+        ModuleRoot.Ins.UIModule.ShowWnd(false,WndType.WND_WIN);
         Current_Level = 2;
+        SceneManager.LoadScene("terrain");
+    }
+    public void LoadLevel3()
+    {
+        ModuleRoot.Ins.UIModule.ShowWnd(false,WndType.WND_WIN);
+        Current_Level = 3;
         SceneManager.LoadScene("LevelFinal");
     }
 
@@ -48,11 +52,15 @@ public class LevelManager : MonoBehaviour
         { 
             ModuleRoot.Ins.UIModule.ShowWnd(true,WndType.WND_WIN,LoadLevel1);
         }
-        else
+        else if(levelIndex ==2)
         {
             ModuleRoot.Ins.UIModule.ShowWnd(true,WndType.WND_WIN,LoadLevel2);
         }
-         // Menu_Win.SetActive(true);
+        else if (levelIndex == 3)
+        {
+            ModuleRoot.Ins.UIModule.ShowWnd(true, WndType.WND_WIN, LoadLevel3);
+        }
+        // Menu_Win.SetActive(true);
     }
 
     public void levelEndLose()

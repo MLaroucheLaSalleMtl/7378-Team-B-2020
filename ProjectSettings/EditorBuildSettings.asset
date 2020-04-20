@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameBoot.unity
     guid: fb3e11e984a5a52458544e1d54a4c5c0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoadingScene.unity
     guid: 2d8364418c11dee4a86247382617463e
   - enabled: 1
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 6038e2ec94980454f8bf26d35433684f
+  - enabled: 1
+    path: Assets/Scenes/terrain.unity
+    guid: 005868f214645d247abd55b1a8962cbb
   - enabled: 1
     path: Assets/Scenes/LevelFinal.unity
     guid: a067c768f249565488fcaaa440b9ac0c

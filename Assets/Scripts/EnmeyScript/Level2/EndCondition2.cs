@@ -17,7 +17,7 @@ public class EndCondition2 : MonoBehaviour
     {
       if(Slider.value>=100)
         {
-            SceneManager.LoadScene("GameMenu");
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().LevelEndWin(3);
         }
     }
 }

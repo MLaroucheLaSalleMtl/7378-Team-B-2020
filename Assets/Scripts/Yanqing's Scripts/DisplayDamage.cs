@@ -6,11 +6,11 @@ public class DisplayDamage : MonoBehaviour
 {
     public GameObject pen;
     public GameObject Unpen;
-    private static GameObject canvas;
+    public GameObject canvas;
     // Start is called before the first frame update
     void Start()
     {
-        canvas = GameObject.Find("Canvas");
+        canvas = GameObject.Find("CanvasMain");
     }
 
 

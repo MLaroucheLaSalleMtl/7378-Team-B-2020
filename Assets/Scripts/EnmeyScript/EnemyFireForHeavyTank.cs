@@ -72,7 +72,6 @@ public class EnemyFireForHeavyTank : MonoBehaviour
         direction = player.position - turret.position;
         rotation = Quaternion.LookRotation((direction + VelocityofPlayer) * PredictiveTime);
         turret.rotation = Quaternion.Lerp(turret.rotation, rotation, Time.deltaTime * rotationspeed);
-        Debug.Log("is running");
         time = time + Time.deltaTime;
         if (time >= FireWaitTime&& !EnemyMovementForHeavyTank.collider_exist)
         {

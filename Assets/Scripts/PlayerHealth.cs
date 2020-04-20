@@ -5,18 +5,19 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health")]
-    private readonly float maxhealth = 1000f;
+    [SerializeField]
+    private float maxhealth;
     private float CurrentHealth;
     [Header("Death")]
     public bool IsDead = false;
     public bool OnlyOnce = false;
     [Header("Display Hp")]
     public Text PlayerHpText;
+    public string type;
     
 
-    public 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         PlayerHpText = GameObject.FindGameObjectWithTag("HP").GetComponent<Text>();
         CurrentHealth = maxhealth;
@@ -28,10 +29,10 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         PlayerHpText.text = ((int)CurrentHealth).ToString();
         if (CurrentHealth <= 0)
         {
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().levelEndLose();
             Debug.Log("dead");
         }
     }

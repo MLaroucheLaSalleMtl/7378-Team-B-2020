@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 6467194738135059250}
   m_Layer: 5
   m_Name: HPText
-  m_TagString: Untagged
+  m_TagString: HP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -864,6 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 49
+  key1: 0
 --- !u!1 &6467194738534696013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1328,7 @@ GameObject:
   - component: {fileID: 6467194739437926887}
   m_Layer: 5
   m_Name: Reticle
-  m_TagString: Untagged
+  m_TagString: Reticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1619,6 +1620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 50
+  key1: 0
 --- !u!1 &6467194739774591173
 GameObject:
   m_ObjectHideFlags: 0

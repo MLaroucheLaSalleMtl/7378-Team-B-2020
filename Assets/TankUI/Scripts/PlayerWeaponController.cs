@@ -26,40 +26,50 @@ public class PlayerWeaponController : MonoBehaviour
     {
         if (wp.canFire)
         {
-            if (Input.GetMouseButtonDown(0))
+            float a;
+            a = Input.GetAxis("Trigger");
+            if (Input.GetMouseButtonDown(0) || a == 1)
             {
                 switch (wp.currentShell)
                 {
                     case 1:
-                        wp.AP--;
-                        GameObject AP = GameObject.Instantiate(projectile, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
-                        AP.GetComponent<Rigidbody>().velocity = AP.transform.forward * shellSpeed;
-                        //AP.GetComponent<WeaponDamage>().SetAPConfig(new List<string>(){"AP"},new List<string>(){"Enemy"},
-                        //    (go) =>
-                        //    {
-                        //        if (go.GetComponent<TurrentEnemyCtrl>())
-                        //        {
-                        //            TurrentEnemyCtrl ctrl = go.GetComponent<TurrentEnemyCtrl>();
-                        //            ctrl.OnTakeDamage(5);
-                        //        }
-                        //        if (go.GetComponent<enemyHealth>())
-                        //        {
-                        //            enemyHealth ctrl = go.GetComponent<enemyHealth>();
-                        //            ctrl.DoDamage(50);
-                        //        }
-                        //        if (go.GetComponent<EnemyTankAttributeCtrl>())
-                        //        {
-                        //            EnemyTankAttributeCtrl ctrl = go.GetComponent<EnemyTankAttributeCtrl>();
-                        //            ctrl.OnTakeDamage(50);
-                        //        }
-                        //    });
-                        audio.Play();
+                        if(wp.AP1 != 0)
+                        {
+                            wp.AP1--;
+                            GameObject AP = GameObject.Instantiate(projectile, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
+                            AP.GetComponent<Rigidbody>().velocity = AP.transform.forward * shellSpeed;
+                            //AP.GetComponent<WeaponDamage>().SetAPConfig(new List<string>() { "AP" }, new List<string>() { "Enemy" },
+                            //    (go) =>
+                            //    {
+                            //        if (go.GetComponent<TurrentEnemyCtrl>())
+                            //        {
+                            //            TurrentEnemyCtrl ctrl = go.GetComponent<TurrentEnemyCtrl>();
+                            //            ctrl.OnTakeDamage(5);
+                            //        }
+                            //        if (go.GetComponent<enemyHealth>())
+                            //        {
+                            //            enemyHealth ctrl = go.GetComponent<enemyHealth>();
+                            //            ctrl.DoDamage(50);
+                            //        }
+                            //        if (go.GetComponent<EnemyTankAttributeCtrl>())
+                            //        {
+                            //            EnemyTankAttributeCtrl ctrl = go.GetComponent<EnemyTankAttributeCtrl>();
+                            //            ctrl.OnTakeDamage(50);
+                            //        }
+                            //    });
+                            audio.Play();
+                            break;
+                        }
                         break;
                     case 2:
-                        wp.HE--;
-                        GameObject HE = GameObject.Instantiate(projectile2, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
-                        HE.GetComponent<Rigidbody>().velocity = HE.transform.forward * shellSpeed;
-                        audio.Play();
+                        if(wp.HE1 != 0)
+                        {
+                            wp.HE1--;
+                            GameObject HE = GameObject.Instantiate(projectile2, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
+                            HE.GetComponent<Rigidbody>().velocity = HE.transform.forward * shellSpeed;
+                            audio.Play();
+                            break;
+                        }
                         break;
                 }
                 //this.gameObject.GetComponent<AudioSource>().Play();

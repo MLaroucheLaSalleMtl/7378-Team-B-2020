@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pen: {fileID: 1587239458183941071, guid: ae5e6a6cd97519b4db34f2f8ed932245, type: 3}
+  Unpen: {fileID: 1587239458183941071, guid: 90e25715b63f8c84fa9d813860116231, type: 3}
+  canvas: {fileID: 0}

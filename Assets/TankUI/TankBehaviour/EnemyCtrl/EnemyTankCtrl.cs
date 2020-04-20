@@ -15,7 +15,9 @@ namespace TankBehaviour
         [HideInInspector] [SerializeField] private NavMeshAgent _agent;
         [HideInInspector] [SerializeField] private Transform _turret;
         [HideInInspector] [SerializeField] private Transform _bulletSpawnPos;
-        [HideInInspector] [SerializeField] private GameObject _bullet;
+        public AudioSource audio;
+        [SerializeField] private GameObject _bullet;
+        public GameObject destroyed;
         [HideInInspector] [SerializeField] private Rigidbody _rb;
         public Transform TargetTran => _curTargetTran;
         public NavMeshAgent Agent => _agent;
@@ -68,10 +70,13 @@ namespace TankBehaviour
         public void OnDead()
         {
             _curEnemyTankFsmCtrl.StopAI();
+            GameObject.Instantiate(destroyed, transform.position, transform.rotation);
+            Destroy(this.gameObject);
         }
 
         public GameObject SpawnBullet()
         {
+            audio.Play();
             return Instantiate(_bullet, _bulletSpawnPos.position, _bulletSpawnPos.rotation);
         }
 
