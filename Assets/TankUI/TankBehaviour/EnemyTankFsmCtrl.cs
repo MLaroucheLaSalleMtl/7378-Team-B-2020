@@ -52,7 +52,7 @@ namespace TankBehaviour
         }
 
         public void StopAI()
-        {
+        {  
             ChangeState(EnemyAIStateType.AISTATE_DEAD);
             isAIStop = true;
         }

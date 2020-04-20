@@ -17,6 +17,7 @@ public class MainUICtrl : MonoBehaviour
     public GameObject WinWnd;
     public GameObject LoseWnd;
     public Action WinWndOnNextLevelClickCallBack;
+    public static int Current_Level;
     // public Action WinWndOnNextToGameMenuClickCallBack;
     // public Action LoseWndOnGameMenuClickCallBack;
     public void ShowWnd(bool flag,WndType type=WndType.WND_OPTION,Action nextLevelCallBack=null)
@@ -74,15 +75,45 @@ public class MainUICtrl : MonoBehaviour
         OptionWnd.SetActive(false);
         TankCamera.Ins.LockCursor();
     }
+    public void LoadLevel1()
+    {
+        Current_Level = 1;
+        SceneManager.LoadScene("Level1");
+    }
+    public void LoadLevel2()
+    {
+        Current_Level = 2;
+        SceneManager.LoadScene("terrain");
+    }
+    public void LoadLevel3()
+    {
+        Current_Level = 3;
+        SceneManager.LoadScene("LevelFinal");
+    }
     public void OnWinWndNextLevelClick()
     {
+        Time.timeScale = 1f;
         WinWnd.SetActive(false);
-        if (WinWndOnNextLevelClickCallBack != null)
-            WinWndOnNextLevelClickCallBack();
+        LoseWnd.SetActive(false);
+        OptionWnd.SetActive(false);
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
+        if (Current_Level == 1)
+        {
+            Current_Level += 1;
+            SceneManager.LoadScene("terrain");
+        }
+        else if (Current_Level == 2)
+        {
+            Current_Level += 1;
+            SceneManager.LoadScene("LevelFinal");
+        }
+        //if (WinWndOnNextLevelClickCallBack != null)
+        //    WinWndOnNextLevelClickCallBack();
     }
 
     public void OnWinWndGameMenuClick()
     {
+        Time.timeScale = 1f;
         WinWnd.SetActive(false);
         LoseWnd.SetActive(false);
         OptionWnd.SetActive(false);
@@ -92,6 +123,7 @@ public class MainUICtrl : MonoBehaviour
 
     public void OnLoseWndGameMenuClick()
     {
+        Time.timeScale = 1f;
         WinWnd.SetActive(false);
         LoseWnd.SetActive(false);
         OptionWnd.SetActive(false);
@@ -100,6 +132,7 @@ public class MainUICtrl : MonoBehaviour
     }
     public void BackToMenu()
     {
+        Time.timeScale = 1f;
         ShowWnd(false);
         WinWnd.SetActive(false);
         LoseWnd.SetActive(false);
@@ -109,6 +142,7 @@ public class MainUICtrl : MonoBehaviour
 
     private void Update()
     {
+        print(Current_Level);
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             if (TankCamera.Ins != null)
@@ -118,7 +152,6 @@ public class MainUICtrl : MonoBehaviour
                 else
                     TankCamera.Ins.UnLockCursor();
             }
-
             ShowWnd(!OptionWnd.gameObject.activeInHierarchy);
         }
     }

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class EnemyHealth2 : MonoBehaviour
 {
     [Header("Health")]
-    private int maxhealth;
-    public int CurrentHealth;
+    private float maxhealth;
+    public float CurrentHealth;
     public GameObject smoke;
     public bool onlyOnceSmoke = false;
     [Header("Death")]

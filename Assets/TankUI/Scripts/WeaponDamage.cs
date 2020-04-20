@@ -37,10 +37,12 @@ public class WeaponDamage : MonoBehaviour
     void Update()
     {
         vel = rigidbody.velocity;
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        print(damage);
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         //if (APCollIgnoreTagArr != null && APCollIgnoreTagArr.Count > 0)
         //{
@@ -66,7 +68,17 @@ public class WeaponDamage : MonoBehaviour
                 Destroy(this.gameObject);
                 break;
             case "MT":
-                if(collisionAngle > 30)
+                if(this.tag == "HE")
+                {
+                    if (collisionAngle > 40)
+                    {
+                        DoDamage(collision.gameObject);
+                        Destroy(this.gameObject);
+                        break;
+                    }
+                    break;
+                }
+                else if(collisionAngle > 30)
                 {
                     DoDamage(collision.gameObject);
                     Destroy(this.gameObject);
@@ -79,8 +91,13 @@ public class WeaponDamage : MonoBehaviour
                     break;
                 }
             case "HT":
-                print(collisionAngle);
-                if (collisionAngle > 55)
+                if (this.tag == "HE")
+                {
+                    Display.GetComponent<DisplayDamage>().Ricochet(collision.transform);
+                    Destroy(this.gameObject);
+                    break;
+                }
+                else if (collisionAngle > 55)
                 {
                     DoDamage(collision.gameObject);
                     Destroy(this.gameObject);
@@ -92,17 +109,47 @@ public class WeaponDamage : MonoBehaviour
                     Destroy(this.gameObject);
                     break;
                 }
+            case "Player":
+                switch (collision.gameObject.GetComponent<PlayerHealth>().type)
+                {
+                    case "Light":
+                        collision.gameObject.GetComponent<PlayerHealth>().DoDamage(damage * 0.2f);
+                        Destroy(this.gameObject);
+                        break;
+                    case "Medium":
+                        if (collisionAngle > 30)
+                        {
+                            collision.gameObject.GetComponent<PlayerHealth>().DoDamage(damage * 0.2f);
+                            Destroy(this.gameObject);
+                            break;
+                        }
+                        else
+                        {
+                            Destroy(this.gameObject);
+                            break;
+                        }
+                    case "Heavy":
+
+                        if (collisionAngle > 55)
+                        {
+                            collision.gameObject.GetComponent<PlayerHealth>().DoDamage(damage * 0.2f);
+                            Destroy(this.gameObject);
+                            break;
+                        }
+                        else
+                        {
+                            Destroy(this.gameObject);
+                            break;
+                        }
+                }
+                break;
+
+
         }
 
     }
     private void DoDamage(GameObject go)
     {
-        if(go.tag == "Player")
-        {
-            go.GetComponent<PlayerHealth>().DoDamage(damage * 0.2f);
-        }
-        else
-        {
             Display.GetComponent<DisplayDamage>().Pen(damage, go.transform);
             if (go.GetComponent<TurrentEnemyCtrl>())
             {
@@ -124,7 +171,6 @@ public class WeaponDamage : MonoBehaviour
                 EnemyTankAttributeCtrl ctrl = go.GetComponent<EnemyTankAttributeCtrl>();
                 ctrl.OnTakeDamage(damage);
             }
-        }
 
     }
     private void CalculateDamage()

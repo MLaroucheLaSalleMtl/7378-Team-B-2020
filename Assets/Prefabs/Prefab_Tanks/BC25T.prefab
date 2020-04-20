@@ -3948,6 +3948,7 @@ MonoBehaviour:
   IsDead: 0
   OnlyOnce: 0
   PlayerHpText: {fileID: 0}
+  type: Light
 --- !u!114 &8685635307390269088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8637,7 +8638,7 @@ MonoBehaviour:
   projectile2: {fileID: 100000, guid: cea64dc63790c4b46a6c79c06c6a2a84, type: 3}
   playerShootPosition: {fileID: 8685635308418814831}
   wp: {fileID: 0}
-  shellSpeed: 250
+  shellSpeed: 600
   APdamage: 390
   HEdamage: 450
   MaxReload: 4.2

@@ -18,7 +18,7 @@ public class Instruction : MonoBehaviour
     private bool cando5 = false;
     private bool cando6 = false;
     private bool cando7 = false;
-    public static bool Completed;
+    public static bool Completed = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -27,7 +27,14 @@ public class Instruction : MonoBehaviour
     }
     void Start()
     {
-        StartCoroutine(Nextstep());
+        if(!Completed)
+        {
+            StartCoroutine(Nextstep());
+        }
+        if(Completed)
+        {
+            instruction.enabled = false;
+        }
     }
 
     private void Spawn(int id)
@@ -58,6 +65,7 @@ public class Instruction : MonoBehaviour
         {
             case 0:
                 cando1 = true;
+  
                 instruction.text = "Let's start by driving your tank. Reach the Designated place!, you can Press W/push left stick upward to drive forward, or press S/push left stick downward to drive backward";
                 break;
             case 1:
@@ -84,7 +92,8 @@ public class Instruction : MonoBehaviour
                 instruction.text = "Heavily armored target has more equivalent armor when the incident angle is too big, try replace yourself. You can also try to press Shift/left shoulder to bring up telescope view.";
                 break;
             case 7:
-
+                Completed = true;
+                MainUICtrl.Current_Level = 1;
                 instruction.text = "You've finished tutorials! You can press Esc/Start at any moment to return to Main menu, or start level 1 using the same tank";
                 break;
         }
@@ -122,18 +131,11 @@ public class Instruction : MonoBehaviour
         }
         if (step == 6 && cando6)
         {
-            float a;
-            a = Input.GetAxis("Trigger");
-            if (Input.GetKey(KeyCode.LeftShift) || a == -1)
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Joystick1Button4))
             {
                 print("pressed");
                 step += 1;
             }
-        }
-        if (step == 7)
-        {
-            GameObject.Find("LevelManager").GetComponent<LevelManager>().LevelEndWin(1);
-            Completed = true;
         }
         
     }

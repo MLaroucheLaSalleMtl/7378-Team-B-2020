@@ -17,7 +17,7 @@ public class TankCamera : MonoBehaviour
 
     public Transform LookAt;
     public Transform TPS_camTransform;
-    public Transform ShootCam;
+    public GameObject ShootCam;
     public Transform ShootCamBase;
 
     private TurrentTester tr;
@@ -32,6 +32,7 @@ public class TankCamera : MonoBehaviour
     private float currentY = 0.0f;
     private float sensivityX = 4.0f;
     private float sensivityY = 1.0f;
+    float zoomlevel;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -78,6 +79,7 @@ public class TankCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ShootCam = GameObject.FindGameObjectWithTag("ShootCamera");
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Joystick1Button4) || distance == 5 )
         {       
             switch(TurrentTester.isAiming)
@@ -91,6 +93,12 @@ public class TankCamera : MonoBehaviour
                     distance = 6;
                     break;
             }
+            zoomlevel = 35;
+            if(ShootCam != null)
+            {
+                ShootCam.GetComponent<Camera>().fieldOfView = 35;
+            }
+
             gettrigger = false;
         }
         if(!TurrentTester.isAiming)
@@ -102,12 +110,12 @@ public class TankCamera : MonoBehaviour
             RotateShoot();
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 || Input.GetAxis("Joystick Zoom" ) < 0)
         {
             distance += 1;
         }
         //Zoom in  
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetAxis("Joystick Zoom") > 0)
         {
             distance -= 1;
         }
@@ -134,6 +142,24 @@ public class TankCamera : MonoBehaviour
 
     private void RotateShoot()
     {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetAxis("Joystick Zoom") > 0)
+        {
+            zoomlevel -= 2;
+
+            ShootCam.GetComponent<Camera>().fieldOfView = zoomlevel;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 || Input.GetAxis("Joystick Zoom") < 0)
+        {
+            zoomlevel += 2;
+  
+            ShootCam.GetComponent<Camera>().fieldOfView = zoomlevel;
+        }
+        if (zoomlevel <= 12)
+        {
+            zoomlevel = 12;
+        }
+        //Mathf.Clamp(zoomlevel, 18, 35);
+
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         ShootCamBase.transform.rotation = rotation;
         //currentY = Mathf.Clamp(currentY, Shoot_Y_Min, Shoot_Y_Max);

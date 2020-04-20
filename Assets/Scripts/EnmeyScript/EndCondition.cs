@@ -5,25 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class EndCondition : MonoBehaviour
 {
-    public float enemynumber;
+    private float enemynumber;
     // Start is called before the first frame update
     void Start()
     {
-        enemynumber = GameObject.FindGameObjectsWithTag("LT").Length + GameObject.FindGameObjectsWithTag("MT").Length + GameObject.FindGameObjectsWithTag("HT").Length;
-        Debug.Log(enemynumber);
+        enemynumber = 15;// = GameObject.FindGameObjectsWithTag("LT").Length + GameObject.FindGameObjectsWithTag("MT").Length + GameObject.FindGameObjectsWithTag("HT").Length;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //enemynumber = GameObject.FindGameObjectsWithTag("LT").Length + GameObject.FindGameObjectsWithTag("MT").Length + GameObject.FindGameObjectsWithTag("HT").Length;
+        Debug.Log(enemynumber);
     }
     public void numberupdate()
     {
         enemynumber--;
         if(enemynumber<=0)
         {
-            SceneManager.LoadScene("GameMenu");
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().LevelEndWin(2);
         }
     }
 }

@@ -97,17 +97,35 @@ public class OptionButton : MonoBehaviour
         optionBodyPanel.transform.Find("GamePlayOptionsPanel").gameObject.SetActive(false);
     }
     
-    public void LoadingGameScence(string gameScenceNam)
+    public void LoadingGameScence()
     {
+        print("clicked");
         LoadPanel.SetActive(true);
-        if(gameScenceNam == "TutorialField")
+        if(!Instruction.Completed)
         {
-            if(Instruction.Completed)
+                SceneManager.LoadScene("TutorialField");
+        }
+        else
+        {
+            switch (MainUICtrl.Current_Level)
             {
-                gameScenceNam = "Level1";
+                case 1:
+                    StartCoroutine(LoadingGameScenceAsync("Level1"));
+                    break;
+                case 2:
+                    StartCoroutine(LoadingGameScenceAsync("terrain"));
+                    break;
+                case 3:
+                    StartCoroutine(LoadingGameScenceAsync("LevelFinal"));
+                    break;
             }
         }
-        StartCoroutine(LoadingGameScenceAsync(gameScenceNam));
+
+    }
+
+    public void LoadTutorial()
+    {
+        SceneManager.LoadSceneAsync("TutorialField");
     }
 
     IEnumerator LoadingGameScenceAsync(string gameScenceNam)
