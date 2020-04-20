@@ -130,16 +130,12 @@ public class Instruction : MonoBehaviour
                 step += 1;
             }
         }
-
         if (step == 7)
         {
-            if (!Completed)
-            {
-                GameObject.Find("LevelManager").GetComponent<LevelManager>().LevelEndWin(1);
-                Completed = true;
-            }
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().LevelEndWin(1);
+            Completed = true;
         }
-    }
         
     }
+}
 
