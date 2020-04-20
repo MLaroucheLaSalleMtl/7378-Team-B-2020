@@ -21,9 +21,18 @@ public class TurrentEnemyCtrl : MonoBehaviour
     [SerializeField] private Slider hpBar;
     [SerializeField] private float Hp = 100;
     [SerializeField] private float apDamage=10f;
+    private bool isDead = false;
 
     private void Update()
     {
+        if (Hp <= 0)
+        {
+            if (!isDead)
+            {
+                isDead = true;
+                ModuleRoot.Ins.UIModule.ShowWnd(true, WndType.WND_OVER);
+            }
+        }
         TryFindTarget();
         TryRotateToTarget();
         TryAttackPlayer();

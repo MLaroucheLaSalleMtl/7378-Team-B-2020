@@ -8,7 +8,8 @@ public enum WndType
 {
     WND_OPTION,
     WND_WIN,
-    WND_LOSE
+    WND_LOSE,
+    WND_OVER
 }
 public class MainUICtrl : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class MainUICtrl : MonoBehaviour
     public GameObject OptionWnd;
     public GameObject WinWnd;
     public GameObject LoseWnd;
+    public GameObject GameOverWnd;
     public Action WinWndOnNextLevelClickCallBack;
     // public Action WinWndOnNextToGameMenuClickCallBack;
     // public Action LoseWndOnGameMenuClickCallBack;
@@ -41,6 +43,9 @@ public class MainUICtrl : MonoBehaviour
                 case WndType.WND_LOSE:
                     LoseWnd.SetActive(true);
                     break;
+                case WndType.WND_OVER:
+                    GameOverWnd.SetActive(true);
+                    break;
             }
         }
         else
@@ -61,6 +66,9 @@ public class MainUICtrl : MonoBehaviour
                 case WndType.WND_LOSE:
                     LoseWnd.SetActive(false);
                     break;
+                case WndType.WND_OVER:
+                    GameOverWnd.SetActive(false);
+                    break;
             }
         }
         
@@ -74,6 +82,7 @@ public class MainUICtrl : MonoBehaviour
         OptionWnd.SetActive(false);
         TankCamera.Ins.LockCursor();
     }
+  
     public void OnWinWndNextLevelClick()
     {
         WinWnd.SetActive(false);
@@ -86,6 +95,7 @@ public class MainUICtrl : MonoBehaviour
         WinWnd.SetActive(false);
         LoseWnd.SetActive(false);
         OptionWnd.SetActive(false);
+        GameOverWnd.SetActive(false);
         ShowWnd(false, WndType.WND_WIN);
         SceneManager.LoadScene(2);
     }
@@ -95,15 +105,18 @@ public class MainUICtrl : MonoBehaviour
         WinWnd.SetActive(false);
         LoseWnd.SetActive(false);
         OptionWnd.SetActive(false);
+        GameOverWnd.SetActive(false);
         ShowWnd(false, WndType.WND_LOSE);
         SceneManager.LoadScene(2);
     }
     public void BackToMenu()
     {
+        Time.timeScale = 1;
         ShowWnd(false);
         WinWnd.SetActive(false);
         LoseWnd.SetActive(false);
         OptionWnd.SetActive(false);
+        GameOverWnd.SetActive(false);
         SceneManager.LoadScene(1);
     }
 
@@ -111,7 +124,7 @@ public class MainUICtrl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
-            if (WinWnd.gameObject.activeInHierarchy || LoseWnd.gameObject.activeInHierarchy) return;
+            if (WinWnd.gameObject.activeInHierarchy || LoseWnd.gameObject.activeInHierarchy|| GameOverWnd.gameObject.activeInHierarchy) return;
             if (TankCamera.Ins != null)
             {
                 if (OptionWnd.gameObject.activeInHierarchy)
