@@ -16,12 +16,11 @@ public class TurrentEnemyCtrl : MonoBehaviour
 
     [SerializeField] private GameObject[] shootPosArr=null;
     [SerializeField] private GameObject bullet=null;
-    [SerializeField] private float bulletSpeed = 40f;
+    [SerializeField] private float bulletSpeed = 20f;
 
     [SerializeField] private Slider hpBar;
     [SerializeField] private float Hp = 100;
     [SerializeField] private float apDamage=10f;
-    [SerializeField] private GameObject particle;
     private bool isDead = false;
 
     private void Update()
@@ -30,11 +29,6 @@ public class TurrentEnemyCtrl : MonoBehaviour
         {
             if (!isDead)
             {
-                if (particle != null)
-                {
-                    GameObject go = Instantiate(particle);
-                    go.transform.position = transform.position;
-                }
                 isDead = true;
                 ModuleRoot.Ins.ModuleData.AddScore();
                 ModuleRoot.Ins.UIModule.ShowWnd(true, WndType.WND_OVER);
@@ -68,7 +62,6 @@ public class TurrentEnemyCtrl : MonoBehaviour
     {
         if (currentTarget != null)
         {
-            transform.LookAt(currentTarget);
             Quaternion targetRot = Quaternion.LookRotation(currentTarget.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation,targetRot,rotateSpeed*Time.deltaTime);
          //   print(Quaternion.Angle(targetRot,transform.rotation));
