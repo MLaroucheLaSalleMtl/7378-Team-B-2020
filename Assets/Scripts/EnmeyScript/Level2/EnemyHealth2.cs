@@ -88,7 +88,7 @@ public class EnemyHealth2 : MonoBehaviour
     public void Death()
     {
         IsDead = true;
-        ModuleRoot.Ins.ModuleData.AddScore();
+
         Debug.Log("dead");
         
            

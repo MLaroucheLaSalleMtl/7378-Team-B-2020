@@ -42,12 +42,12 @@ public class WeaponDamage : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
-        if (APCollIgnoreTagArr != null && APCollIgnoreTagArr.Count > 0)
-        {
-            if (APCollIgnoreTagArr.Contains(collision.gameObject.tag)) return;
-        }
-        if (ApCollTargetTagArr.Contains(collision.gameObject.tag)) 
-            if (OnCollisionEnterCallBack != null) OnCollisionEnterCallBack(collision.gameObject);
+        //if (APCollIgnoreTagArr != null && APCollIgnoreTagArr.Count > 0)
+        //{
+        //    if (APCollIgnoreTagArr.Contains(collision.gameObject.tag)) return;
+        //}
+        //if (ApCollTargetTagArr.Contains(collision.gameObject.tag)) 
+        //    if (OnCollisionEnterCallBack != null) OnCollisionEnterCallBack(collision.gameObject);
         if (ExplosionEffect && !ExplosionFlg)
         {
             ExplosionFlg = true;

@@ -61,15 +61,6 @@ public class PlayerWeaponController : MonoBehaviour
                         wp.HE--;
                         GameObject HE = GameObject.Instantiate(projectile2, playerShootPosition.transform.position, playerShootPosition.transform.rotation);
                         HE.GetComponent<Rigidbody>().velocity = HE.transform.forward * shellSpeed;
-                        HE.GetComponent<WeaponDamage>().SetAPConfig(new List<string>() { "HE" }, new List<string>() { "Enemy" },
-                            (go) =>
-                            {
-                                if (go.GetComponent<TurrentEnemyCtrl>())
-                                {
-                                    TurrentEnemyCtrl ctrl = go.GetComponent<TurrentEnemyCtrl>();
-                                    ctrl.OnTakeDamage(5);
-                                }
-                            });
                         audio.Play();
                         break;
                 }

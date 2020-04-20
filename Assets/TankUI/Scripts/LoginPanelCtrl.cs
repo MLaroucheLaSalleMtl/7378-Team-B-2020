@@ -13,8 +13,6 @@ public class LoginPanelCtrl : MonoBehaviour
     public Text passwdHolder;
     public GameObject tankSwitcher;
     public GameObject bgVideo;
-    public Text[] nameTextArr;
-    public Text[] scoreTextArr;
 
     // Start is called before the first frame update
     void Start()
@@ -51,22 +49,5 @@ public class LoginPanelCtrl : MonoBehaviour
         menuPanel.SetActive(true);
         loginPanel.SetActive(false);
         bgVideo.SetActive(false);
-    }
-
-    public void UpdateRankView()
-    {
-     List<PlayerData> lst=   ModuleRoot.Ins.ModuleData.GetScoreLst();
-     for (int i = 0; i <7; i++)
-     {
-         nameTextArr[i].text = "";
-         scoreTextArr[i].text = "";
-     }
-     for (int i = 0; i < lst.Count; i++)
-     {
-        nameTextArr[i].text= lst[i].Name;
-        scoreTextArr[i].text = lst[i].Score.ToString();
-     }
-
-     
     }
 }

@@ -23,8 +23,7 @@ public class EndCondition : MonoBehaviour
         enemynumber--;
         if(enemynumber<=0)
         {
-          //  SceneManager.LoadScene("GameMenu");
-          GameObject.Find("LevelManager").GetComponent<LevelManager>().LevelEndWin(2);
+            SceneManager.LoadScene("GameMenu");
         }
     }
 }

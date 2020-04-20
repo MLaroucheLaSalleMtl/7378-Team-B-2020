@@ -10,7 +10,6 @@ public class OptionButton : MonoBehaviour
     private AsyncOperation asyncOp;
     private float loadPct = 0;
     public GameObject LoadProgress;
-    public LoginPanelCtrl ctrl;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +48,6 @@ public class OptionButton : MonoBehaviour
     {
         GameObject.Find("HomeCanvas").transform.Find("MenuPanel").gameObject.SetActive(false);
         GameObject.Find("HomeCanvas").transform.Find("RankPanel").gameObject.SetActive(true);
-        ctrl.UpdateRankView();
     }
 
     public void HideRankPanel()
@@ -107,9 +105,7 @@ public class OptionButton : MonoBehaviour
             if(Instruction.Completed)
             {
                 gameScenceNam = "Level1";
-                ModuleRoot.Ins.UIModule.ShowScoreText(true);
             }
-            ModuleRoot.Ins.UIModule.ShowScoreText(true);
         }
         StartCoroutine(LoadingGameScenceAsync(gameScenceNam));
     }

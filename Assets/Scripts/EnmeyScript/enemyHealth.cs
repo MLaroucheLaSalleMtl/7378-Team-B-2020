@@ -88,7 +88,6 @@ public class enemyHealth : MonoBehaviour
         Debug.Log("dead");
         if (!OnlyOnce)
         {
-            ModuleRoot.Ins.ModuleData.AddScore();
             EndCondition.numberupdate();
             OnlyOnce = true;
         }

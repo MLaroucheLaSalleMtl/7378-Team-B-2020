@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public enum WndType
 {
@@ -20,13 +19,8 @@ public class MainUICtrl : MonoBehaviour
     public GameObject LoseWnd;
     public GameObject GameOverWnd;
     public Action WinWndOnNextLevelClickCallBack;
-    public Text TexScore;
-    
-
-    public void UpdateScoreText(string text)
-    {
-        TexScore.text = text;
-    }
+    // public Action WinWndOnNextToGameMenuClickCallBack;
+    // public Action LoseWndOnGameMenuClickCallBack;
     public void ShowWnd(bool flag,WndType type=WndType.WND_OPTION,Action nextLevelCallBack=null)
     {
         if (flag)
@@ -118,9 +112,6 @@ public class MainUICtrl : MonoBehaviour
     public void BackToMenu()
     {
         Time.timeScale = 1;
-        ModuleRoot.Ins.ModuleData.SaveScore();
-        ModuleRoot.Ins.ModuleData.ResetScore();
-        ShowScoreText(false);
         ShowWnd(false);
         WinWnd.SetActive(false);
         LoseWnd.SetActive(false);
@@ -129,10 +120,6 @@ public class MainUICtrl : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void ShowScoreText(bool flag)
-    {
-        TexScore.transform.parent.gameObject.SetActive(flag);
-    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
