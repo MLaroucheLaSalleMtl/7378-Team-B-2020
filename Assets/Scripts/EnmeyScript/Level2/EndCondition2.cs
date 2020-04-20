@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class EndCondition2 : MonoBehaviour
 {
     public Slider Slider;
-
-    private bool isEnd=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +17,7 @@ public class EndCondition2 : MonoBehaviour
     {
       if(Slider.value>=100)
         {
-            if (!isEnd)
-            {
-                isEnd = true;
-                //SceneManager.LoadScene("GameMenu");
-                GameObject.Find("LevelManager").GetComponent<LevelManager>().LevelEndWin(3);
-            }
+            SceneManager.LoadScene("GameMenu");
         }
     }
 }
