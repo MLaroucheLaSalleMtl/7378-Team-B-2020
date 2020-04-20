@@ -111,6 +111,7 @@ public class MainUICtrl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
+            if (WinWnd.gameObject.activeInHierarchy || LoseWnd.gameObject.activeInHierarchy) return;
             if (TankCamera.Ins != null)
             {
                 if (OptionWnd.gameObject.activeInHierarchy)
