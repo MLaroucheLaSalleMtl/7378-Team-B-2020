@@ -2760,7 +2760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
-  findTargetRadius: 40
+  findTargetRadius: 131.9
   mainPlayerTag: 
   rotateSpeed: 1
   attackDelay: 1

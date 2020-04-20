@@ -30,6 +30,7 @@ public class TurrentEnemyCtrl : MonoBehaviour
             if (!isDead)
             {
                 isDead = true;
+                ModuleRoot.Ins.ModuleData.AddScore();
                 ModuleRoot.Ins.UIModule.ShowWnd(true, WndType.WND_OVER);
             }
         }

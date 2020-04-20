@@ -10,7 +10,7 @@ namespace TankBehaviour
         public float _maxHp = 2500;
         public float _curHp;
         private EnemyTankCtrl _owner;
-        [HideInInspector] public float _atkDist = 1000;
+        public float _atkDist = 15000;
         [HideInInspector] public bool _isMoving = false;
         [HideInInspector] public float _rotateSpeed = 1;
         [HideInInspector] public float _atkDelay = 5f;

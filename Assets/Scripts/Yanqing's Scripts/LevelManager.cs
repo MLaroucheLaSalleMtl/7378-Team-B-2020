@@ -52,9 +52,13 @@ public class LevelManager : MonoBehaviour
         { 
             ModuleRoot.Ins.UIModule.ShowWnd(true,WndType.WND_WIN,LoadLevel1);
         }
-        else
+        else if(levelIndex==2)
         {
             ModuleRoot.Ins.UIModule.ShowWnd(true,WndType.WND_WIN,LoadLevel2);
+        }
+        else
+        {
+            ModuleRoot.Ins.UIModule.ShowWnd(true,WndType.WND_WIN,LoadLevel3);
         }
     }
 

@@ -30,7 +30,7 @@ public class AIStateBase
     public Vector3 GetMoveToPos()
     {
         return _owner.TargetTran.position +
-               Random.Range(-3000, 3000) * new Vector3(1, 0, 1);
+               Random.Range(-13000, 13000) * new Vector3(1, 0, 1);
     }
 
     public float GetDistToTarget()
