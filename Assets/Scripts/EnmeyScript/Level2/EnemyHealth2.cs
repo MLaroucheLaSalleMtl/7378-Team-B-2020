@@ -72,7 +72,8 @@ public class EnemyHealth2 : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
-            Death();
+            if(!IsDead)
+                Death();
         }
     }
     public void DoDamage(int damage)
