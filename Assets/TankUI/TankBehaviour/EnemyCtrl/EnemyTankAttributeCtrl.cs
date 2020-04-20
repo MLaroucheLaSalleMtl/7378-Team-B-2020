@@ -10,7 +10,7 @@ namespace TankBehaviour
         public float _maxHp = 2500;
         public float _curHp;
         private EnemyTankCtrl _owner;
-        [HideInInspector] public float _atkDist = 1000;
+        [HideInInspector] public float _atkDist = 4000;
         [HideInInspector] public bool _isMoving = false;
         [HideInInspector] public float _rotateSpeed = 1;
         [HideInInspector] public float _atkDelay = 5f;
@@ -44,7 +44,6 @@ namespace TankBehaviour
         private void Update()
         {
             if (_curHp <= 0) OnDead();
-            print("Current " + _curHp);
             UpdateUIView();
         }
 
@@ -57,7 +56,6 @@ namespace TankBehaviour
         public void OnTakeDamage(int dmg)
         {
             _curHp-= dmg;
-            print("Current " + _curHp);
         }
 
         public void UpdateUIView()

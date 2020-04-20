@@ -5541,7 +5541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1150787683349767668
 Transform:
   m_ObjectHideFlags: 0
@@ -5675,7 +5675,7 @@ MonoBehaviour:
   m_SteerHelper: 0
   m_TractionControl: 0
   m_FullTorqueOverAllWheels: 1500
-  m_ReverseTorque: 600
+  m_ReverseTorque: 300
   m_MaxHandbrakeTorque: 1
   m_Downforce: 500
   m_SpeedType: 1
@@ -5761,9 +5761,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce35f7f397acdd44c8f0dc8fc0a9b79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhealth: 0
   IsDead: 0
   OnlyOnce: 0
   PlayerHpText: {fileID: 0}
+  type: 
 --- !u!114 &302669654023230002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5903,8 +5905,6 @@ MonoBehaviour:
   ReloadTime: {fileID: 0}
   APammo: {fileID: 0}
   HEammo: {fileID: 0}
-  AP: 0
-  HE: 0
   currentShell: 0
   canFire: 0
 --- !u!114 &8987741442876428094
@@ -5932,9 +5932,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce35f7f397acdd44c8f0dc8fc0a9b79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhealth: 2000
   IsDead: 0
   OnlyOnce: 0
   PlayerHpText: {fileID: 0}
+  type: 
 --- !u!1 &4190886577779835649
 GameObject:
   m_ObjectHideFlags: 0

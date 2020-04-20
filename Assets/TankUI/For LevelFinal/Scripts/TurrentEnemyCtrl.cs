@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TurrentEnemyCtrl : MonoBehaviour
 {
     [SerializeField] private Transform currentTarget=null;
-    [SerializeField] private float findTargetRadius=20f;
+    [SerializeField] private float findTargetRadius=50f;
     [SerializeField] private string mainPlayerTag = "TankBody";
     [SerializeField] private float rotateSpeed=1f;
     [SerializeField] private float attackDelay = 1f;
@@ -19,14 +19,22 @@ public class TurrentEnemyCtrl : MonoBehaviour
     [SerializeField] private float bulletSpeed = 20f;
 
     [SerializeField] private Slider hpBar;
-    [SerializeField] private float Hp = 100;
-    [SerializeField] private float apDamage=10f;
+    [SerializeField] private float Hp = 5000;
+    [SerializeField] private float apDamage=50f;
+    public AudioSource audio;
+
+    public GameObject WinTxt;
 
     private void Update()
     {
         TryFindTarget();
         TryRotateToTarget();
         TryAttackPlayer();
+        if(Hp <= 0)
+        {
+            WinTxt.SetActive(true);
+            MainUICtrl.Current_Level = 1;
+        }
     }
     private void OnDrawGizmos()
     {
@@ -81,6 +89,7 @@ public class TurrentEnemyCtrl : MonoBehaviour
     private void Attack()
     {
         Rigidbody tempRb;
+        audio.Play();
         foreach (var posObj in shootPosArr)
         {
           GameObject obj=  Instantiate(bullet, posObj.transform.position, posObj.transform.rotation);
@@ -98,7 +107,7 @@ public class TurrentEnemyCtrl : MonoBehaviour
     {
         float val = Hp - dmg;
         Hp = val <= 0 ? 0 : val;
-        SetHpUI(Hp/100);
+        SetHpUI(Hp/5000);
     }
 
     public void SetHpUI(float HpRatio)

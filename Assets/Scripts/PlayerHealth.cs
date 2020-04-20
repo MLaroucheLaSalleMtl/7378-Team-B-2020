@@ -13,13 +13,12 @@ public class PlayerHealth : MonoBehaviour
     public bool OnlyOnce = false;
     [Header("Display Hp")]
     public Text PlayerHpText;
+    public string type;
     
 
-    public 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
         PlayerHpText = GameObject.FindGameObjectWithTag("HP").GetComponent<Text>();
         CurrentHealth = maxhealth;
         PlayerHpText.text = CurrentHealth.ToString();
@@ -30,10 +29,10 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         PlayerHpText.text = ((int)CurrentHealth).ToString();
         if (CurrentHealth <= 0)
         {
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().levelEndLose();
             Debug.Log("dead");
         }
     }

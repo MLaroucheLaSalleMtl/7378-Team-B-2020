@@ -19967,7 +19967,7 @@ GameObject:
   - component: {fileID: 4853034884026216}
   m_Layer: 10
   m_Name: Firefly_ST
-  m_TagString: Untagged
+  m_TagString: MT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21650,7 +21650,7 @@ GameObject:
   - component: {fileID: 64946328759998222}
   m_Layer: 10
   m_Name: MainBody
-  m_TagString: Untagged
+  m_TagString: MT
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

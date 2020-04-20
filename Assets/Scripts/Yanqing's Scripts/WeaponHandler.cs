@@ -9,24 +9,29 @@ public class WeaponHandler : MonoBehaviour
     public Text ReloadTime;
     public Text APammo;
     public Text HEammo;
-    public  int AP;
-    public  int HE;
+    private  int AP;
+    private int HE;
     public  int currentShell;
     private float reload;
     private  bool canCount = true;
     private  bool doOnce = false;
     public bool canFire = false;
+
+    public int AP1 { get => AP; set => AP = value; }
+    public int HE1 { get => HE; set => HE = value; }
+
     // Start is called before the first frame update
     void Start()
     {
         currentShell = 1;
         shell_indicator.text = "AP Loaded";
-
+        
         reload = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerWeaponController>().MaxReload;
-        AP = 20;
-        HE = 20;
-        APammo.text = AP.ToString();
-        HEammo.text = HE.ToString();
+
+        AP1 = 40;
+        HE1 = 35;
+        APammo.text = AP1.ToString();
+        HEammo.text = HE1.ToString();
     }
 
     // Update is called once per frame
@@ -45,19 +50,33 @@ public class WeaponHandler : MonoBehaviour
             ReloadTime.text = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerWeaponController>().MaxReload + "sec";
             reload = 0.0f;
         }
-        APammo.text = AP.ToString();
-        HEammo.text = HE.ToString();
+        APammo.text = AP1.ToString();
+        HEammo.text = HE1.ToString();
     }
     public void SwitchAP()
     {
-        currentShell = 1;
-        shell_indicator.text = "AP Loaded";
+        if(AP1 != 0)
+        {
+            currentShell = 1;
+            shell_indicator.text = "AP Loaded";
+        }
+        if(AP1 == 0)
+        {
+            shell_indicator.text = "Out of AP";
+        }
     }
 
     public void SwitchHE()
     {
-        currentShell = 2;
-        shell_indicator.text = "HE Loaded";
+        if(HE1 != 0)
+        {
+            currentShell = 2;
+            shell_indicator.text = "HE Loaded";
+        }
+        if(HE1 == 0)
+        {
+            shell_indicator.text = "Out of HE";
+        }
     }
 
     public void resetTimer()

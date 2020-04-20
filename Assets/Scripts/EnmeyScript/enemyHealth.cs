@@ -85,7 +85,6 @@ public class enemyHealth : MonoBehaviour
     {
         IsDead = true;
        
-        Debug.Log("dead");
         if (!OnlyOnce)
         {
             EndCondition.numberupdate();

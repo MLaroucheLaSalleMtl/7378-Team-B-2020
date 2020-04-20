@@ -23,7 +23,6 @@ namespace TurretDemo
             ShootCamBase = GameObject.FindGameObjectWithTag("ShootCamBase").transform;
             turret[0] = GameObject.FindGameObjectWithTag("Turrent").GetComponent<TurretRotation>();
             cam = Camera.main;
-            print("finished");
         }
         private void Update()
         {
@@ -35,7 +34,8 @@ namespace TurretDemo
 
                 Ray ray = cam.ScreenPointToRay(new Vector3(960, 583, 0));
 
-                LayerMask layerMask = 1 << 16;
+                LayerMask layerMask = 1 << 19;
+                layerMask = ~layerMask;
                 RaycastHit hit;
                 if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000, layerMask))
                 {
