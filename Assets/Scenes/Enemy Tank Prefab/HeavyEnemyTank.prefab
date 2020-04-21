@@ -27305,7 +27305,7 @@ MonoBehaviour:
   distance: 50
   LineMask:
     serializedVersion: 2
-    m_Bits: 1167414
+    m_Bits: 1097782
   timer: 0
   waittime: 3
   collider_exist: 0

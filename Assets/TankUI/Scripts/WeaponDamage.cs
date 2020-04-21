@@ -113,13 +113,13 @@ public class WeaponDamage : MonoBehaviour
                 switch (collision.gameObject.GetComponent<PlayerHealth>().type)
                 {
                     case "Light":
-                        collision.gameObject.GetComponent<PlayerHealth>().DoDamage(damage * 0.2f);
+                        collision.gameObject.GetComponent<PlayerHealth>().DoDamage(damage * 0.15f);
                         Destroy(this.gameObject);
                         break;
                     case "Medium":
                         if (collisionAngle > 30)
                         {
-                            collision.gameObject.GetComponent<PlayerHealth>().DoDamage(damage * 0.2f);
+                            collision.gameObject.GetComponent<PlayerHealth>().DoDamage(damage * 0.15f);
                             Destroy(this.gameObject);
                             break;
                         }
@@ -132,7 +132,7 @@ public class WeaponDamage : MonoBehaviour
 
                         if (collisionAngle > 55)
                         {
-                            collision.gameObject.GetComponent<PlayerHealth>().DoDamage(damage * 0.2f);
+                            collision.gameObject.GetComponent<PlayerHealth>().DoDamage(damage * 0.15f);
                             Destroy(this.gameObject);
                             break;
                         }

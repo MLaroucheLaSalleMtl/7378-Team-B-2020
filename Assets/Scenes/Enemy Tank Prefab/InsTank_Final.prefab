@@ -3309,7 +3309,7 @@ MonoBehaviour:
   distance: 300
   LineMask:
     serializedVersion: 2
-    m_Bits: 1167415
+    m_Bits: 1097783
   ReachDestination: 0
   timer: 0
   waittime: 3
