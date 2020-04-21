@@ -33,7 +33,8 @@ public class InsTankMovement : MonoBehaviour
     public float RandomNumber = 0f;
     public bool SetDestinationOnce=false;
     [Header("Death")]
-    public EnemyHealth2 enemyHealth;
+    private EnemyHealth2 enemyHealth;
+    private InsTankFire InsTankFire;
     // Start is called before the first frame update
     void Start()
     {
@@ -121,6 +122,7 @@ public class InsTankMovement : MonoBehaviour
 
         if (enemyHealth.IsDead)
         {
+            InsTankFire.enabled = false;
             enemy.Stop(true);
         }
 
