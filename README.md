@@ -21,20 +21,30 @@ External resources and references:
 PART BY YANQING:
 
 1.https://www.youtube.com/watch?v=ox8dvz6e6ws (turret rotation)
+
 2.https://assetstore.unity.com/packages/templates/systems/physics-tank-maker-50485 (Part of tank models)
+
 3.World of Tanks Tank models.
 
 
 PART BY CHENGYU:
 
 1.https://www.youtube.com/watch?v=dHzeHh-3bp4&t=71s
+
 2.https://www.youtube.com/watch?v=EHgQnTr7OW4&t=372s
+
 3.https://www.youtube.com/watch?v=_nRzoTzeyxU
+
 4.https://www.youtube.com/watch?v=aEPSuGlcTUQ
+
 5.https://free3d.com/
+
 6.https://answers.unity.com/questions/1161260/rotating-an-object-to-face-another-object-only-on.html
+
 7.https://m.youtube.com/watch?v=_nRzoTzeyxU
+
 8. https://forum.unity.com/threads/making-an-object-rotate-to-face-another.1211/
+
 9. assert store(Model)
 
 
