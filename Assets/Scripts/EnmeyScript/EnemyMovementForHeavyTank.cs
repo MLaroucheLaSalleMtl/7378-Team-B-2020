@@ -63,6 +63,7 @@ public class EnemyMovementForHeavyTank : MonoBehaviour
 
         if (enemyHealth.IsDead)
         {
+            EnemyFireForHeavyTank.enabled = false;
             enemy.Stop(true);
         }
 

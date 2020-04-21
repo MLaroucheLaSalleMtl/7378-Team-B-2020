@@ -20,7 +20,8 @@ public class HeavyTankMoveLevel2 : MonoBehaviour
     Rigidbody enemyrigi;
     Vector3 velocity = Vector3.zero;
 
-
+    private EnemyHealth2 EnemyHealth2;
+    private HeavyTankFireLevel2 HeavyTankFireLevel2;
     RaycastHit linehit;
     public bool collider_exist = false;
     public LayerMask LineMask;
@@ -31,6 +32,7 @@ public class HeavyTankMoveLevel2 : MonoBehaviour
         enemy = this.GetComponent<NavMeshAgent>();
         enemyrigi = this.GetComponent<Rigidbody>();
         GameManagerLelvel2 = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameManagerLelvel2>();
+        HeavyTankFireLevel2 = this.GetComponent<HeavyTankFireLevel2>();
         //NormalDestination = GameObject.FindGameObjectWithTag("ND").transform;
         //RetreatDestination = GameObject.FindGameObjectWithTag("RD").transform;
     }
@@ -72,6 +74,12 @@ public class HeavyTankMoveLevel2 : MonoBehaviour
             destination = NormalDestination.position;
             SetDestination();
         }
+        if (EnemyHealth2.IsDead)
+        {
+            HeavyTankFireLevel2.enabled = false;
+            enemy.Stop(true);
+        }
+
     }
 
     public void DetectedDistance()
