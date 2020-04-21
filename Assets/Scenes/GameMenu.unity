@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -2406,7 +2406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadPanel: {fileID: 4361394402867568585}
   LoadProgress: {fileID: 4361394404647431112}
-  ctrl: {fileID: 0}
 --- !u!1 &640902157
 GameObject:
   m_ObjectHideFlags: 0
@@ -13381,8 +13380,6 @@ MonoBehaviour:
   passwdHolder: {fileID: 2091501010294181683}
   tankSwitcher: {fileID: 1675612482}
   bgVideo: {fileID: 1346247263}
-  nameTextArr: []
-  scoreTextArr: []
 --- !u!222 &2091501010403934215
 CanvasRenderer:
   m_ObjectHideFlags: 0
