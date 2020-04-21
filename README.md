@@ -43,25 +43,41 @@ PART BY FENLI:
 Scripting help from: 
 
 Unity Documentation
+
 https://www.runoob.com/csharp/csharp-tutorial.html
 
 Video at the beginning:
+
 https://www.youtube.com/watch?v=OTLHPN5Uhjs
 
 UI Material (including a part of coding references):
+
 http://www.6m5m.com/index.php?do=service&sid=21816、
+
 http://www.6m5m.com/index.php?do=service&sid=12478
+
 http://www.6m5m.com/index.php?do=service&sid=23559
+
 Tutorial study (including a little coding references):
+
 http://www.sikiedu.com/ 
+
 https://www.bilibili.com/video/av86142995?p=9
+
 https://www.bilibili.com/video/av29751762
+
 https://www.youtube.com/watch?v=faXQQ5b6GEs(Mini map)
+
 https://www.bilibili.com/video/BV1vs41167vU?p=6 (about fire system)
+
 https://www.bilibili.com/video/BV15W411976h?p=38 (Turret damage effect)
+
 https://www.youtube.com/watch?v=PaLD1t-kIwM (Make a Basic AI State Machine)
+
 https://www.youtube.com/watch?v=dYi-i83sq5g (State Machine Behaviors)
+
 https://www.youtube.com/watch?v=Ar9eIn4z6XE (Basics of Shader Graph)
+
 https://52movs.com/mov/82382478.php (Shader in PUBG)
 
 
