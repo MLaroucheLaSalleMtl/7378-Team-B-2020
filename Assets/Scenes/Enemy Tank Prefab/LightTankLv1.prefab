@@ -22604,7 +22604,7 @@ MonoBehaviour:
   distance: 50
   LineMask:
     serializedVersion: 2
-    m_Bits: 1568822
+    m_Bits: 1097782
   ReachDestination: 0
   timer: 0
   waittime: 3

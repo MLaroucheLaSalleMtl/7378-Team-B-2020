@@ -19458,7 +19458,7 @@ MonoBehaviour:
   collider_exist: 0
   LineMask:
     serializedVersion: 2
-    m_Bits: 118839
+    m_Bits: 1097783
 --- !u!1 &1387545804632407331
 GameObject:
   m_ObjectHideFlags: 0
