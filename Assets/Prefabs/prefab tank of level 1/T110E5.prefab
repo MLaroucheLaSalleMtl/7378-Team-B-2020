@@ -4035,7 +4035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 100000, guid: 5c07a9c445f6a464c83deaf35dd8cd37, type: 3}
-  projectile2: {fileID: 0}
+  projectile2: {fileID: 100000, guid: cea64dc63790c4b46a6c79c06c6a2a84, type: 3}
   playerShootPosition: {fileID: 6504619806043574154}
   wp: {fileID: 0}
   shellSpeed: 250
@@ -4923,6 +4923,7 @@ MonoBehaviour:
   IsDead: 0
   OnlyOnce: 0
   PlayerHpText: {fileID: 0}
+  type: 
 --- !u!82 &8241048237233860650
 AudioSource:
   m_ObjectHideFlags: 0
