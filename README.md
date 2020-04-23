@@ -28,22 +28,17 @@ PART BY YANQING:
 
 
 PART BY CHENGYU:
+1.https://www.youtube.com/watch?v=_nRzoTzeyxU
 
-1.https://www.youtube.com/watch?v=dHzeHh-3bp4&t=71s
+2.https://www.youtube.com/watch?v=aEPSuGlcTUQ
 
-2.https://www.youtube.com/watch?v=EHgQnTr7OW4&t=372s
+3.https://free3d.com/
 
-3.https://www.youtube.com/watch?v=_nRzoTzeyxU
+4.https://answers.unity.com/questions/1161260/rotating-an-object-to-face-another-object-only-on.html
 
-4.https://www.youtube.com/watch?v=aEPSuGlcTUQ
+5.https://m.youtube.com/watch?v=_nRzoTzeyxU
 
-5.https://free3d.com/
-
-6.https://answers.unity.com/questions/1161260/rotating-an-object-to-face-another-object-only-on.html
-
-7.https://m.youtube.com/watch?v=_nRzoTzeyxU
-
-8. https://forum.unity.com/threads/making-an-object-rotate-to-face-another.1211/
+6. https://forum.unity.com/threads/making-an-object-rotate-to-face-another.1211/
 
 9. assert store(Model)
 
